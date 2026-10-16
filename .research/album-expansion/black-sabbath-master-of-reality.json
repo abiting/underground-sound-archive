@@ -1,0 +1,57 @@
+{
+  "id": "black-sabbath-master-of-reality",
+  "title": "Master of Reality",
+  "artist": "Black Sabbath",
+  "year": "1971",
+  "trackCount": 8,
+  "trackCountNote": "原始專輯版本為 8 首、約 34 分鐘；不同再版可能加入額外現場或錄音，未計入本欄。Apple Music 頁面標示 1971 年版本 8 songs。",
+  "genre": "重金屬",
+  "releaseGroupId": "e51e9779-2edc-3b39-959c-299fdb5ed940",
+  "coverUrl": "https://coverartarchive.org/release-group/e51e9779-2edc-3b39-959c-299fdb5ed940/front-500",
+  "coverSource": "MusicBrainz／Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/e51e9779-2edc-3b39-959c-299fdb5ed940/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/e51e9779-2edc-3b39-959c-299fdb5ed940",
+  "storeUrl": "https://music.apple.com/tw/album/master-of-reality/785239139",
+  "tracks": [
+    "Sweet Leaf",
+    "After Forever",
+    "Embryo",
+    "Children of the Grave",
+    "Orchid",
+    "Lord of This World",
+    "Solitude",
+    "Into the Void"
+  ],
+  "summary": "Black Sabbath 在 1971 年把降調吉他、反戰主題與陰鬱慢曲整合成重金屬經典；從 Sweet Leaf、Children of the Grave 到 Into the Void，呈現厚重聲響的關鍵轉折。",
+  "listeningNotes": "1971 年的 Master of Reality 是 Black Sabbath 的第三張錄音室專輯。Apple Music 將這個原始版本標為 8 首、約 34 分鐘，MusicBrainz 也把它歸為 Black Sabbath 的專輯作品。這不是把後來的豪華再版曲目倒灌回原始曲序；本誌以八首正式曲目作為聆聽範圍。\n\n錄音背景上，Louder Sound 記載樂團在 1971 年 2 月進入倫敦 Island Studios，仍由 Rodger Bain 製作；相較前兩張唱片，這次有更多錄音時間與 24 軌設備可供試驗。這讓作品不只是把音量推大，而是把短小器樂片段、慢速段落與更有方向感的編曲放進同一張唱片。\n\n開場的 Sweet Leaf 以咳嗽與沉重 riff 建立唱片的身體感，After Forever 則把宗教與信仰問題帶進快速推進的歌曲。Children of the Grave 是三首代表曲之一：Louder Sound 將它的低沉質地連到 Tony Iommi 把吉他降至 C# 的做法，Geezer Butler 的貝斯也跟著下移，形成近乎行軍的壓迫感。\n\n曲序中段故意放慢。Embryo 像銜接用的短篇素描，接到 Children of the Grave；Orchid 的木吉他語氣與 Solitude 的陰鬱旋律，讓後面的厚重不會變成單一色塊。Louder Sound 引述 Butler 的判讀，柔和曲目反而使重段更重；這是評論與創作者回顧，不是把每首歌都說成同一種金屬。\n\n收尾的 Into the Void 是另一首代表曲，聽點在於 riff 如何穿過變化拍感與快速人聲句法；Lord of This World 則把低頻推成滾動的重量。若要先聽三首，可依 Sweet Leaf、Children of the Grave、Into the Void 排列：先辨認聲響的質地，再聽降調帶來的深度，最後觀察樂團如何在短篇、慢歌與長 riff 之間安排張力。作品後來常被視為重金屬及 stoner rock、sludge metal 先聲，但這是歷史定位的評論性概括；可確定的是，它在 1971 年已把 Black Sabbath 的厚重、實驗性與陰暗主題集中到一套清楚的八首曲序中。留意 Bill Ward 的鼓點如何在低音吉他後方保留推進力，也留意 Ozzy Osbourne 在重 riff 之間留下的空隙；這些細節使厚重仍有呼吸，而不是只靠失真堆疊。",
+  "sources": [
+    {
+      "name": "Apple Music 專輯頁",
+      "url": "https://music.apple.com/us/album/master-of-reality/785239139"
+    },
+    {
+      "name": "Louder Sound 專輯故事與訪談整理",
+      "url": "https://www.loudersound.com/features/black-sabbath-master-of-reality-story-behind-the-album"
+    },
+    {
+      "name": "MusicBrainz Master of Reality release group",
+      "url": "https://musicbrainz.org/release-group/e51e9779-2edc-3b39-959c-299fdb5ed940"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Apple Music 將 Master of Reality 列為 Black Sabbath 於 1971 年發行的專輯，標示 1971 年 7 月 21 日、8 首歌、約 34 分鐘。",
+      "sourceUrl": "https://music.apple.com/us/album/master-of-reality/785239139"
+    },
+    {
+      "fact": "Louder Sound 記載樂團於 1971 年 2 月在倫敦 Island Studios 錄製第三張專輯，製作人為 Rodger Bain，並談到更多錄音時間、24 軌技術與降調造成的厚重聲響。",
+      "sourceUrl": "https://www.loudersound.com/features/black-sabbath-master-of-reality-story-behind-the-album"
+    },
+    {
+      "fact": "MusicBrainz 公開頁確認 release group 標題為 Master of Reality、藝人為 Black Sabbath，release-group UUID 為 e51e9779-2edc-3b39-959c-299fdb5ed940。",
+      "sourceUrl": "https://musicbrainz.org/release-group/e51e9779-2edc-3b39-959c-299fdb5ed940"
+    }
+  ],
+  "coverStatus": "已由 MusicBrainz release-group 公開頁核對 UUID，並以 HEAD 確認 Cover Art Archive front-500 URL 可重新導向至 JPEG 封面。",
+  "notes": "曲目與年份採原始專輯版本；Apple Music 顯示的商店日期與其他資料庫可能存在日期差異，因此資料模型只固定位 1971 年。封面使用該 release-group 的 Cover Art Archive 真實封面，不採搜尋縮圖。"
+}

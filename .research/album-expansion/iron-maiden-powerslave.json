@@ -1,0 +1,39 @@
+{
+  "id": "iron-maiden-powerslave",
+  "title": "Powerslave",
+  "artist": "Iron Maiden",
+  "year": "1984",
+  "trackCount": 8,
+  "trackCountNote": "原始 1984 年版本為 8 首；不計入再版 bonus 或日本追加曲目。原始曲序中的 Losfer Words (Big 'Orra) 為器樂曲。",
+  "genre": "重金屬",
+  "releaseGroupId": "60a20bc8-acac-3cbb-99f9-ce458317233a",
+  "coverUrl": "https://coverartarchive.org/release-group/60a20bc8-acac-3cbb-99f9-ce458317233a/front-500",
+  "coverSource": "Cover Art Archive（MusicBrainz release-group）",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/60a20bc8-acac-3cbb-99f9-ce458317233a/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/60a20bc8-acac-3cbb-99f9-ce458317233a",
+  "storeUrl": "https://music.apple.com/gb/album/powerslave/980112277",
+  "tracks": [
+    {"position": 1, "title": "Aces High", "duration": "4:31"},
+    {"position": 2, "title": "2 Minutes to Midnight", "duration": "6:04"},
+    {"position": 3, "title": "Losfer Words (Big 'Orra)", "duration": "4:15", "note": "Instrumental"},
+    {"position": 4, "title": "Flash of the Blade", "duration": "4:05"},
+    {"position": 5, "title": "The Duellists", "duration": "6:18"},
+    {"position": 6, "title": "Back in the Village", "duration": "5:02"},
+    {"position": 7, "title": "Powerslave", "duration": "7:12"},
+    {"position": 8, "title": "Rime of the Ancient Mariner", "duration": "13:45"}
+  ],
+  "summary": "Iron Maiden 於一九八四年推出的重金屬經典，以〈Aces High〉、〈2 Minutes to Midnight〉與〈Rime of the Ancient Mariner〉串起戰爭意象、埃及神話與長篇敘事；八首原始曲序展現樂團在速度、旋律和史詩篇幅間的成熟平衡。",
+  "listeningNotes": "《Powerslave》在一九八四年九月三日發行，是 Iron Maiden 由 Martin Birch 製作、於巴哈馬 Compass Point Studios 錄製的第五張錄音室專輯。官方曲序與 MusicBrainz 都確認原始版本為八首；這裡不把後來再版或日本追加曲目混入。Adrian Smith 回憶，標題曲的埃及意象源自 Bruce Dickinson 在《Piece Of Mind》巡演期間帶著四軌機整理的想法；這項背景能解釋封面與歌曲的視覺連續性，但不代表整張唱片是預先設計的單一概念。\n\n開場〈Aces High〉先用高速雙吉他與急促鼓點建立空戰般的推進，接著〈2 Minutes to Midnight〉把速度壓低，讓粗重主歌和反覆回返的副歌更有重量。〈Losfer Words (Big 'Orra)〉是全碟唯一的器樂曲，並非失誤或填充：樂團認為旋律不需要歌詞。聆聽時可留意它如何以吉他對答維持張力，再把耳朵交給〈Flash of the Blade〉與〈The Duellists〉中更鮮明的旋律線。\n\n後半段把敘事尺度逐步拉大。〈Back in the Village〉以緊繃節奏推進，〈Powerslave〉則把沉重和異國色彩集中在標題段落；這些是對聲響與圖像的評論判讀，不是官方宣稱的概念專輯說法。真正的終點〈Rime of the Ancient Mariner〉長達十三分四十五秒，段落、停頓與氣氛變化都比前曲更開闊，適合完整播放而非切成單曲。\n\n作品定位上，資料顯示它在英國專輯榜到達第二名，在美國到達第二十一名，隨後的 World Slavery Tour 更把舞台規模推向新階段。若只挑三首代表作，可先聽〈Aces High〉理解速度與戰場畫面，再聽〈2 Minutes to Midnight〉感受較厚的中速重擊，最後以〈Rime of the Ancient Mariner〉觀察樂團如何把重金屬寫成長篇敘事。這三首並置，也能聽見《Powerslave》在直接性、旋律性與進行感之間的平衡。若想細聽編曲，可比較前兩曲的即時衝刺與終曲的留白，注意貝斯如何把長段落連起來，再回頭聽標題曲的主唱層次；這些具體差異正是專輯耐聽之處。",
+  "sources": [
+    {"name": "Iron Maiden 官方 Powerslave 專輯頁", "url": "https://www.ironmaiden.com/studio-album/powerslave/"},
+    {"name": "Louder Sound／Metal Hammer：Powerslave 故事回顧", "url": "https://www.loudersound.com/features/iron-maiden-powerslave-album"},
+    {"name": "MusicBrainz Powerslave release-group", "url": "https://musicbrainz.org/release-group/60a20bc8-acac-3cbb-99f9-ce458317233a"}
+  ],
+  "verifiedFacts": [
+    {"fact": "Iron Maiden 官方資料列出發行日為 1984 年 9 月 3 日、製作人為 Martin Birch、錄音地點為 Compass Point Studios，原始曲序共 8 首。", "sourceUrl": "https://www.ironmaiden.com/studio-album/powerslave/"},
+    {"fact": "MusicBrainz release-group 60a20bc8-acac-3cbb-99f9-ce458317233a 的多個 1984 原始發行均標示 8 首，並記錄 1984-09-03 日期。", "sourceUrl": "https://musicbrainz.org/release-group/60a20bc8-acac-3cbb-99f9-ce458317233a"},
+    {"fact": "Louder Sound 的 Metal Hammer 回顧記載〈Rime of the Ancient Mariner〉在 Compass Point Studios 成形、長度為 13 分鐘，並說明〈Losfer Words〉是器樂曲，以及專輯在英國榜第 2、 美國榜第 21。", "sourceUrl": "https://www.loudersound.com/features/iron-maiden-powerslave-album"}
+  ],
+  "coverStatus": "已由 Cover Art Archive 回應 200 且確認為 image/jpeg；使用對應 MusicBrainz release-group 的 front-500。",
+  "notes": "代表曲目為 Aces High、2 Minutes to Midnight、Rime of the Ancient Mariner。曲目名稱與原始版本由 Iron Maiden 官方頁核對；coverUrl 的 HEAD 驗證回應 200。"
+}

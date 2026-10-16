@@ -1,0 +1,59 @@
+{
+  "id": "radiohead-kid-a",
+  "title": "Kid A",
+  "artist": "Radiohead",
+  "year": "2000",
+  "trackCount": 10,
+  "trackCountNote": "原始 CD／正式專輯曲序為 10 首；部分數位版本把結尾隱藏音軌 Untitled 另列為第 11 首，未計入原始曲目數。",
+  "genre": "另類搖滾",
+  "releaseGroupId": "e75c0549-ad55-39e3-8025-c72c5d4a3c5d",
+  "coverUrl": "https://coverartarchive.org/release-group/e75c0549-ad55-39e3-8025-c72c5d4a3c5d/front-500",
+  "coverSource": "MusicBrainz／Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/e75c0549-ad55-39e3-8025-c72c5d4a3c5d/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/e75c0549-ad55-39e3-8025-c72c5d4a3c5d",
+  "storeUrl": "https://music.apple.com/tw/search?term=Radiohead%20Kid%20A",
+  "tracks": [
+    "Everything In Its Right Place",
+    "Kid A",
+    "The National Anthem",
+    "How to Disappear Completely",
+    "Treefingers",
+    "Optimistic",
+    "In Limbo",
+    "Idioteque",
+    "Morning Bell",
+    "Motion Picture Soundtrack"
+  ],
+  "summary": "Radiohead 於 2000 年推出的實驗性另類搖滾經典，將電子節拍、合成器、弦樂與冷峻人聲編入 10 首曲目，從 Everything In Its Right Place 到 Motion Picture Soundtrack 展開疏離而精密的聲音旅程，適合搜尋專輯背景與曲序導讀。",
+  "listeningNotes": "Radiohead 在 2000 年 10 月 2 日推出《Kid A》，這是樂團繼《OK Computer》之後的第四張錄音室專輯。官方頁面列出的原始版本有 10 首正式曲目；部分數位版本把結尾的隱藏音軌 Untitled 另列為第 11 首，因此這裡以原始專輯曲序為準。這個差異不是再版加歌，也不應把《KID A MNESIA》的內容混入本輯。作品定位可先從發行事實理解，再交給評論判讀：NPR 在 2000 年的評論稱它是對早期作品的實驗性偏離，並以「反搖滾」概括其拒絕既有期待的姿態。開場 Everything In Its Right Place 沒有先用吉他建立熟悉的入口，而是讓切分的人聲與合成器和弦把空間切成冷而不穩的片段；緊接的 Kid A 把旋律藏在處理過的聲線裡。到 The National Anthem，低音反覆推進，銅管的擁擠感把節奏推向近乎失控；How to Disappear Completely 則以較開闊的弦樂與長線條形成反差。聆聽時可注意樂團如何讓「歌曲」不再只等於主唱加吉他，而是由音色、留白和剪接共同完成。\n\nTreefingers 是短暫的器樂停格，像把前半段的壓力抽空，之後 Optimistic 才讓較清楚的搖滾吉他重新出現。In Limbo 的循環感不靠大副歌釋放，反而把人留在似醒未醒的狀態。曲序在此呈現由可辨識的樂團編制，轉向電子脈衝與不對稱層次的連續變形；這是具體的聽感判讀，不是把抽象情緒當成樂團自述。\n\n後半段的核心可從 Idioteque 開始：取樣式節拍、急促的電子重複與人聲的警報感，讓舞曲語法承擔搖滾專輯的重量。Morning Bell 把同一組和聲放進更幽閉的節拍與聲場，Motion Picture Soundtrack 又以較少元素收束，留下近乎室內樂的餘韻。建議第一次完整播放不要跳曲，特別比較第三首與第八首的節奏密度，再回頭聽第十首如何把整張唱片的冷色調折回安靜。\n\n《Kid A》的重要性不只在於它「改變風格」，而在於 Radiohead 把主流搖滾專輯的聽覺尺度重新安排：吉他仍在，卻不再擔任唯一骨架；電子聲響、爵士式銅管、弦樂與人聲處理各自保留摩擦。把 NPR 的「實驗性偏離」視為評論框架，再以官方曲序逐首驗證，會比只記住其經典地位更能聽見這張專輯如何運作。",
+  "sources": [
+    {
+      "name": "Radiohead 官方 Bandcamp《Kid A》",
+      "url": "https://radiohead.bandcamp.com/album/kid-a"
+    },
+    {
+      "name": "NPR《Radiohead CD Kid A Is An Experimental Departure From Earlier Work》",
+      "url": "https://www.npr.org/2000/10/13/1112430/kid-a-by-radiohead"
+    },
+    {
+      "name": "MusicBrainz《Kid A》Release Group",
+      "url": "https://musicbrainz.org/release-group/e75c0549-ad55-39e3-8025-c72c5d4a3c5d"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Radiohead 官方 Bandcamp 頁標示發行日期為 2000 年 10 月 2 日，並列出 Kid A 原始曲序及 10 首正式曲目；其頁面另將 Untitled 作為隱藏音軌列出。",
+      "sourceUrl": "https://radiohead.bandcamp.com/album/kid-a"
+    },
+    {
+      "fact": "NPR 的 2000 年評論將《Kid A》描述為對 Radiohead 早期作品的實驗性偏離，並稱其為「反搖滾」。",
+      "sourceUrl": "https://www.npr.org/2000/10/13/1112430/kid-a-by-radiohead"
+    },
+    {
+      "fact": "MusicBrainz 公開頁確認《Kid A》是 Radiohead 的 Album release group，UUID 為 e75c0549-ad55-39e3-8025-c72c5d4a3c5d。",
+      "sourceUrl": "https://musicbrainz.org/release-group/e75c0549-ad55-39e3-8025-c72c5d4a3c5d"
+    }
+  ],
+  "coverStatus": "verified",
+  "notes": "封面 URL 已以 urllib HEAD 確認回應 200 且內容類型為 image/jpeg。MusicBrainz 公開頁與 Cover Art Archive 對應同一 release-group UUID；storeUrl 是 Apple Music 台灣搜尋連結，非已核對的精確專輯發行頁。"
+}

@@ -8,14 +8,10 @@ import { albums, articles } from "../data/catalog";
 import { sourceNotes } from "../data/sourceNotes";
 import { searchAlbums } from "../lib/itunesSearch";
 import type { SearchAlbum } from "../data/types";
+import { buildArtistIndex, catalogCategories, catalogDecades, filterAlbums, filterArticles } from "../lib/catalogSearch";
 
-const categories = ["全部", ...Array.from(new Set(articles.map((article) => article.category)))];
-const decades = ["全部年代", "1970s", "1980s", "1990s", "2000s", "2020s"];
-
-function decadeOf(year: string) {
-  const yearNumber = Number(year);
-  return `${Math.floor(yearNumber / 10) * 10}s`;
-}
+const categories = catalogCategories(albums, articles);
+const decades = catalogDecades(albums, articles);
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -26,30 +22,9 @@ export default function Home() {
   const [apiLoading, setApiLoading] = useState(false);
   const [apiMessage, setApiMessage] = useState("");
 
-  const filteredArticles = useMemo(() => articles.filter((article) => {
-    const search = query.trim().toLocaleLowerCase();
-    const matchesQuery = !search || [article.title, article.artist, article.category, article.summary, article.body, ...article.tags].join(" ").toLocaleLowerCase().includes(search);
-    const matchesCategory = category === "全部" || article.category === category;
-    const matchesDecade = decade === "全部年代" || decadeOf(article.year) === decade;
-    return matchesQuery && matchesCategory && matchesDecade;
-  }), [query, category, decade]);
-
-  const artists = useMemo(() => {
-    const index = new Map<string, { slug: string; name: string; category: string; count: number; albumCount: number }>();
-    for (const article of articles) {
-      const slug = article.artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-      const entry = index.get(slug) || { slug, name: article.artist, category: article.category, count: 0, albumCount: 0 };
-      entry.count += 1;
-      index.set(slug, entry);
-    }
-    for (const album of albums) {
-      const slug = album.artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-      const entry = index.get(slug) || { slug, name: album.artist, category: album.genre, count: 0, albumCount: 0 };
-      entry.albumCount += 1;
-      index.set(slug, entry);
-    }
-    return Array.from(index.values());
-  }, []);
+  const filteredAlbums = useMemo(() => filterAlbums(albums, { query, category, decade }), [query, category, decade]);
+  const filteredArticles = useMemo(() => filterArticles(articles, { query, category, decade }), [query, category, decade]);
+  const artists = useMemo(() => buildArtistIndex(albums, articles), []);
 
   async function handleApiSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -94,12 +69,24 @@ export default function Home() {
           <div><p className="section-kicker">01 / THE RECORD SHELF</p><h2>本期開聲<span>／</span>唱片選輯</h2></div>
           <p className="section-note">{albums.length} 張專輯，從不同聲音找到下一張值得重播的唱片。</p>
         </div>
-        <div className="album-grid">
-          {albums.slice(0, 5).map((album) => <AlbumCard key={album.id} album={album} />)}
+        <div className="filter-bar">
+          <label className="filter-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="搜尋站內樂團、專輯與文章關鍵字" placeholder="搜尋樂團、專輯或故事關鍵字" /></label>
+          <select aria-label="依音樂類型篩選" value={category} onChange={(event) => setCategory(event.target.value)}>
+            {categories.map((item) => <option key={item} value={item}>{item === "全部" ? "全部類型" : item}</option>)}
+          </select>
+          <select aria-label="依年代篩選" value={decade} onChange={(event) => setDecade(event.target.value)}>
+            {decades.map((item) => <option key={item} value={item}>{item}</option>)}
+          </select>
+          <span className="result-count" role="status">{filteredAlbums.length} 張／{filteredArticles.length} 篇</span>
         </div>
-        <div className="album-grid album-grid-secondary">
-          {albums.slice(5).map((album) => <AlbumCard key={album.id} album={album} compact />)}
-        </div>
+        {filteredAlbums.length ? <>
+          <div className="album-grid">
+            {filteredAlbums.slice(0, 5).map((album) => <AlbumCard key={album.id} album={album} />)}
+          </div>
+          <div className="album-grid album-grid-secondary">
+            {filteredAlbums.slice(5).map((album) => <AlbumCard key={album.id} album={album} compact />)}
+          </div>
+        </> : <div className="empty-state"><Disc3 size={30} /><h3>沒有相符的唱片</h3><p>試試其他關鍵字、類型或年代。</p></div>}
       </section>
 
       <section className="artist-band" id="artists">
@@ -110,7 +97,7 @@ export default function Home() {
               <span className="artist-index">{String(index + 1).padStart(2, "0")}</span>
               <strong>{artist.name}</strong>
               <span className="artist-genre">{artist.category}</span>
-              <span className="artist-count">{artist.count ? `${artist.count} 篇` : `${artist.albumCount} 張專輯`}</span>
+              <span className="artist-count"><span>{artist.albumCount} 張專輯</span>{artist.count > 0 && <small>{artist.count} 篇導讀</small>}</span>
               <ArrowUpRight size={16} />
             </Link>
           ))}
@@ -122,16 +109,7 @@ export default function Home() {
           <div><p className="section-kicker">03 / FRESHLY PRINTED</p><h2>剛印好的<span>場刊</span></h2></div>
           <p className="section-note">樂團背景、專輯脈絡與聽完之後想說的話。</p>
         </div>
-        <div className="filter-bar">
-          <label className="filter-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="搜尋站內樂團、專輯與文章關鍵字" placeholder="搜尋樂團、專輯或關鍵字" /></label>
-          <select aria-label="依音樂類型篩選" value={category} onChange={(event) => setCategory(event.target.value)}>
-            {categories.map((item) => <option key={item} value={item}>{item === "全部" ? "全部類型" : item}</option>)}
-          </select>
-          <select aria-label="依年代篩選" value={decade} onChange={(event) => setDecade(event.target.value)}>
-            {decades.map((item) => <option key={item} value={item}>{item}</option>)}
-          </select>
-          <span className="result-count">{filteredArticles.length} 篇</span>
-        </div>
+        {(query || category !== "全部" || decade !== "全部年代") && <p className="section-note">依唱片選輯的搜尋與篩選顯示 {filteredArticles.length} 篇相關場刊。</p>}
         {filteredArticles.length ? (
           <div className="article-grid">
             {filteredArticles.map((article, index) => <ArticleCard key={article.id} article={article} index={index} />)}

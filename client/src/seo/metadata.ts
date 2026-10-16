@@ -4,7 +4,7 @@ import { normalizeBasePath, withBasePath } from "../lib/sitePaths";
 export const SITE_NAME = "破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌";
 export const BRAND_NAME = "破繭之聲";
 export const ENGLISH_NAME = "Underground Sound Archive";
-export const SITE_DESCRIPTION = "破繭之聲 Underground Sound Archive 是以繁體中文探索搖滾、重金屬與唱片文化的線上場刊。從 Queen、Pink Floyd 到 Metallica 與 Slipknot，閱讀專輯導讀、樂團背景、代表曲目與聲音脈絡，依類型或年代尋找下一張值得重播的唱片。";
+export const SITE_DESCRIPTION = "破繭之聲 Underground Sound Archive 是以繁體中文探索搖滾、重金屬與唱片文化的線上場刊。從 Queen、Metallica 到 Green Day 與 Ave Mujica，閱讀完整專輯故事、樂團背景、代表曲目與聲音脈絡，依類型或年代尋找下一張值得重播的唱片。";
 export const SITE_KEYWORDS = ["搖滾", "重金屬", "專輯導讀", "樂團介紹", "唱片評論", "音樂史", "破繭之聲"];
 export const SOCIAL_IMAGE_PATH = "/images/underground-social.jpg";
 export const DEFAULT_SOCIAL_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663217818186/wjjvFTNJhRwXPVCd.jpg";
@@ -106,14 +106,14 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
     const album = albums.find((item) => path === `/album/${item.id}`);
     if (album) {
       Object.assign(metadata, {
-        kind: "album", status: 200, title: `${album.artist}《${album.title}》${album.title.length > 25 ? "專輯導讀" : "專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`,
-        description: `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：${album.genre} 聲音風格、${album.trackCount} 首曲目與代表聽點。閱讀原創專輯導讀、封面來源和相關樂團文章，找到完整唱片脈絡。`,
+        kind: "album", status: 200, title: `${album.artist}《${album.title}》${album.title.length > 25 ? "專輯導讀" : "完整專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`,
+        description: `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：以${album.genre}為聲音底色，收錄 ${album.trackCount} 首曲目與代表聽點。閱讀完整專輯故事、封面來源和相關樂團文章，深入唱片脈絡。`,
         keywords: uniqueKeywords([album.artist, album.title, album.genre, "專輯評論", "曲目介紹", BRAND_NAME]),
         image: album.coverUrl, imageAlt: `${album.artist}《${album.title}》專輯封面`,
       });
       mainEntity = { "@type": "MusicAlbum", name: album.title, byArtist: { "@type": "MusicGroup", name: album.artist },
         datePublished: album.year, numTracks: album.trackCount, genre: album.genre, image: album.coverUrl,
-        sameAs: [album.musicbrainzUrl], description: metadata.description };
+        ...(album.musicbrainzUrl ? { sameAs: [album.musicbrainzUrl] } : {}), description: metadata.description };
     }
   } else if (path.startsWith("/artist/")) {
     const related = articles.filter((item) => path === `/artist/${artistSlug(item.artist)}`);

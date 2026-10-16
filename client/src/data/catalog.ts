@@ -1,2 +1,6 @@
+import { albums as currentAlbums } from "./albums";
+import { expandedAlbums } from "./albumExpansion";
+import type { Album } from "./types";
+
 export { articles } from "./articles";
-export { albums } from "./albums";
+export const albums: Album[] = [...currentAlbums, ...expandedAlbums];

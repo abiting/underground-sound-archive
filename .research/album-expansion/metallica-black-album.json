@@ -1,0 +1,61 @@
+{
+  "id": "metallica-metallica-1991",
+  "title": "Metallica",
+  "artist": "Metallica",
+  "year": "1991",
+  "trackCount": 12,
+  "trackCountNote": "原始 1991 年正式版本為 12 首；不含重製版、豪華版 bonus 或日本追加曲。",
+  "genre": "重金屬",
+  "releaseGroupId": "e8f70201-8899-3f0c-9e07-5d6495bc8046",
+  "coverUrl": "https://coverartarchive.org/release-group/e8f70201-8899-3f0c-9e07-5d6495bc8046/front-500",
+  "coverSource": "Cover Art Archive / MusicBrainz",
+  "coverSourceUrl": "https://musicbrainz.org/release-group/e8f70201-8899-3f0c-9e07-5d6495bc8046/cover-art",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/e8f70201-8899-3f0c-9e07-5d6495bc8046",
+  "storeUrl": "https://music.apple.com/tw/search?term=Metallica%20Metallica",
+  "tracks": [
+    "Enter Sandman",
+    "Sad But True",
+    "Holier Than Thou",
+    "The Unforgiven",
+    "Wherever I May Roam",
+    "Don't Tread on Me",
+    "Through the Never",
+    "Nothing Else Matters",
+    "Of Wolf and Man",
+    "The God That Failed",
+    "My Friend of Misery",
+    "The Struggle Within"
+  ],
+  "summary": "Metallica 於 1991 年發行的同名重金屬經典，以更厚重的律動、清晰段落與旋律張力，串起 Enter Sandman、Sad But True、Nothing Else Matters 等代表曲。",
+  "listeningNotes": "一九九一年八月十二日，Metallica 以同名第五張錄音室專輯回到樂團核心，正式發行資料列出十二首曲目；黑色封面因此成為樂迷稱呼的 The Black Album，但 MusicBrainz 的註記提醒，正式專輯名仍是 Metallica。這裡把日期與曲序視為已核對的發行事實，不把後來豪華版、重製版或日本追加曲目混入原版。\n\n製作上的關鍵是聲音重心的調整。製作人 Bob Rock 在 MusicRadar 訪談中說，Lars Ulrich 希望節奏更有律動，錄製 Enter Sandman 時還要求樂團在錄音室以現場方式一起演奏；這些是製作訪談中的具體說法，不等同於我對成品的主觀評價。實際聆聽時，可先注意鼓組如何把吉他的停頓與低音推成一個更寬、更穩的脈動。\n\n曲序先以 Enter Sandman 的簡潔主題建立入口，接著由 Sad But True 把速度壓低，讓厚重音色與反覆節奏成為焦點；Holier Than Thou 則把銳利速度拉回來。The Unforgiven 和 Nothing Else Matters 顯示 Hetfield 聲線更重視旋律與空間，這是聲音發展的可聽線索。Wherever I May Roam 的異國色彩，以及 Through The Never 的短促衝刺，又把寬闊感拉回金屬框架。\n\n若要挑三首代表曲目，Enter Sandman 適合觀察主歌與副歌如何用少量材料製造記憶點；Sad But True 適合聽低調弦與鼓的重量如何佔據空間；Nothing Else Matters 則讓人比較乾淨分解和弦、管弦色彩與主唱的親密距離。這三首不是唯一答案，而是分別對應節奏律動、低頻壓力與抒情開展的入口。\n\n作品定位可以分成兩層理解：事實上，它是 Metallica 的第五張錄音室專輯，也是樂團最廣為人知的作品之一；評論上，MusicRadar 將它描述為藝術與商業都極具規模的突破，而我更願意把它聽成一次取捨：保留斷奏、失真與重量，卻用更清楚的段落、更大的動態和更直接的旋律接近更廣聽眾。從頭播放時，請留意每次速度改變前後，鼓、低音與人聲如何重新分配注意力。",
+  "sources": [
+    {
+      "name": "Metallica 官方專輯頁",
+      "url": "https://www.metallica.com/releases/albums/the-black-album.html"
+    },
+    {
+      "name": "MusicRadar Bob Rock 專訪",
+      "url": "https://www.musicradar.com/news/bob-rock-metallica-black-album-interview"
+    },
+    {
+      "name": "MusicBrainz Metallica release-group 頁",
+      "url": "https://musicbrainz.org/release-group/e8f70201-8899-3f0c-9e07-5d6495bc8046"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Metallica 官方頁列出發行日為 1991 年 8 月 12 日，並列出原始版本 12 首曲目。",
+      "sourceUrl": "https://www.metallica.com/releases/albums/the-black-album.html"
+    },
+    {
+      "fact": "MusicRadar 的 Bob Rock 訪談提到 Lars Ulrich 希望節奏更有律動，且 Enter Sandman 錄製時樂團以現場方式演奏。",
+      "sourceUrl": "https://www.musicradar.com/news/bob-rock-metallica-black-album-interview"
+    },
+    {
+      "fact": "MusicBrainz 將正式名稱記為 Metallica，release-group UUID 為 e8f70201-8899-3f0c-9e07-5d6495bc8046，並註明 The Black Album 是樂迷稱呼。",
+      "sourceUrl": "https://musicbrainz.org/release-group/e8f70201-8899-3f0c-9e07-5d6495bc8046"
+    }
+  ],
+  "coverStatus": "已驗證：Cover Art Archive front-500 URL 可存取，對應該 release-group。",
+  "notes": "原始曲目與正式專輯名以 Metallica 官方頁及 MusicBrainz 核對；Apple Music 使用台灣站搜尋連結，未宣稱為精確專輯發行頁。"
+}

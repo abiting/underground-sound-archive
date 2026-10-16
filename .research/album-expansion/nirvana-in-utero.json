@@ -1,0 +1,61 @@
+{
+  "id": "nirvana-in-utero",
+  "title": "In Utero",
+  "artist": "Nirvana",
+  "year": "1993",
+  "trackCount": 12,
+  "trackCountNote": "原始正式版本為 12 首；官方曲目頁未納入再版 bonus 或日版追加曲。不同再版可能另含額外音軌。",
+  "genre": "另類搖滾",
+  "releaseGroupId": "2a0981fb-9593-3019-864b-ce934d97a16e",
+  "coverUrl": "https://coverartarchive.org/release-group/2a0981fb-9593-3019-864b-ce934d97a16e/front-500",
+  "coverSource": "MusicBrainz / Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/2a0981fb-9593-3019-864b-ce934d97a16e/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/2a0981fb-9593-3019-864b-ce934d97a16e",
+  "storeUrl": "https://music.apple.com/tw/search?term=Nirvana%20In%20Utero",
+  "tracks": [
+    "Serve The Servants",
+    "Scentless Apprentice",
+    "Heart Shaped Box",
+    "Rape Me",
+    "Frances Farmer Will Have Her Revenge On Seattle",
+    "Dumb",
+    "Very Ape",
+    "Milk It",
+    "Pennyroyal Tea",
+    "Radio Friendly Unit Shifter",
+    "Tourette's",
+    "All Apologies"
+  ],
+  "summary": "Nirvana 於 1993 年發行的另類搖滾經典，從「Heart Shaped Box」的旋律陰影到「All Apologies」的沉降，呈現主流成功後仍拒絕被磨平的聲音。",
+  "listeningNotes": "Nirvana 在《Nevermind》爆發成為主流焦點後，於 1993 年推出《In Utero》。官方資料把它列為 1993 年作品，MusicBrainz 的原始 CD 發行紀錄則標示 1993 年 9 月 21 日與 DGC Records。這張唱片不是把前作的成功重新複製，而是把樂團的另類搖滾身分放回更刺耳、更少修飾的錄音空間；AllMusic 評論也把 Steve Albini 的冷硬製作與樂團後來的調整並列，提醒聽者不要把所有聲音決定簡化成單一製作人故事。這個轉向讓專輯在流行規模與地下質地之間保留明顯摩擦。\n\n原始版本是 12 首，從「Serve The Servants」一路到「All Apologies」；官方曲序沒有把後來的加曲混入本欄。開場吉他與鼓的衝擊先建立拒絕討好的姿態，「Scentless Apprentice」再把節奏推向近乎失控的噪響。中段的「Heart Shaped Box」以較清楚的旋律包住不安，「Dumb」則讓失真與留白並存；這種在可唱性和破裂感之間來回的安排，是整張唱片最值得追蹤的聲音發展。\n\n三首代表曲可先聽「Heart Shaped Box」、「Rape Me」與「All Apologies」。第一首留意主歌的陰影與副歌的開闊如何互相拉扯；第二首聽吉他反覆推進時，鼓和人聲如何把緊張維持在前景；最後一首則觀察音量收束後，旋律如何留下比吼叫更持久的重量。它們是辨識專輯的入口，但不應取代「Milk It」、「Radio Friendly Unit Shifter」等較不安定的段落。\n\n作品定位上，《In Utero》既是 Nirvana 對《Nevermind》時代期待的回應，也是 1990 年代另類搖滾由地下語彙進入大眾市場後的一次自我校正。AllMusic 將它形容為刻意不易親近的聆聽經驗，這是評論判讀，不是樂團宣言；較可確定的事實是，官方曲序保留了短促、尖銳、抒情段落交錯的結構。建議先完整播放，不要只跳聽三首單曲，並把「Pennyroyal Tea」到「All Apologies」的後半段當成情緒逐步沉降的連續段落來聽。",
+  "sources": [
+    {
+      "name": "Nirvana 官方發行頁",
+      "url": "https://www.nirvana.com/releases-archive/in-utero/"
+    },
+    {
+      "name": "AllMusic《In Utero》專輯評論",
+      "url": "https://www.allmusic.com/album/in-utero-mw0000097301"
+    },
+    {
+      "name": "MusicBrainz《In Utero》Release Group",
+      "url": "https://musicbrainz.org/release-group/2a0981fb-9593-3019-864b-ce934d97a16e"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Nirvana 官方頁標示《In Utero》發行於 1993 年，並列出原始 12 首曲序。",
+      "sourceUrl": "https://www.nirvana.com/releases-archive/in-utero/"
+    },
+    {
+      "fact": "AllMusic 標示發行日為 1993 年 9 月 21 日，並將作品歸入 Alternative Pop/Rock、Alternative/Indie Rock 與 Grunge。",
+      "sourceUrl": "https://www.allmusic.com/album/in-utero-mw0000097301"
+    },
+    {
+      "fact": "MusicBrainz release-group 頁將《In Utero》歸為 Nirvana 專輯，並列出 1993 年 9 月 21 日、DGC Records、12 首的正式 CD 發行紀錄。",
+      "sourceUrl": "https://musicbrainz.org/release-group/2a0981fb-9593-3019-864b-ce934d97a16e"
+    }
+  ],
+  "coverStatus": "verified",
+  "notes": "MusicBrainz release-group UUID 已由公開頁核對；Cover Art Archive front-500 以 urllib HEAD 回應 200 image/jpeg。storeUrl 為 Apple Music 台灣搜尋連結，非特定專輯發行頁。"
+}

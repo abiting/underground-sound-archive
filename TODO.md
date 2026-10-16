@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁補齊 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；所有有內容的圖片均有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、11 篇文章、13 個樂團頁及 12 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、11 篇文章、15 個樂團頁及 27 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；未設定正式網域時預覽 noindex，提供 robots 與 sitemap 模板，錯誤頁 noindex 並在預覽返回 HTTP 404。
 - [x] SEO 更新經型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為正式收錄，不擅自完成待確認的 GitHub 轉移或公開發佈。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標仍為「把音量開到／失真以外。」，該區塊不再重複站名。
@@ -41,3 +41,12 @@
 
 ## 頁尾微調
 - [x] 移除頁尾文案「扭開音量，翻開一頁」，聲明精確為「封面由資料來源提供；作品權利屬於原權利人；本站為音樂導讀與評論用途」。
+
+## 全樂團追加知名專輯與新團
+- [x] 現存 13 個樂團 Queen、Pink Floyd、Led Zeppelin、Nirvana、Radiohead、Black Sabbath、Iron Maiden、Metallica、Megadeth、Slipknot、Dreamshade、Dream Theater、Spitz 各新增 1 張未收錄的知名專輯，保留既有 12 張專輯及 11 篇文章。
+- [x] Green Day（依使用者 Greeeday 拼寫正規化）與 Ave Mujica 各加入 1 張專輯，含有效樂團索引、樂團頁及代表專輯連結。
+- [x] 共新增 15 張專輯；各有查證過的年份、版本／曲目數、3 首代表聽點、正確封面及其來源；不捏造 MusicBrainz ID 或以其他專輯封面替代。
+- [x] 每張新增專輯都有 500–800 個中文字、4–6 段的原創完整故事，涵蓋發行／創作背景、曲目與聲音發展、作品定位及聆聽線索，至少 2 個已閱讀的可靠查證來源；中文與英文／數字間保留空格。
+- [x] 27 張專輯、15 個樂團與原有文章可以從首頁目錄、站內搜尋、篩選與樂團頁完整瀏覽；新增頁面的初始 HTML、圖片 alt、title、description、分享 metadata、canonical、sitemap 及路由清單同步且使用 GitHub Pages 子目錄。
+- [x] TypeScript 檢查與 36 項測試全部通過；Pages 靜態建置輸出 54 個公開路由、sitemap、robots、404 及正確子目錄 manifest。
+- [x] 依使用者指正，Dreamshade 指定新選輯為《What Silence Hides》，排除無法證實的《Human》；匯入 ID 與回歸測試已同步更正。

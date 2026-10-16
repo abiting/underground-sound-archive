@@ -1,0 +1,60 @@
+{
+  "id": "megadeth-countdown-to-extinction",
+  "title": "Countdown to Extinction",
+  "artist": "Megadeth",
+  "year": "1992",
+  "trackCount": 11,
+  "trackCountNote": "原始 1992 版本為 11 首；MusicBrainz 同頁另列日本 bonus track edition 為 13 首，追加曲目不計入原版。",
+  "genre": "鞭擊金屬",
+  "releaseGroupId": "04785b90-87cb-3d5d-a9a9-7f465e327bb4",
+  "coverUrl": "https://coverartarchive.org/release-group/04785b90-87cb-3d5d-a9a9-7f465e327bb4/front-500",
+  "coverSource": "MusicBrainz／Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/04785b90-87cb-3d5d-a9a9-7f465e327bb4/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/04785b90-87cb-3d5d-a9a9-7f465e327bb4",
+  "storeUrl": "https://music.apple.com/tw/search?term=Megadeth%20Countdown%20to%20Extinction",
+  "tracks": [
+    "Skin O' My Teeth",
+    "Symphony Of Destruction",
+    "Architecture Of Aggression",
+    "Foreclosure Of A Dream",
+    "Sweating Bullets",
+    "This Was My Life",
+    "Countdown To Extinction",
+    "High Speed Dirt",
+    "Psychotron",
+    "Captive Honour",
+    "Ashes In Your Mouth"
+  ],
+  "summary": "Megadeth 於 1992 年推出的經典鞭擊金屬專輯，以更凝練的歌形、厚重主 riff 與鮮明旋律拓展樂團聲音，收錄 Symphony of Destruction、Sweating Bullets 等代表作。",
+  "listeningNotes": "Megadeth 在 1992 年推出《Countdown to Extinction》，正值樂團已把速度與技術磨成更清楚的歌曲輪廓。官方回顧確認這是樂團第 5 張錄音室專輯，並指出它在美國告示牌專輯榜最高第 2 名、獲雙白金認證；這些成績說明作品不只服務鞭擊金屬核心聽眾，也真正進入主流金屬的視野。原始版本以 Capitol Records 發行，MusicBrainz 的美國 1992 版本列出 11 首，不能把日本版額外曲目算進本版。\n\n曲序從「Skin O’ My Teeth」的急促鼓擊與短促吉他啟動，接到「Symphony of Destruction」較寬闊、帶藍調感的主 riff，再由「Architecture of Aggression」把壓迫感推回密集的推進。這個排列先給出速度，再拉開空間，然後重新加壓；聆聽時可注意低音如何在主 riff 留出的縫隙裡脈動。Rolling Stone 的訪談把這種取向概括為從早期偏重炫技與甩頭感，轉向更重視 songcraft 的寫法，這是評論判讀，不是把專輯簡化成流行作品。\n\n中段的「Foreclosure of a Dream」把沉重節奏放進更有旋律性的副歌，之後「Sweating Bullets」以帶搖擺感的 groove 和斷裂式人聲把心理不安寫成可辨識的戲劇。這兩首是很好的對照：前者靠段落的開闔製造宏觀感，後者靠聲線、停頓與吉他回應製造近距離的緊張。三首代表曲目可先選「Symphony of Destruction」、「Sweating Bullets」與「Countdown to Extinction」，它們分別展示主 riff、律動和敘事性。\n\n後半段的「This Was My Life」與「High Speed Dirt」維持推進，但不讓速度成為唯一焦點；「Psychotron」則以更硬、更機械的重拍改變質地。「Captive Honour」把戲劇化的段落放在較長的結構裡，最後由「Ashes in Your Mouth」收束，讓雙吉他獨奏與鼓組的張力集中爆發。可從頭到尾留意 Marty Friedman 的旋律性獨奏怎樣和 Dave Mustaine 的咬字、riff 互相切換。\n\n作品定位上，它仍是鞭擊金屬，但把複雜演奏服務於更容易記住的歌形。Rolling Stone 訪談記載 Max Norman 與 Mustaine 共同製作，並形容錄音期間對細節要求嚴格；因此我會把這張唱片的「更直接」理解為編曲與聲音焦點的整理，而不是技術退讓。封面與專輯身份則以 MusicBrainz 的 release-group 對應和 Cover Art Archive 端點為準，避免把再版圖像或追加曲目混入原始版本。",
+  "sources": [
+    {
+      "name": "Megadeth 官方網站：Countdown to Extinction 發行 31 週年",
+      "url": "https://www.megadeth.com/blogs/news/countdown-to-extinction-released-31-years-ago-today"
+    },
+    {
+      "name": "MusicBrainz：Countdown to Extinction release group",
+      "url": "https://musicbrainz.org/release-group/04785b90-87cb-3d5d-a9a9-7f465e327bb4"
+    },
+    {
+      "name": "Rolling Stone：Megadeth’s Countdown to Extinction at 30",
+      "url": "https://www.rollingstone.com/music/music-features/megadeth-countdown-to-extinction-interview-1383170/"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Megadeth 官方確認《Countdown to Extinction》是樂團第 5 張錄音室專輯，於 1992 年 7 月 14 日發行。",
+      "sourceUrl": "https://www.megadeth.com/blogs/news/countdown-to-extinction-released-31-years-ago-today"
+    },
+    {
+      "fact": "MusicBrainz release group 對應 UUID 為 04785b90-87cb-3d5d-a9a9-7f465e327bb4；美國 1992 CD 原始版本為 11 首，日本 bonus track edition 為 13 首。",
+      "sourceUrl": "https://musicbrainz.org/release-group/04785b90-87cb-3d5d-a9a9-7f465e327bb4"
+    },
+    {
+      "fact": "Rolling Stone 訪談記載 Dave Mustaine 回顧專輯採更精簡、聚焦歌曲寫作的速度金屬取向，並列出 Max Norman 與 Mustaine 共同製作。",
+      "sourceUrl": "https://www.rollingstone.com/music/music-features/megadeth-countdown-to-extinction-interview-1383170/"
+    }
+  ],
+  "coverStatus": "CAA 封面端點可連線（HTTP 200）。",
+  "notes": "未納入任何再版 bonus 曲目；封面以對應 release-group 的 Cover Art Archive front-500 端點為準。"
+}

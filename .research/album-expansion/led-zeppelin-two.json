@@ -1,0 +1,62 @@
+{
+  "id": "led-zeppelin-two",
+  "title": "Led Zeppelin II",
+  "artist": "Led Zeppelin",
+  "year": "1969",
+  "trackCount": 9,
+  "trackCountNote": "原始 1969 年專輯為 9 首；官方頁另列豪華版 companion disc 的 8 首 bonus，未計入此數。",
+  "genre": "硬式搖滾",
+  "releaseGroupId": "33b4653d-006e-3cc1-8afb-386b15a6cd6e",
+  "coverUrl": "https://coverartarchive.org/release-group/33b4653d-006e-3cc1-8afb-386b15a6cd6e/front-500",
+  "coverSource": "MusicBrainz / Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/33b4653d-006e-3cc1-8afb-386b15a6cd6e/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/33b4653d-006e-3cc1-8afb-386b15a6cd6e",
+  "storeUrl": "https://music.apple.com/tw/search?term=Led%20Zeppelin%20Led%20Zeppelin%20II",
+  "tracks": [
+    "Whole Lotta Love",
+    "What Is and What Should Never Be",
+    "The Lemon Song",
+    "Thank You",
+    "Heartbreaker",
+    "Living Loving Maid (She’s Just a Woman)",
+    "Ramble On",
+    "Moby Dick",
+    "Bring It On Home"
+  ],
+  "summary": "Led Zeppelin 於 1969 年發行的第二張錄音室專輯，以 Whole Lotta Love、Heartbreaker 與 Ramble On 串起藍調根源、厚重 riff 和現場感，呈現硬式搖滾經典的聲音轉折。",
+  "listeningNotes": "1969 年 10 月 22 日，Led Zeppelin 發行第二張錄音室專輯《Led Zeppelin II》，唱片公司為 Atlantic。官方唱片資料把它列為由 Jimmy Page 製作，曲目則是 9 首原始專輯內容；頁面另把 2014 年重新母帶的豪華版伴碟分開列出，因此這裡不把 8 首加料曲目混入原版。錄音地點橫跨倫敦、洛杉磯、紐約與溫哥華，這種在巡演間隙完成作品的條件，也解釋了整張唱片為何保留強烈的現場推進感。這些是可核對的發行資料，並非把後來再版的聲音當成 1969 年版本。\n\n開場的 Whole Lotta Love 先用厚重吉他反覆句建立核心，再把人聲、鼓擊與突兀的空間效果推到前景；它是最直接的入口，也奠定專輯的硬式搖滾重量。What Is and What Should Never Be 把較輕的段落和爆發式副歌並置，聆聽時可留意編曲如何在收斂與擴張之間換檔。第三首 The Lemon Song 放慢藍調步伐，讓低音、吉他和 Robert Plant 的歌唱互相拉扯，成為樂團把藍調語法拉長、加壓的清楚例子。\n\n中段的 Thank You 暫時把焦點移向較開闊的旋律與鍵盤色彩，接著 Heartbreaker 以短促而銳利的 riff 把張力收回；兩首相鄰，正好聽見抒情尺度與舞台型硬搖滾之間的切換。Living Loving Maid (She’s Just a Woman) 更輕巧，Ramble On 則在民謠感、強弱對比與幻想意象間前進。這裡的重點不是把每首都推成同一種猛烈，而是聽四位樂手怎樣調整密度。\n\n後段的 Moby Dick 以鼓的獨奏展示 John Bonham 的身體感，錄音室曲目仍像一段可延伸的現場表演；Bring It On Home 先保留藍調輪廓，再以更強硬的吉他收束。BBC 評論指出，這張專輯在巡演與錄音交錯下仍有少見的現場感，並把結尾理解為樂團與藍調來源的一次重要拉扯；後半句屬於評論判讀。若要循序聆聽，可先抓主 riff，再比較 Thank You 的留白、Moby Dick 的鼓聲空間，以及最後一曲如何把傳統推向自己的聲音。",
+  "sources": [
+    {
+      "name": "Led Zeppelin 官方唱片資料：Led Zeppelin II",
+      "url": "https://discography.ledzeppelin.com/lz2"
+    },
+    {
+      "name": "BBC Music：Led Zeppelin II 專輯評論",
+      "url": "https://www.bbc.co.uk/music/reviews/hxhj/"
+    },
+    {
+      "name": "MusicBrainz：Led Zeppelin II release group",
+      "url": "https://musicbrainz.org/release-group/33b4653d-006e-3cc1-8afb-386b15a6cd6e"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "官方資料列出的原始專輯發行日為 1969 年 10 月 22 日。",
+      "sourceUrl": "https://discography.ledzeppelin.com/lz2"
+    },
+    {
+      "fact": "官方資料列出原始專輯 9 首曲目，並將豪華版 companion disc 另列為 8 首。",
+      "sourceUrl": "https://discography.ledzeppelin.com/lz2"
+    },
+    {
+      "fact": "BBC 的曲目表列出 9 首，並記載 Atlantic、1969 年 10 月 22 日。",
+      "sourceUrl": "https://www.bbc.co.uk/music/reviews/hxhj/"
+    },
+    {
+      "fact": "MusicBrainz release group UUID 為 33b4653d-006e-3cc1-8afb-386b15a6cd6e，正式藝人為 Led Zeppelin。",
+      "sourceUrl": "https://musicbrainz.org/release-group/33b4653d-006e-3cc1-8afb-386b15a6cd6e"
+    }
+  ],
+  "coverStatus": "verified",
+  "notes": "封面 URL 以 Cover Art Archive 對應 release-group UUID 取得，HTTP HEAD 回應 200 image/jpeg；storeUrl 是 Apple Music 台灣搜尋連結，未宣稱為已核對的單一官方專輯頁。代表曲目為 Whole Lotta Love、Heartbreaker、Ramble On。"
+}

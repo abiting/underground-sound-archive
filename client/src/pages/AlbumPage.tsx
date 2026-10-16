@@ -32,7 +32,7 @@ export default function AlbumPage({ id }: { id: string }) {
             <p className="section-kicker">THE RECORD / {album.year}</p>
             <span className="category-pill">{album.genre}</span>
             <h1>{album.title}</h1>
-            <p className="album-artist-name">{articles.some(item => item.artist === album.artist) ? <Link href={`/artist/${artistSlug(album.artist)}`}>{album.artist}</Link> : album.artist}</p>
+            <p className="album-artist-name"><Link href={`/artist/${artistSlug(album.artist)}/`}>{album.artist}</Link></p>
             <div className="album-facts">
               <span><b>{album.year}</b><small>發行年份</small></span>
               <span><b>{album.trackCount}</b><small>曲目數</small></span>
@@ -41,8 +41,8 @@ export default function AlbumPage({ id }: { id: string }) {
             </div>
             <p className="album-lede">{article?.summary || album.summary}</p>
             <div className="album-outbound">
-              <a href={album.storeUrl} target="_blank" rel="noreferrer">在 Apple Music 查看作品 <ArrowUpRight size={14} /></a>
-              <a href={album.musicbrainzUrl} target="_blank" rel="noreferrer">MusicBrainz 專輯資料 <ArrowUpRight size={14} /></a>
+              <a href={album.storeUrl} target="_blank" rel="noopener noreferrer">在 Apple Music 查看作品 <ArrowUpRight size={14} /></a>
+              {album.musicbrainzUrl && <a href={album.musicbrainzUrl} target="_blank" rel="noopener noreferrer">MusicBrainz 專輯資料 <ArrowUpRight size={14} /></a>}
             </div>
           </div>
         </section>
@@ -60,9 +60,9 @@ export default function AlbumPage({ id }: { id: string }) {
               <EditorialBody content={article?.body || album.listeningNotes || ""} />
               <div className="article-sources">
                 <h2>資料與封面來源</h2>
-                <p>封面圖片由 Cover Art Archive 提供；專輯識別資料連回 MusicBrainz，作品商店資訊連回 Apple Music。</p>
-                <a href={album.coverSourceUrl} target="_blank" rel="noreferrer">封面來源：Cover Art Archive <ArrowUpRight size={13} /></a>
-                <a href={album.musicbrainzUrl} target="_blank" rel="noreferrer">專輯中繼資料：MusicBrainz <ArrowUpRight size={13} /></a>
+                <p>封面來源為 {album.coverSource}，作品權利屬於原權利人。發行與創作資料附於下列來源，作品資訊可在 Apple Music 查看。</p>
+                <a href={album.coverSourceUrl} target="_blank" rel="noopener noreferrer">封面來源：{album.coverSource} <ArrowUpRight size={13} /></a>
+                {album.musicbrainzUrl && <a href={album.musicbrainzUrl} target="_blank" rel="noopener noreferrer">專輯中繼資料：MusicBrainz <ArrowUpRight size={13} /></a>}
                 {[...(article?.sources || []), ...(album.sources || [])].map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
               </div>
             </div>

@@ -1,0 +1,56 @@
+{
+  "id": "ave-mujica-completeness",
+  "title": "Completeness",
+  "artist": "Ave Mujica",
+  "year": "2025",
+  "trackCount": 7,
+  "trackCountNote": "官方三種版本的核心 CD 均收錄 7 首；限定盤 Blu-ray 現場影像、附贈特典與其他追加內容不計入原始專輯曲數。",
+  "genre": "日本金屬",
+  "releaseGroupId": "f7cc4d78-56f8-49ae-9d6f-034c6a5e4f01",
+  "coverUrl": "https://coverartarchive.org/release-group/f7cc4d78-56f8-49ae-9d6f-034c6a5e4f01/front-500",
+  "coverSource": "MusicBrainz／Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/f7cc4d78-56f8-49ae-9d6f-034c6a5e4f01/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/f7cc4d78-56f8-49ae-9d6f-034c6a5e4f01",
+  "storeUrl": "https://music.apple.com/jp/album/1807241685",
+  "tracks": [
+    "KiLLKiSS",
+    "Georgette Me, Georgette You",
+    "Imprisoned XII",
+    "Crucifix X",
+    "八芒星ダンス",
+    "顔",
+    "天球(そら)のMúsica"
+  ],
+  "summary": "Ave Mujica 於 2025 年推出的首張專輯，以交響金屬、視覺系戲劇感與動畫主題曲為入口，七首歌在重型吉他、哥德氛圍與莊嚴終曲之間推進。",
+  "listeningNotes": "Ave Mujica 的首張專輯《Completeness》於 2025 年 4 月 23 日由 Bushiroad Music 發行；官方列明三種實體版本，核心 CD 都是 7 首。這裡的 Ave Mujica 是 BanG Dream! 企劃中的現實演出團，也由聲優實際演奏，不把動畫中的面具、儀式或角色遭遇當成錄音史。作品同時承接動畫的黑暗美學，但專輯本身應先作為一張獨立的日本金屬作品聆聽。\n\n曲序像一段由舞台宣告走向餘韻的短篇。開場〈KiLLKiSS〉把交響感、閃亮吉他與迫近的節奏壓在一起，先建立戲劇張力；〈Georgette Me, Georgette You〉隨即放慢，讓懸浮的旋律和逐步增強的歌聲成為第一個轉折。第三首〈Imprisoned XII〉收斂到合成器與較簡潔的人聲層次，適合留意它如何把前兩曲的外放情緒暫時冷卻。\n\n中段的〈Crucifix X〉重新加重吉他與慢速重拍，結尾獨奏把舞台感推到高點；接著〈八芒星ダンス〉把節奏拉向可舞動的哥德式戲劇。第六首〈顔〉較偏流行，但沒有放掉搖滾骨架。最後的〈天球(そら)のMúsica〉以莊嚴編曲收束，聆聽時可比較它與開場同樣宏大、卻更像終幕的空間感。這三首〈KiLLKiSS〉、〈Crucifix X〉、〈天球(そら)のMúsica〉最能看出作品的起、承、收。\n\n評論者把專輯歸在另類金屬、交響金屬與視覺系交界，並指出全長約 28 分鐘，緊湊得更接近迷你專輯。這是評論判讀，不是官方曲風標籤；以唱片誌的日本金屬分類來看，重點正在於金屬吉他、交響層次和視覺系式的戲劇編排同時存在。聆聽時不必只追求厚重，還要注意每首歌如何安排情緒功能。\n\n官方資料也說明片中包含動畫《BanG Dream! Ave Mujica》的片頭〈KiLLKiSS〉與片尾〈Georgette Me, Georgette You〉；這解釋了兩曲在曲序前端的辨識度，卻不等於專輯只是動畫配樂合輯。限定盤的 Blu-ray、現場影像與附贈特典不計入原始 CD 曲數；本資料採官方 7 首 CD 版本，並把其他版本內容排除。",
+  "sources": [
+    {
+      "name": "Bushiroad Music 官方《Completeness》專輯頁",
+      "url": "https://bushiroad-music.com/musics/brmm-10915/"
+    },
+    {
+      "name": "MusicBrainz《Completeness》release 頁",
+      "url": "https://musicbrainz.org/release/194a7606-b3b3-45dd-9c88-d3f0471b17d1"
+    },
+    {
+      "name": "OndaRock《Completeness》專輯評論",
+      "url": "https://www.ondarock.com/review/2025-avemujica-completeness.htm"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Bushiroad Music 官方列出發行日為 2025 年 4 月 23 日，並列出 7 首 CD 曲目。",
+      "sourceUrl": "https://bushiroad-music.com/musics/brmm-10915/"
+    },
+    {
+      "fact": "MusicBrainz 將 Completeness 的 release-group UUID 記為 f7cc4d78-56f8-49ae-9d6f-034c6a5e4f01，且 2025 年 4 月 23 日日本發行版本列有 7 首曲目。",
+      "sourceUrl": "https://musicbrainz.org/release/194a7606-b3b3-45dd-9c88-d3f0471b17d1"
+    },
+    {
+      "fact": "OndaRock 評論將作品描述為另類金屬、交響金屬與視覺系交界，並指出全長約 28 分鐘。",
+      "sourceUrl": "https://www.ondarock.com/review/2025-avemujica-completeness.htm"
+    }
+  ],
+  "coverStatus": "已驗證可用：Cover Art Archive release-group URL 回應重新導向至同一 Completeness 限定盤的 MusicBrainz release 封面。",
+  "notes": "採官方 7 首 CD 原始版本；MusicBrainz 的 release-group 可能包含數位、通常盤與限定盤等版本，封面導向限定盤圖像但同屬本專輯 release group。動畫劇情與現實演出團背景分開敘述，未把虛構角色經歷當作製作史。"
+}

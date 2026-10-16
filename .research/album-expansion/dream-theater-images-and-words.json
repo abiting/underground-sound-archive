@@ -1,0 +1,61 @@
+{
+  "id": "dream-theater-images-and-words",
+  "title": "Images and Words",
+  "artist": "Dream Theater",
+  "year": "1992",
+  "trackCount": 8,
+  "trackCountNote": "原始 ATCO 專輯版本為 8 首；MusicBrainz 的原始 CD 發行與 Prog Archives 均列 8 首。後來再版、日版或其他企劃可能有額外內容，本資料不併入原始曲數。",
+  "genre": "前衛金屬",
+  "releaseGroupId": "ee30c026-b4f4-3e2a-94cf-7e586f1ccae0",
+  "coverUrl": "https://coverartarchive.org/release-group/ee30c026-b4f4-3e2a-94cf-7e586f1ccae0/front-500",
+  "coverSource": "MusicBrainz／Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/ee30c026-b4f4-3e2a-94cf-7e586f1ccae0/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/ee30c026-b4f4-3e2a-94cf-7e586f1ccae0",
+  "storeUrl": "https://music.apple.com/tw/search?term=Dream%20Theater%20Images%20and%20Words",
+  "tracks": [
+    "Pull Me Under",
+    "Another Day",
+    "Take the Time",
+    "Surrounded",
+    "Metropolis - Part I: The Miracle and the Sleeper",
+    "Under a Glass Moon",
+    "Wait for Sleep",
+    "Learning to Live"
+  ],
+  "summary": "Dream Theater 以 James LaBrie 首次登場的 1992 年前衛金屬經典，將複雜拍號、鍵盤與吉他對話，和〈Pull Me Under〉等鮮明旋律放進八首歌的完整聆聽弧線。",
+  "listeningNotes": "Dream Theater 在首張專輯後更換主唱，James LaBrie 加入後，樂團於 1991 年底開始錄製《Images and Words》。唱片由 ATCO Records 在 1992 年 7 月 7 日推出，是 LaBrie 首次參與的 Dream Theater 錄音室專輯。官方資料也指出，樂團原想做成雙唱片，但唱片公司否決；因此〈A Change of Seasons〉等作品沒有進入原始曲序，後來才以獨立作品面世。這段背景解釋了本作既像突破，也帶著取捨後的集中感。\n\n八首歌的安排把前衛金屬的複雜度放進清楚的專輯流程。〈Pull Me Under〉先用厚重吉他、鍵盤與鼓組建立張力，結尾突然截斷，聽者會感到歌曲拒絕以傳統收束。〈Another Day〉轉向較抒情的聲線，薩氏管和旋律讓密度暫時下降；接著〈Take the Time〉以更強的節奏推進，並在段落與拍號變化中恢復技術感。這不是單純把快歌排在慢歌旁邊，而是用對比讓每次轉折更清楚。\n\n中段的〈Surrounded〉與〈Metropolis - Part I: The Miracle and the Sleeper〉把空間拉開。前者以明亮的鍵盤和歌唱線條留下呼吸，後者則把重型節奏、器樂對話和長篇敘事感疊在一起，是本張最能預示樂團日後史詩寫法的段落。〈Under a Glass Moon〉再把焦點拉回吉他與鍵盤的競逐；〈Wait for Sleep〉像短暫的鋼琴內省，讓最後的〈Learning to Live〉能以長篇幅完成收束。建議連續播放，注意動機如何在不同音色中被重新排列。\n\n事實上，這張專輯是 Dream Theater 最成功的錄音室作品，〈Pull Me Under〉也是樂團唯一打入 Billboard 主流搖滾榜前十的歌曲。評論判讀則常把它視為九十年代前衛金屬的重要轉折：它沒有犧牲副歌與抒情段落，卻保留多段器樂變化、複雜節奏和成員各自的演奏存在感。兩者合在一起，說明本作的定位不是炫技展示，而是把高難度寫作帶進更廣泛的搖滾聆聽場景。\n\n實際聆聽時，可先比較〈Pull Me Under〉突然停止與〈Learning to Live〉較完整的終章感，再回頭聽〈Wait for Sleep〉如何以短小篇幅改變整張唱片的光線。若想捕捉樂團的核心聲音，留意 Petrucci 的吉他和 Moore 的鍵盤如何互相加倍或彼此讓位，也留意 LaBrie 在金屬高壓與抒情旋律間的切換。這些線索能讓《Images and Words》同時成立為 1992 年的突破，以及仍適合逐段拆解的前衛金屬專輯。",
+  "sources": [
+    {
+      "name": "Dream Theater 官方唱片資料頁",
+      "url": "https://dreamtheater.net/discography-item/images-and-words/"
+    },
+    {
+      "name": "MusicBrainz《Images and Words》Release Group",
+      "url": "https://musicbrainz.org/release-group/ee30c026-b4f4-3e2a-94cf-7e586f1ccae0"
+    },
+    {
+      "name": "Prog Archives 專輯資料與評論",
+      "url": "https://www.progarchives.com/album.asp?id=1662"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "官方資料確認《Images and Words》於 1992 年 7 月 7 日經 ATCO Records 發行，並是 Dream Theater 首張由 James LaBrie 擔任主唱的作品；官方同頁亦說明原先雙唱片構想遭否決。",
+      "sourceUrl": "https://dreamtheater.net/discography-item/images-and-words/"
+    },
+    {
+      "fact": "MusicBrainz release group UUID 為 ee30c026-b4f4-3e2a-94cf-7e586f1ccae0；其列出的 1992 年官方 CD 發行有 8 首，並標示 progressive metal 標籤。",
+      "sourceUrl": "https://musicbrainz.org/release-group/ee30c026-b4f4-3e2a-94cf-7e586f1ccae0"
+    },
+    {
+      "fact": "Prog Archives 的 1992 年錄音室專輯資料列出原始 8 首曲序，並將作品分類為 Progressive Metal；其頁面列出的代表曲包含 Pull Me Under、Another Day、Take the Time。",
+      "sourceUrl": "https://www.progarchives.com/album.asp?id=1662"
+    },
+    {
+      "fact": "Dream Theater 官方資料指出〈Pull Me Under〉是樂團唯一打入 Billboard Hot Mainstream Rock Tracks 前十的歌曲。",
+      "sourceUrl": "https://dreamtheater.net/discography-item/images-and-words/"
+    }
+  ],
+  "coverStatus": "已驗證：MusicBrainz release-group UUID 與 Cover Art Archive front-500 封面網址相符；以 urllib HEAD 回應 200、image/jpeg。",
+  "notes": "封面採真正的 MusicBrainz release-group 對應 CAA 圖像，不使用搜尋縮圖或重製封面。Apple Music 使用依藝人與專輯名稱建立的台灣區搜尋連結，未宣稱其為精確官方專輯頁。官方網頁標題區有顯示 2024 的版面文字，但正文與頁面結構化資料明確指向 1992-07-07，並由 MusicBrainz 與 Prog Archives 交叉核對。"
+}

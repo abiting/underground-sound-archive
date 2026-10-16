@@ -51,7 +51,7 @@ describe("GitHub Pages 專案目錄", () => {
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(37);
+    expect(urls).toHaveLength(54);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
     expect(urls.every(url => url.endsWith("/"))).toBe(true);
   });
@@ -73,10 +73,10 @@ describe("GitHub Pages 專案目錄", () => {
     const home = renderDocument(template, "/", options).html;
     expect(home).toContain("Dreamshade");
     expect(home).toContain("Dream Theater");
-    expect(home).toContain("1 張專輯");
+    expect(home).toMatch(/2(?:<!-- -->)? 張專輯/);
   });
 
-  it("兩張新專輯有封面與筆記，不連結不存在的藝人頁", () => {
+  it("兩張既有新增專輯有封面、筆記與有效藝人回鏈", () => {
     for (const id of ["dreamshade-gift-of-life", "dream-theater-six-degrees"]) {
       const album = albums.find(item => item.id === id)!;
       expect(album).toBeDefined();
@@ -85,7 +85,7 @@ describe("GitHub Pages 專案目錄", () => {
       expect(page.html).toContain(album.title);
       expect(page.html).toContain(album.artist);
       expect(page.html).toContain("專輯導讀／評論");
-      expect(page.html).not.toMatch(/href="[^"]*\/artist\/(dreamshade|dream-theater)"/);
+      expect(page.html).toMatch(/href="\/underground-sound-archive\/artist\/(dreamshade|dream-theater)\/"/);
     }
     expect(albums.find(item => item.artist === "Dreamshade")?.year).toBe("2013");
     expect(albums.find(item => item.artist === "Dream Theater")?.trackCount).toBe(13);

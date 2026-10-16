@@ -1,0 +1,108 @@
+{
+  "id": "dreamshade-what-silence-hides",
+  "title": "What Silence Hides",
+  "artist": "Dreamshade",
+  "year": 2011,
+  "trackCount": 10,
+  "trackCountNote": "正式原始版（Spinefarm Records 的芬蘭 CD 發行）為 10 首；Apple Music 的日本版列 11 首，另加 bonus track It's Worth A Try，未計入本欄。Apple Music 標準版頁面雖顯示 2010 年數位商品日期，但 MusicBrainz、官方樂團簡介與金屬資料庫均支持正式原始發行年為 2011 年。",
+  "genre": "Melodic Death Metal",
+  "releaseGroupId": "c1f3b84b-6247-4001-8c75-9b843f68bfb7",
+  "coverUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7b/b6/ee/7bb6eed3-9008-99a1-76ac-77175b112b26/5400863124601_cover.jpg/600x600bb.jpg",
+  "coverSource": "Apple Music／iTunes Store 官方商店 artwork CDN；由 Apple iTunes Lookup API 回傳的 What Silence Hides 專輯封面端點。Cover Art Archive 對應 release-group 沒有封面，未以其他專輯圖片替代。",
+  "coverSourceUrl": "https://itunes.apple.com/lookup?id=1669990868&entity=album",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/c1f3b84b-6247-4001-8c75-9b843f68bfb7",
+  "storeUrl": "https://music.apple.com/us/album/what-silence-hides/1669990868",
+  "tracks": [
+    "What Silence Hides",
+    "Wide Awake",
+    "As Serenity Falls"
+  ],
+  "summary": "Dreamshade 於 2011 年發行的首張全長專輯，以旋律死亡金屬為核心，把高速失真、雙吉他和聲、鍵盤氛圍與粗礪吼唱組合成技術性明確而具情緒張力的作品。",
+  "listeningNotes": "What Silence Hides 是 Dreamshade 來自瑞士 Lugano 的首張全長作品。樂團 2006 年成立，先以 2008 年 EP To the Edge of Reality 建立基礎，之後在 2010 年與 Universal Music / Spinefarm Records 簽約；官方簡介把這張專輯列為 2011 年作品，MusicBrainz 所收錄的正式芬蘭 CD 發行日是 2011 年 1 月 26 日。它的定位接近旋律死亡金屬，也帶有現代金屬核的推進感：厚重失真、清楚的雙吉他旋律與情緒化段落並行，早期作品的直接性因此很鮮明。\n\n製作面可從聲音的分層開始追蹤。資料記載唱片在瑞典 Studio Fredman 混音，再由 George Marino 於紐約 Sterling Sound 負責母帶處理；評論則注意到吉他和鍵盤互相牽引，反覆出現情緒化 riff、飛行般的和聲與朦朧合成器。第一次播放時，可以先聽鼓組如何把高速段落固定住，再留意鍵盤不是獨立主角，而是把旋律的陰影拉長，讓尖銳失真和較寬的空間感同時存在。人聲維持粗礪的吼唱，卻沒有蓋過雙吉他在左右聲道之間的回應。\n\n原始正式版的曲序從 What Silence Hides、As Serenity Falls、Revive In Me、Wide Awake 展開，先建立密集、技術性強而仍易辨認的旋律語法；Eternal、Miles Away、Only Memories Remain 位於中段，適合比較較長的吉他句子如何在低音與合成器襯底上延展；DeGeneration、Erased By Time、Open Wounds 則把全碟收束在持續推進的重量裡。正式原始版是 10 首，不應把日本版多出的第 11 首 It's Worth A Try 混入本版曲序，兩個版本的曲目數必須分開理解。\n\n若只挑三首作為入口，主打曲 What Silence Hides 可先聽吉他與鍵盤的交疊，觀察旋律如何在厚重節奏中保持清楚；Wide Awake 是檢驗速度控制和旋律鉤子的好段落，也被列為拍攝官方影像的歌曲；As Serenity Falls 則能讓人感受這張專輯如何把陰鬱情緒放進仍然明亮、具有推進力的編曲。Metal Crypt 的評論把後兩首列為特別突出的段落，也肯定標題曲的表現，三首並置後再回到全碟，會更容易聽見它的層次。\n\n這張首作的價值不只在於旋律死亡金屬的標籤，而在於它把可記憶的主題、精密演奏與不過度修飾的侵略感放在同一個框架。建議使用耳機從第一首一路播放到結尾，先追蹤左右聲道的吉他和聲，再把注意力移到鍵盤層次與人聲的粗礪質地；第二輪可比較中段較長的旋律段落，以及結尾三曲如何連續收束。這樣聽，What Silence Hides 便不只是早期作品清單中的名稱，而是 Dreamshade 從瑞士場景進入國際唱片體系時留下的聲音座標。",
+  "sources": [
+    {
+      "name": "Dreamshade 官方網站 About Dreamshade",
+      "url": "https://dreamshade.ch/"
+    },
+    {
+      "name": "Dreamshade 官方 Short Bio 2022 PDF",
+      "url": "https://dreamshade.ch/RISE/DS_Short_BIO_2022.pdf"
+    },
+    {
+      "name": "MusicBrainz What Silence Hides release-group",
+      "url": "https://musicbrainz.org/release-group/c1f3b84b-6247-4001-8c75-9b843f68bfb7"
+    },
+    {
+      "name": "MusicBrainz 正式 release API",
+      "url": "https://musicbrainz.org/ws/2/release/45feb908-f577-47b4-9600-1a03adc8f44b?inc=recordings+artist-credits+release-groups&fmt=json"
+    },
+    {
+      "name": "The Metal Crypt 專輯評論",
+      "url": "https://www.metalcrypt.com/reviews/6152/dreamshade-what-silence-hides-review"
+    },
+    {
+      "name": "MetalMusicArchives Dreamshade discography",
+      "url": "https://www.metalmusicarchives.com/artist/dreamshade"
+    },
+    {
+      "name": "Apple Music 標準版作品頁（作品頁，非搜尋頁）",
+      "url": "https://music.apple.com/us/album/what-silence-hides/1669990868"
+    },
+    {
+      "name": "Apple Music 日本版作品頁（作品頁，非搜尋頁）",
+      "url": "https://music.apple.com/us/album/what-silence-hides-japan-edition/1669997356"
+    },
+    {
+      "name": "Apple iTunes Lookup API artwork metadata",
+      "url": "https://itunes.apple.com/lookup?id=1669990868&entity=album"
+    },
+    {
+      "name": "Cover Art Archive 對應 release-group endpoint（無封面回應）",
+      "url": "https://coverartarchive.org/release-group/c1f3b84b-6247-4001-8c75-9b843f68bfb7"
+    },
+    {
+      "name": "Dreamshade 官方 YouTube：It's Worth a Try (Japanese Bonus)",
+      "url": "https://www.youtube.com/watch?v=h_XQGAxF3o0"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "正式原始發行年為 2011；MusicBrainz 所收錄的官方芬蘭 CD release 日期為 2011-01-26，release-group ID 為 c1f3b84b-6247-4001-8c75-9b843f68bfb7。",
+      "sourceUrl": "https://musicbrainz.org/release-group/c1f3b84b-6247-4001-8c75-9b843f68bfb7"
+    },
+    {
+      "fact": "作品正式標題為 What Silence Hides，藝人為 Dreamshade；MusicBrainz 將其列為 Album release-group。",
+      "sourceUrl": "https://musicbrainz.org/ws/2/release-group/?query=artist:%22Dreamshade%22%20AND%20release:%22What%20Silence%20Hides%22&fmt=json"
+    },
+    {
+      "fact": "正式原始版的 MusicBrainz release 有 10 首，曲序包含 What Silence Hides、As Serenity Falls、Revive In Me、Wide Awake、Eternal、Miles Away、Only Memories Remain、Degeneration、Erased By Time、Open Wounds。",
+      "sourceUrl": "https://musicbrainz.org/ws/2/release/45feb908-f577-47b4-9600-1a03adc8f44b?inc=recordings+artist-credits+release-groups&fmt=json"
+    },
+    {
+      "fact": "Apple Music 標準版作品頁列 10 songs，對應原始數位版的 10 首曲目。",
+      "sourceUrl": "https://music.apple.com/us/album/what-silence-hides/1669990868"
+    },
+    {
+      "fact": "Apple Music 日本版作品頁列 11 songs；Dreamshade 官方 YouTube 將 It's Worth a Try 標為 Japanese Bonus，並說明它收錄於 2011 年日本限定版。",
+      "sourceUrl": "https://music.apple.com/us/album/what-silence-hides-japan-edition/1669997356"
+    },
+    {
+      "fact": "官方網站說 Dreamshade 於 2006 年在 Lugano 成立，先發行 2008 年 EP，之後推出 What Silence Hides 與 The Gift Of Life。",
+      "sourceUrl": "https://dreamshade.ch/"
+    },
+    {
+      "fact": "可靠評論將作品歸入 melodic death metal，指出吉他／鍵盤互動與旋律性，並特別肯定 What Silence Hides、Wide Awake、As Serenity Falls 等曲目。",
+      "sourceUrl": "https://www.metalcrypt.com/reviews/6152/dreamshade-what-silence-hides-review"
+    },
+    {
+      "fact": "MetalMusicArchives 記載專輯在 Studio Fredman 混音、由 George Marino 母帶處理，並列出 Wide Awake、Eternal、Miles Away 的官方影像資訊。",
+      "sourceUrl": "https://www.metalmusicarchives.com/artist/dreamshade"
+    },
+    {
+      "fact": "MusicBrainz release 的 cover-art-archive 欄位為 count 0、artwork false、front false；Cover Art Archive 對應 endpoint 未提供封面。",
+      "sourceUrl": "https://musicbrainz.org/ws/2/release/45feb908-f577-47b4-9600-1a03adc8f44b?inc=recordings+artist-credits+release-groups&fmt=json"
+    }
+  ],
+  "coverStatus": "Cover Art Archive 對應 release-group 無封面（MusicBrainz release record count 0、front false）；已採用 Apple Music／iTunes Store 官方商店 artwork CDN 的標準版 What Silence Hides 封面端點，沒有捏造 Cover Art Archive ID，也沒有以別張專輯圖片替代。",
+  "notes": "storeUrl 是 Apple Music 實際作品頁（不是搜尋頁）。年份採正式原始實體 release 的 2011，而非 Apple Music 數位頁顯示的 2010-01-01 商品日期。trackCount 僅計原始 10 首；日本版第 11 首 It's Worth A Try 是 bonus track。封面來源型態是 Apple Music／iTunes Store CDN；Cover Art Archive 查核結果為無圖。"
+}

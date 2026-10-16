@@ -1,0 +1,82 @@
+{
+  "id": "pink-floyd-wish-you-were-here",
+  "title": "Wish You Were Here",
+  "artist": "Pink Floyd",
+  "year": "1975",
+  "trackCount": 5,
+  "trackCountNote": "原始 1975 年專輯正式曲序為 5 首；〈Shine On You Crazy Diamond〉以 Parts 1-5 與 Parts 6-9 分置兩面，屬同一首套曲的分段。未計入再版 bonus 或日版追加曲目。",
+  "genre": "前衛搖滾",
+  "releaseGroupId": "1a272023-10d3-38ee-bab3-317b55fcc21d",
+  "coverUrl": "https://coverartarchive.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d/front-500",
+  "coverSource": "MusicBrainz / Cover Art Archive",
+  "coverSourceUrl": "https://coverartarchive.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d/front-500",
+  "musicbrainzUrl": "https://musicbrainz.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d",
+  "storeUrl": "https://music.apple.com/us/album/wish-you-were-here/1065973975",
+  "tracks": [
+    {
+      "position": 1,
+      "title": "Shine On You Crazy Diamond, Parts 1-5",
+      "representative": true
+    },
+    {
+      "position": 2,
+      "title": "Welcome To The Machine",
+      "representative": true
+    },
+    {
+      "position": 3,
+      "title": "Have A Cigar",
+      "representative": false
+    },
+    {
+      "position": 4,
+      "title": "Wish You Were Here",
+      "representative": true
+    },
+    {
+      "position": 5,
+      "title": "Shine On You Crazy Diamond, Parts 6-9",
+      "representative": false
+    }
+  ],
+  "summary": "Pink Floyd 於 1975 年推出的前衛搖滾經典，以 Syd Barrett 的缺席、樂團對唱片工業的疏離與錄音室聲響為核心。五首曲目由兩段長篇套曲串起，適合從頭聆聽，感受〈Shine On You Crazy Diamond〉、〈Welcome To The Machine〉與標題曲的情緒轉折。",
+  "listeningNotes": "Pink Floyd 在《The Dark Side Of The Moon》成功後承受續作壓力，官方資料把這張唱片的核心指向「缺席」：對唱片業的幻滅、私人困境與疲憊交疊成創作背景。官方也說，樂團曾試過只用家中物件錄音，最後放棄這條路；因此這不是把錄音軼聞當傳奇，而是從已公開的製作描述理解它的起點。作品於 1975 年 9 月發行，原始黑膠只有 5 首曲目。\n\n曲序像一個被拆開又合上的長篇樂章。A 面先以〈Shine On You Crazy Diamond, Parts 1-5〉慢慢堆出器樂空間，再轉入〈Welcome To The Machine〉的冷硬機械感；B 面的〈Have A Cigar〉把音樂產業批判推到較直接的歌唱段落，〈Wish You Were Here〉則收束成更親近的吉他與人聲，最後由〈Shine On You Crazy Diamond, Parts 6-9〉回到開頭的主題。這裡的 5 首不是 9 首，Parts 1-5 與 Parts 6-9 是同一首套曲的兩段，聆聽時應保留整張唱片的連續性。\n\n官方明確把〈Shine On You Crazy Diamond〉說成由 David Gilmour 找到的四音吉他片段發展而來，並指向 Syd Barrett；官方也指出〈Welcome To The Machine〉與〈Have A Cigar〉批評不理解樂團的唱片公司主管。這些是可核對的創作背景，不等於把每句歌詞硬套成單一故事。BBC 的評論則把整張唱片判讀為更連貫的音樂敘事，並注意到開場長時間的懸置、〈Welcome To The Machine〉的戲劇性，以及 Gilmour 長篇藍調吉他的骨架。\n\n實際聆聽可先留意三個入口：〈Shine On You Crazy Diamond, Parts 1-5〉的四音動機如何從寂靜中出現，等到人聲加入才改變時間感；〈Welcome To The Machine〉裡合成器、效果與節奏如何製造被系統推動的壓迫；〈Wish You Were Here〉則聽木吉他與電吉他問答，以及廣播般的聲音如何把私人感受放進公共媒介。再回到結尾套曲，前後兩半的呼應會比單聽熱門歌更清楚。\n\n因此，這張專輯的地位不只在三首代表曲目，而在它把前衛搖滾的長篇結構、錄音室音色與樂團對名聲的疑問放在同一個可反覆聆聽的框架裡。BBC 認為它常被《The Dark Side Of The Moon》掩蓋，卻有更一致的敘事與聲音；這是評論判讀，不是銷量或製作史的硬事實。若以專輯而非單曲進入，應從頭播放，讓兩段套曲、冷峻中段與標題曲的情緒轉折完整發生。",
+  "sources": [
+    {
+      "name": "Pink Floyd 官方專輯頁",
+      "url": "https://www.pinkfloyd.com/albums/wish-you-were-here/"
+    },
+    {
+      "name": "BBC Music 專輯評論",
+      "url": "https://www.bbc.co.uk/music/reviews/b8dp/"
+    },
+    {
+      "name": "MusicBrainz Wish You Were Here release group",
+      "url": "https://musicbrainz.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d"
+    },
+    {
+      "name": "Apple Music 專輯頁",
+      "url": "https://music.apple.com/us/album/wish-you-were-here/1065973975"
+    }
+  ],
+  "verifiedFacts": [
+    {
+      "fact": "Pink Floyd 官方頁標示專輯於 1975 年 9 月發行，原始曲序為 5 首，並將曲目分列為 A、B 兩面。",
+      "sourceUrl": "https://www.pinkfloyd.com/albums/wish-you-were-here/"
+    },
+    {
+      "fact": "官方頁指出專輯主題涉及缺席、唱片業幻滅與 Syd Barrett；〈Shine On You Crazy Diamond〉由 David Gilmour 的四音吉他片段發展而來。",
+      "sourceUrl": "https://www.pinkfloyd.com/albums/wish-you-were-here/"
+    },
+    {
+      "fact": "BBC Music 評論列出 5 首正式曲目，並將 Parts I-V 與 Parts VI-IX 視為同一套曲的兩段，同時評論其連貫的音樂敘事。",
+      "sourceUrl": "https://www.bbc.co.uk/music/reviews/b8dp/"
+    },
+    {
+      "fact": "MusicBrainz 公開頁確認 release group 名稱為 Wish You Were Here、藝人為 Pink Floyd，類型為 Album。",
+      "sourceUrl": "https://musicbrainz.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d"
+    }
+  ],
+  "coverStatus": "verified",
+  "notes": "封面使用對應 MusicBrainz release-group UUID 的 Cover Art Archive front-500；HTTP HEAD 取得 307 轉址至 Archive.org 圖像端點。"
+}

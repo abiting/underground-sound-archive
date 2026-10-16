@@ -20,8 +20,8 @@ export default function ArtistPage({ slug }: { slug: string }) {
   }
 
   const category = profile?.category ?? records[0]?.genre ?? "搖滾／金屬";
-  const summary = profile?.summary ?? `破繭之聲目前收錄 ${artistName} 的 ${records.length} 張專輯。從代表作品開始，查看曲目重點、封面來源與完整發行資料。`;
-  const background = profile?.body.split("\n\n")[0] ?? `目前索引收錄 ${artistName} 的《${records[0]?.title}》（${records[0]?.year}）。這張專輯的詳情頁整理了曲目數、代表聽點和封面來源；後續新增唱片也會由這份樂團索引串起來。`;
+  const summary = profile?.summary ?? records[0]?.summary ?? `破繭之聲目前收錄 ${artistName} 的 ${records.length} 張專輯。從代表作品開始，查看曲目重點、封面來源與完整發行資料。`;
+  const background = profile?.body.split("\n\n")[0] ?? records[0]?.listeningNotes?.split("\n\n")[0] ?? `目前索引收錄 ${artistName} 的《${records[0]?.title}》（${records[0]?.year}）。這張專輯的詳情頁整理了曲目數、代表聽點和封面來源；後續新增唱片也會由這份樂團索引串起來。`;
   const styleTags = Array.from(new Set(related.flatMap((article) => article.tags)));
   const tags = styleTags.length ? styleTags : [category, "代表專輯"];
 

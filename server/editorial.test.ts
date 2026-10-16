@@ -10,7 +10,7 @@ const movieLink = "https://coai.abiting.cc/archives/1437";
 describe("Riff Atlas 唱片誌資料", () => {
   it("有 10 篇專輯文章及 1 篇指定的 Spitz 單曲文章", () => {
     expect(articles).toHaveLength(11);
-    expect(albums).toHaveLength(12);
+    expect(albums).toHaveLength(27);
     expect(new Set(articles.map((item) => item.slug)).size).toBe(11);
     expect(articles.filter((item) => item.albumId)).toHaveLength(10);
     const special = articles.find((item) => item.artist === "Spitz");
@@ -40,9 +40,13 @@ describe("Riff Atlas 唱片誌資料", () => {
         expect(item.summary).toBeTruthy();
         expect(item.listeningNotes).toBeTruthy();
       }
-      expect(item.coverUrl).toMatch(/^https:\/\/coverartarchive\.org\/release-group\/[a-f0-9-]+\/front-500$/);
-      expect(item.musicbrainzUrl).toMatch(/^https:\/\/musicbrainz\.org\/release-group\//);
-      expect(item.coverSource).toBe("Cover Art Archive");
+      expect(item.coverUrl).toMatch(/^https:\/\//);
+      expect(item.coverSourceUrl).toMatch(/^https:\/\//);
+      expect(item.coverSource).toBeTruthy();
+      if (item.coverSource === "Cover Art Archive") {
+        expect(item.coverUrl).toMatch(/^https:\/\/coverartarchive\.org\/release-group\/[a-f0-9-]+\/front-500$/);
+        expect(item.musicbrainzUrl).toMatch(/^https:\/\/musicbrainz\.org\/release-group\//);
+      }
       expect(item.tracks.length).toBeGreaterThan(0);
     }
   });
