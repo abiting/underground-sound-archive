@@ -36,6 +36,8 @@ describe("GitHub Pages 專案目錄", () => {
       expect(page.html).toContain('href="/underground-sound-archive/#artists"');
       expect(page.html).toContain('href="https://abiurl.me/Jc8uTl"');
       expect(page.html).toContain('href="https://abiting.cc"');
+      expect(page.html).toContain("封面由資料來源提供；作品權利屬於原權利人；本站為音樂導讀與評論用途");
+      expect(page.html).not.toContain("扭開音量，翻開一頁");
     }
   });
 

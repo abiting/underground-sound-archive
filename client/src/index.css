@@ -35,7 +35,6 @@ button { color: inherit; }
 .mobile-menu { display: none; border: 0; background: transparent; }
 .site-footer { display: grid; grid-template-columns: 1fr 2fr auto; gap: 22px; align-items: center; padding: 35px clamp(18px, 5vw, 76px); border-top: 1px solid var(--line); color: #bdb7ac; }
 .footer-brand { color: var(--paper); font-family: Impact, "Arial Black", sans-serif; letter-spacing: .06em; font-size: 15px; }
-.footer-brand i { display: block; margin-top: 6px; color: var(--muted); font: normal 11px/1.4 "Noto Sans TC", sans-serif; letter-spacing: .04em; }
 .footer-copy { font-size: 11px; line-height: 1.7; }
 .site-footer a { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; white-space: nowrap; }
 

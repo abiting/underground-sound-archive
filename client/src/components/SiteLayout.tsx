@@ -29,8 +29,8 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       </header>
       <main id="main-content">{children}</main>
       <footer className="site-footer">
-        <div className="footer-brand">{BRAND_NAME}{" "}<small>{ENGLISH_NAME}</small><i>扭開音量，翻開一頁。</i></div>
-        <div className="footer-copy">封面由資料來源提供；作品權利屬於原權利人。本站為音樂導讀與評論用途。</div>
+        <div className="footer-brand">{BRAND_NAME}{" "}<small>{ENGLISH_NAME}</small></div>
+        <div className="footer-copy">封面由資料來源提供；作品權利屬於原權利人；本站為音樂導讀與評論用途</div>
         <a href="https://abiurl.me/Jc8uTl" target="_blank" rel="noreferrer">資料來源與授權說明 <ArrowUpRight size={14} aria-hidden="true" /></a>
         <p className="footer-maintenance">本站由<a href="https://abiting.cc" target="_blank" rel="noopener noreferrer">阿比丁</a>協助架設與維護</p>
       </footer>

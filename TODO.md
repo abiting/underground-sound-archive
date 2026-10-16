@@ -38,3 +38,6 @@
 ## 樂團索引
 - [x] 樂團索引同步納入新增唱片所屬的 Dreamshade 與 Dream Theater；每個索引連結須能開啟該團的樂團頁並列出代表專輯；公開路由、canonical 與 sitemap 同步更新。
 - [x] Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》各有完整繁體中文專輯故事，涵蓋發行／創作背景、曲目及聲音脈絡、可採用的聆聽線索，並附可核對的來源連結。
+
+## 頁尾微調
+- [x] 移除頁尾文案「扭開音量，翻開一頁」，聲明精確為「封面由資料來源提供；作品權利屬於原權利人；本站為音樂導讀與評論用途」。
