@@ -16,3 +16,14 @@
 
 ## 桌面與行動閱讀介面
 - [x] 支援桌面與行動裝置的響應式閱讀介面。
+
+## 破繭之聲站名與 SEO
+- [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
+- [x] 每頁補齊 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；所有有內容的圖片均有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
+- [x] 首頁、11 篇文章、11 個樂團頁及10張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；未設定正式網域時預覽 noindex，提供 robots 與 sitemap 模板，錯誤頁 noindex 並在預覽返回 HTTP 404。
+- [x] SEO 更新經型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為正式收錄，不擅自完成待確認的 GitHub 轉移或公開發佈。
+- [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標仍為「把音量開到／失真以外。」，該區塊不再重複站名。
+- [x] 頁尾「資料來源與授權說明」使用 https://abiurl.me/Jc8uTl；專輯查證與封面來源連結不改。
+- [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abiting.cc。
+- [ ] GitHub 使用 Webdev 的目的儲存庫確認流程；未確認目的地前不傳輸程式碼。

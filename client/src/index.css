@@ -52,7 +52,7 @@ button { color: inherit; }
 
 /* Editorial issue layout */
 .hero-stage { min-height: 610px; position: relative; display: flex; align-items: center; padding: 80px clamp(22px, 9vw, 140px) 92px; isolation: isolate; background: #101010; }
-.hero-image { position: absolute; inset: 0; z-index: -2; background-image: linear-gradient(90deg, rgba(16,16,16,.96) 0%, rgba(16,16,16,.78) 36%, rgba(16,16,16,.12) 100%), linear-gradient(0deg, rgba(16,16,16,.76), transparent 42%), url('/manus-storage/async-images/WcH4cRqfxV5NVKbG01Vtti/image-1.webp'); background-size: cover; background-position: center 52%; }
+.hero-image { position: absolute; inset: 0; z-index: -2; background-image: linear-gradient(90deg, rgba(16,16,16,.96) 0%, rgba(16,16,16,.78) 36%, rgba(16,16,16,.12) 100%), linear-gradient(0deg, rgba(16,16,16,.76), transparent 42%), url('/images/underground-social.jpg'); background-size: cover; background-position: center 52%; }
 .hero-grain { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .17; background-image: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.12) 3px 4px); mix-blend-mode: screen; }
 .hero-content { max-width: 720px; position: relative; z-index: 1; }
 .hero-kicker, .section-kicker { color: #c4beb5; font: 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; text-transform: uppercase; }
@@ -261,7 +261,7 @@ button { color: inherit; }
 }
 @media (max-width: 760px) {
   .hero-stage { min-height: 565px; padding: 66px 22px 78px; }
-  .hero-image { background-image: linear-gradient(90deg, rgba(16,16,16,.86), rgba(16,16,16,.35)), linear-gradient(0deg, rgba(16,16,16,.8), transparent 70%), url('/manus-storage/async-images/WcH4cRqfxV5NVKbG01Vtti/image-1.webp'); background-position: 62% center; }
+  .hero-image { background-image: linear-gradient(90deg, rgba(16,16,16,.86), rgba(16,16,16,.35)), linear-gradient(0deg, rgba(16,16,16,.8), transparent 70%), url('/images/underground-social.jpg'); background-position: 62% center; }
   .hero-stamp { width: 81px; height: 81px; top: 18px; right: 20px; padding: 9px; }
   .hero-stamp span { font-size: 12px; }
   .hero-content h1 { font-size: clamp(52px, 13vw, 76px); }
@@ -333,3 +333,15 @@ button { color: inherit; }
 .api-result-card .missing-cover { gap: 5px; }
 .api-result-card .missing-cover > svg { width: 20px; }
 .api-result-card .missing-cover > span { color: #d3c8ba; font-size: 8px; }
+
+/* 破繭之聲／中英字標 */
+.brand-name { font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; letter-spacing: .07em; line-height: 1.1; }
+.brand-name strong { display: block; font-size: 23px; font-weight: 900; }
+.brand-name small { display: block; margin-top: 5px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; font-weight: 500; letter-spacing: .035em; white-space: nowrap; }
+.footer-brand { font-family: "Noto Sans TC", "PingFang TC", sans-serif; font-size: 18px; font-weight: 800; }
+.footer-brand small { display: block; margin-top: 5px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; font-weight: 400; letter-spacing: .02em; }
+@media (max-width: 720px) { .brand-name strong { font-size: 20px; } .brand-name small { font-size: 8px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.footer-maintenance { grid-column: 1 / -1; margin: 0; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.8; }
+.footer-maintenance a { display: inline; margin: 0 .25em; color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }

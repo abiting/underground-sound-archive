@@ -1,29 +1,24 @@
-import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import ArticlePage from "./pages/ArticlePage";
+import ArtistPage from "./pages/ArtistPage";
+import AlbumPage from "./pages/AlbumPage";
+import NotFound from "./pages/NotFound";
+import SeoSync from "./seo/SeoSync";
+import { metadataForPath } from "./seo/metadata";
 
-const ArticlePage = lazy(() => import("./pages/ArticlePage"));
-const ArtistPage = lazy(() => import("./pages/ArtistPage"));
-const AlbumPage = lazy(() => import("./pages/AlbumPage"));
-
-function Router() {
-  return (
-    <Suspense fallback={<div className="page-loading">唱片翻面中⋯</div>}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/article/:slug">{(params) => <ArticlePage slug={params.slug} />}</Route>
-        <Route path="/artist/:slug">{(params) => <ArtistPage slug={params.slug} />}</Route>
-        <Route path="/album/:id">{(params) => <AlbumPage id={params.id} />}</Route>
-        <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
-    </Suspense>
-  );
+function PageRouter() {
+  const [path] = useLocation();
+  const metadata = metadataForPath(path);
+  if (metadata.kind === "home") return <Home />;
+  if (metadata.kind === "article") return <ArticlePage slug={metadata.path.slice("/article/".length)} />;
+  if (metadata.kind === "artist") return <ArtistPage slug={metadata.path.slice("/artist/".length)} />;
+  if (metadata.kind === "album") return <AlbumPage id={metadata.path.slice("/album/".length)} />;
+  return <NotFound />;
 }
 
 export default function App() {
@@ -32,7 +27,8 @@ export default function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <SeoSync />
+          <PageRouter />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

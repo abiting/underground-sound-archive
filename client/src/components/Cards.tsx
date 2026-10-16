@@ -39,9 +39,9 @@ export function ArticleCard({ article, index = 0 }: { article: Article; index?: 
     <Link href={`/article/${article.slug}`} className={`article-card article-card-${index % 3}`}>
       <div className="article-card-art">
         {album && !failed ? (
-          <img src={album.coverUrl} alt={`${album.artist}《${album.title}》`} loading="lazy" onError={() => setFailed(true)} />
+          <img src={album.coverUrl} alt={`${album.artist}《${album.title}》專輯封面`} loading="lazy" onError={() => setFailed(true)} />
         ) : (
-          <div className="article-art-placeholder"><span>RIFF<br />NOTES</span><b>{String(index + 1).padStart(2, "0")}</b></div>
+          <div className="article-art-placeholder"><span>聲音<br />檔案</span><b>{String(index + 1).padStart(2, "0")}</b></div>
         )}
         <span className="article-card-number">{String(index + 1).padStart(2, "0")}</span>
         {album && <span className="article-cover-credit">封面／{album.coverSource}</span>}

@@ -58,10 +58,23 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  app.use(express.static(distPath, { index: false, redirect: false }));
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // Every public route has its own prerendered HTML; never turn misses into a soft 404.
+  app.use("*", (req, res) => {
+    const pathname = new URL(req.originalUrl, "http://localhost").pathname.replace(/\/+$/, "") || "/";
+    const filename = pathname === "/"
+      ? path.resolve(distPath, "index.html")
+      : path.resolve(distPath, `.${pathname}`, "index.html");
+    if (filename.startsWith(`${path.resolve(distPath)}${path.sep}`) && fs.existsSync(filename) && fs.statSync(filename).isFile()) {
+      res.sendFile(filename);
+      return;
+    }
+    const missing = path.resolve(distPath, "404.html");
+    if (fs.existsSync(missing)) {
+      res.status(404).sendFile(missing);
+    } else {
+      res.status(404).type("text/plain").send("找不到頁面。");
+    }
   });
 }

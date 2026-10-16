@@ -5,7 +5,7 @@ import { articles, albums } from "../client/src/data/catalog";
 const out = resolve(process.argv[2] ?? "deliverables");
 mkdirSync(out, { recursive: true });
 
-const introduction = `# Riff Atlas｜搖滾與金屬唱片誌：11 篇文章合集
+const introduction = `# 破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌：11 篇文章合集
 
 本合集包含 10 篇搖滾／金屬專輯導讀，以及 1 篇 Spitz〈美しい鰭〉電影片尾歌曲介紹。正文採原創繁體中文撰寫，每篇約 500–800 個中文字；文末保留查證與延伸來源。評分為本刊主觀聆聽評分，不代表外部排行榜。
 

@@ -25,7 +25,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             {album && <Link className="button-red article-album-button" href={`/album/${album.id}`}>打開專輯評論 <ArrowUpRight size={15} /></Link>}
           </div>
           <div className="article-detail-cover">
-            {album ? <SafeCover src={album.coverUrl} alt={`${album.artist}《${album.title}》專輯封面`} /> : <div className="cover-fallback cover-fallback-large"><span>RIFF<br />NOTES</span></div>}
+            {album ? <SafeCover src={album.coverUrl} alt={`${album.artist}《${album.title}》專輯封面`} /> : <div className="cover-fallback cover-fallback-large"><span>聲音<br />檔案</span></div>}
             {album && <a href={album.coverSourceUrl} target="_blank" rel="noreferrer">封面來源：{album.coverSource} <ArrowUpRight size={13} /></a>}
           </div>
         </header>

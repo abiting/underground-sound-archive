@@ -69,7 +69,7 @@ export default function Home() {
             <a className="text-link" href="#api">用封面找唱片 <ArrowDown size={15} /></a>
           </div>
         </div>
-        <div className="hero-stamp"><span>TURN<br />IT<br />LOUD</span><b>R/A</b></div>
+        <div className="hero-stamp"><span>TURN<br />IT<br />LOUD</span><b>U/S/A</b></div>
         <div className="hero-caption"><span>聽見失真裡的細節</span><span>搖滾 × 金屬 × 唱片文化</span></div>
       </section>
 
@@ -111,7 +111,7 @@ export default function Home() {
           <p className="section-note">樂團背景、專輯脈絡與聽完之後想說的話。</p>
         </div>
         <div className="filter-bar">
-          <label className="filter-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜尋樂團、專輯或關鍵字" /></label>
+          <label className="filter-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="搜尋站內樂團、專輯與文章關鍵字" placeholder="搜尋樂團、專輯或關鍵字" /></label>
           <select aria-label="依音樂類型篩選" value={category} onChange={(event) => setCategory(event.target.value)}>
             {categories.map((item) => <option key={item} value={item}>{item === "全部" ? "全部類型" : item}</option>)}
           </select>

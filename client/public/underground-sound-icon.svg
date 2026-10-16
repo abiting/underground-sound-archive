@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="破繭之聲唱片波形標誌">
+  <rect width="512" height="512" rx="48" fill="#171717"/>
+  <path d="M0 0h512v138L0 390z" fill="#e6392f"/>
+  <path d="M0 422 512 172v56L0 478z" fill="#e6392f" opacity=".78"/>
+  <circle cx="256" cy="256" r="160" fill="#171717" stroke="#f0ece4" stroke-width="8"/>
+  <circle cx="256" cy="256" r="84" fill="none" stroke="#f0ece4" stroke-opacity=".36" stroke-width="4"/>
+  <circle cx="256" cy="256" r="28" fill="#e6392f"/>
+  <path d="M100 256h68l28-55 32 102 28-74 24 49 32-38h100" fill="none" stroke="#f0ece4" stroke-width="13" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
