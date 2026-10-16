@@ -51,7 +51,7 @@ export default function Home() {
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-kicker"><span className="red-dot" /> 台灣繁體中文搖滾／金屬場刊 <span>NO. 001</span></div>
-          <h1>把音量開到<br /><em>失真以外。</em></h1>
+          <h1>把音量開到<br /><em>失真以外</em></h1>
           <p>從一張封面開始，沿著 riff、年代與故事，走進搖滾和金屬唱片的另一面。</p>
           <div className="hero-actions">
             <a className="button-red" href="#explore">翻開本期 <ArrowUpRight size={16} /></a>

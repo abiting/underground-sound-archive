@@ -102,7 +102,8 @@ describe("不執行 JavaScript 的內容可見性", () => {
     expect(home.html).not.toContain('aria-label="Notifications alt+T"');
     const h1 = home.html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1];
     expect(h1).toContain("把音量開到");
-    expect(h1).toContain("失真以外。");
+    expect(h1).toContain("失真以外");
+    expect(h1).not.toContain("失真以外。");
     expect(h1).not.toContain("破繭之聲");
     expect(home.html).toContain('href="https://abiurl.me/Jc8uTl"');
     expect(home.html).toContain("資料來源與授權說明");

@@ -23,7 +23,7 @@
 - [x] 首頁、12 篇文章、16 個樂團頁及 27 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
-- [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標仍為「把音量開到／失真以外。」，不在該區重複站名。
+- [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
 - [x] 頁尾「資料來源與授權說明」使用 https://abiurl.me/Jc8uTl；專輯查證與封面來源連結不改。
 - [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abiting.cc。
 - [x] 使用者已確認 abiting/underground-sound-archive 為 GitHub 目標儲存庫；Webdev 驗證切換完成，後續保存使用該儲存庫。
