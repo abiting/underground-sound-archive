@@ -6,16 +6,20 @@ import EditorialBody from "../client/src/components/EditorialBody";
 import { searchAlbums } from "../client/src/lib/itunesSearch";
 
 const movieLink = "https://coai.abiting.cc/archives/1437";
+const genesectLink = "https://list.abitingpokedex.com/pokemon/genesect/zh";
 
 describe("Riff Atlas 唱片誌資料", () => {
-  it("有 10 篇專輯文章及 1 篇指定的 Spitz 單曲文章", () => {
-    expect(articles).toHaveLength(11);
+  it("有 10 篇專輯文章及 2 篇指定的 Spitz／生物股長單曲文章", () => {
+    expect(articles).toHaveLength(12);
     expect(albums).toHaveLength(27);
-    expect(new Set(articles.map((item) => item.slug)).size).toBe(11);
+    expect(new Set(articles.map((item) => item.slug)).size).toBe(12);
     expect(articles.filter((item) => item.albumId)).toHaveLength(10);
     const special = articles.find((item) => item.artist === "Spitz");
     expect(special?.title).toBe("美しい鰭：《黑鐵的魚影》片尾");
     expect(special?.body).toContain(`[《黑鐵的魚影》](${movieLink})`);
+    const egao = articles.find((item) => item.id === "ikimono-gakari-egao");
+    expect(egao?.artist).toBe("生物股長");
+    expect(egao?.body).toContain(`[蓋諾賽克特](${genesectLink})`);
   });
 
   it("每篇正文有 500–800 個中文字、4–6 段與至少 2 筆來源", () => {

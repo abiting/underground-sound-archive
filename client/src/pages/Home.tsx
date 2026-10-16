@@ -8,10 +8,11 @@ import { albums, articles } from "../data/catalog";
 import { sourceNotes } from "../data/sourceNotes";
 import { searchAlbums } from "../lib/itunesSearch";
 import type { SearchAlbum } from "../data/types";
-import { buildArtistIndex, catalogCategories, catalogDecades, filterAlbums, filterArticles } from "../lib/catalogSearch";
+import { buildArtistIndex, catalogCategories, catalogDecades, catalogGuideCount, filterAlbums, filterArticles } from "../lib/catalogSearch";
 
 const categories = catalogCategories(albums, articles);
 const decades = catalogDecades(albums, articles);
+const guideCount = catalogGuideCount(albums, articles);
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -24,6 +25,7 @@ export default function Home() {
 
   const filteredAlbums = useMemo(() => filterAlbums(albums, { query, category, decade }), [query, category, decade]);
   const filteredArticles = useMemo(() => filterArticles(articles, { query, category, decade }), [query, category, decade]);
+  const filteredGuideCount = useMemo(() => catalogGuideCount(filteredAlbums, filteredArticles), [filteredAlbums, filteredArticles]);
   const artists = useMemo(() => buildArtistIndex(albums, articles), []);
 
   async function handleApiSearch(event: FormEvent<HTMLFormElement>) {
@@ -61,7 +63,7 @@ export default function Home() {
       </section>
 
       <section className="issue-ribbon" id="explore">
-        <span>THIS ISSUE</span><b>經典唱片，從頭到尾聽一次</b><span>{albums.length} 張選輯　／　{articles.length} 篇導讀</span>
+        <span>THIS ISSUE</span><b>經典唱片，從頭到尾聽一次</b><span>{albums.length} 張專輯　／　{guideCount} 篇導讀</span>
       </section>
 
       <section className="section-block featured-section">
@@ -77,7 +79,7 @@ export default function Home() {
           <select aria-label="依年代篩選" value={decade} onChange={(event) => setDecade(event.target.value)}>
             {decades.map((item) => <option key={item} value={item}>{item}</option>)}
           </select>
-          <span className="result-count" role="status">{filteredAlbums.length} 張／{filteredArticles.length} 篇</span>
+          <span className="result-count" role="status">專輯頁 {filteredAlbums.length} 張／不重複導讀 {filteredGuideCount} 篇</span>
         </div>
         {filteredAlbums.length ? <>
           <div className="album-grid">
@@ -90,14 +92,14 @@ export default function Home() {
       </section>
 
       <section className="artist-band" id="artists">
-        <div className="artist-band-title"><p className="section-kicker">02 / BAND INDEX</p><h2>樂團索引<span>，</span><br />從名字開始挖。</h2></div>
+        <div className="artist-band-title"><p className="section-kicker">02 / BAND INDEX</p><h2>樂團索引<span>，</span><br />從名字開始挖。</h2><p className="artist-index-note">場刊是本站的編輯風格；長文都統稱「導讀」，同一篇只計一次。</p></div>
         <div className="artist-list">
           {artists.map((artist, index) => (
             <Link key={artist.slug} href={`/artist/${artist.slug}/`} className="artist-row">
               <span className="artist-index">{String(index + 1).padStart(2, "0")}</span>
               <strong>{artist.name}</strong>
               <span className="artist-genre">{artist.category}</span>
-              <span className="artist-count"><span>{artist.albumCount} 張專輯</span>{artist.count > 0 && <small>{artist.count} 篇導讀</small>}</span>
+              <span className="artist-count">{artist.albumCount > 0 && <span>{artist.albumCount} 張專輯</span>}{artist.guideCount > 0 && <small>{artist.guideCount} 篇導讀</small>}</span>
               <ArrowUpRight size={16} />
             </Link>
           ))}
@@ -106,10 +108,10 @@ export default function Home() {
 
       <section className="section-block explore-section">
         <div className="section-heading section-heading-stack">
-          <div><p className="section-kicker">03 / FRESHLY PRINTED</p><h2>剛印好的<span>場刊</span></h2></div>
+          <div><p className="section-kicker">03 / LATEST GUIDES</p><h2>最新<span>導讀</span></h2></div>
           <p className="section-note">樂團背景、專輯脈絡與聽完之後想說的話。</p>
         </div>
-        {(query || category !== "全部" || decade !== "全部年代") && <p className="section-note">依唱片選輯的搜尋與篩選顯示 {filteredArticles.length} 篇相關場刊。</p>}
+        {(query || category !== "全部" || decade !== "全部年代") && <p className="section-note">依唱片選輯的搜尋與篩選顯示 {filteredArticles.length} 篇導讀。</p>}
         {filteredArticles.length ? (
           <div className="article-grid">
             {filteredArticles.map((article, index) => <ArticleCard key={article.id} article={article} index={index} />)}

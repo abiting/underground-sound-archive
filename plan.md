@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 11 篇文章、27 張專輯、15 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺仍為「把音量開到／失真以外。」，不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 12 篇文章、27 張專輯、16 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺仍為「把音量開到／失真以外。」，不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 54 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 56 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -32,12 +32,25 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## GitHub Pages 子目錄
 
-使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。專輯選輯更新為 27 張；樂團索引與公開頁面路由合併文章和唱片資料，收錄 15 個樂團。
+使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。專輯選輯更新為 27 張；樂團索引與公開頁面路由合併文章和唱片資料，收錄 16 個樂團。
 
-新增的 15 張專輯各有 500–800 個中文字的故事導讀，涵蓋創作／發行背景、曲目結構和聆聽脈絡，並列出至少兩筆外部可核對來源。15 個樂團都可從首頁索引進入各自樂團頁，查看代表專輯。
+新增的 15 張專輯各有 500–800 個中文字的故事導讀，涵蓋創作／發行背景、曲目結構和聆聽脈絡，並列出至少兩筆外部可核對來源。16 個樂團都可從首頁索引進入各自樂團頁，查看代表專輯。
 
 ## 全樂團追加選輯（2026-10-16）
 
-既有 13 團各加一張非重複知名作品，再加入 Green Day 和 Ave Mujica。選曲以具代表性的正式錄音室專輯優先：Queen《News of the World》、Pink Floyd《Wish You Were Here》、Led Zeppelin《Led Zeppelin II》、Nirvana《In Utero》、Radiohead《Kid A》、Black Sabbath《Master of Reality》、Iron Maiden《Powerslave》、Metallica《Metallica》、Megadeth《Countdown to Extinction》、Slipknot《Vol. 3: (The Subliminal Verses)》、Dreamshade《What Silence Hides》、Dream Theater《Images and Words》、Spitz《ハチミツ》、Green Day《American Idiot》、Ave Mujica《Completeness》。各項獨立研究；每張來源、版次和曲目數由所屬研究項目查證，無可靠支援的細節不寫。共新增 15 張，總計 27 張專輯、15 團和 54 個公開頁面（首頁 + 11 篇既有文章 + 27 個專輯頁 + 15 個樂團頁）。
+既有 13 團各加一張非重複知名作品，再加入 Green Day 和 Ave Mujica。選曲以具代表性的正式錄音室專輯優先：Queen《News of the World》、Pink Floyd《Wish You Were Here》、Led Zeppelin《Led Zeppelin II》、Nirvana《In Utero》、Radiohead《Kid A》、Black Sabbath《Master of Reality》、Iron Maiden《Powerslave》、Metallica《Metallica》、Megadeth《Countdown to Extinction》、Slipknot《Vol. 3: (The Subliminal Verses)》、Dreamshade《What Silence Hides》、Dream Theater《Images and Words》、Spitz《ハチミツ》、Green Day《American Idiot》、Ave Mujica《Completeness》。各項獨立研究；每張來源、版次和曲目數由所屬研究項目查證，無可靠支援的細節不寫。共新增 15 張，總計 27 張專輯、16 團和 56 個公開頁面（首頁 + 12 篇文章 + 27 個專輯頁 + 16 個樂團頁）。
 
 新增內容放獨立 albumExpansion 資料模組，沿用 Album.listeningNotes 的長篇故事呈現而不重寫既有文章；每篇 500–800 個中文字、4–6 段，至少 2 個可靠來源。研究輸出保存為每張專輯獨立 JSON，主程式以受控腳本彙整為型別化資料，封面优先使用已核對的 Cover Art Archive，缺漏才使用經核對的官方封面來源且標示。首頁專輯目錄和站內搜尋需真的涵蓋全部新增資料，artist 索引由全目錄生成；每個新增專輯的藝人連結指向有效樂團頁。內容組合沿用 EditorialBody 和語意 heading，不插入任意 HTML。SEO 與 Pages base-path helper 仍共用現有入口，資料變更自動生成 sitemap、canonical 和路由清單。既有排版、頁尾、主視覺、品牌與 Pages workflow 不更換。
+
+
+## 統一導讀內容與索引
+
+專輯頁的 `listeningNotes` 和同一張專輯的文章頁可能呈現同一篇導讀；不可將兩者當成兩份內容相加。「場刊」保留為品牌／版面語氣，內容類型統一稱為「導讀」。藝人索引每列顯示專輯數及去重後的導讀數：連結至專輯的文章只算一次，沒有專輯關聯的單曲文章另計。首頁的文章區改稱最新導讀，保留不同路由供讀者瀏覽。
+
+## 強化 15 張新增專輯的故事
+
+沿用 15 個已完成的獨立研究檔與來源，逐篇改寫 `summary` 與 `listeningNotes`，不更換專輯、不改 release-group、年份、曲目數、曲目聽點、封面或來源 ID。每篇維持 500–800 個中文字、4–6 段，補足專輯發行／創作脈絡、曲序與聲音轉折、2–3 首已選聽點的具體分析，以及一段可實際採用的聆聽路徑；風格須依作品而異，不複製同一模板，無來源支持的細節不寫。由一張一位研究者使用同一輸出規格並行編輯，再由匯入器和網站測試驗證。
+
+## 單曲導讀
+
+加入生物股長 2013 年單曲《笑顏》（《笑顔》）的獨立文章和 artist route。把指定的「蓋諾賽克特」連結嵌在電影標題文字中；日本團名使用固定 `ikimono-gakari` slug。更新目錄、SEO、初始 HTML 和 GitHub Pages 清單，保持單曲文章與專輯型錄分離。總計 12 篇文章、27 張專輯、16 個樂團、56 個公開頁面。

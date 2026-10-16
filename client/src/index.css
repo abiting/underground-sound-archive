@@ -100,8 +100,9 @@ button { color: inherit; }
 .artist-band-title .section-kicker { margin: 0 0 16px; color: var(--red); }
 .artist-band-title h2 { margin: 0; font-size: clamp(36px, 5.3vw, 63px); line-height: 1.05; letter-spacing: -.065em; }
 .artist-band-title h2 span { color: var(--red); }
+.artist-index-note { max-width: 34ch; margin: 17px 0 0; color: #706a62; font-size: 11px; line-height: 1.8; }
 .artist-list { border-top: 1px solid rgba(23,23,23,.22); }
-.artist-row { min-height: 49px; display: grid; grid-template-columns: 36px minmax(120px, 1fr) minmax(110px, .8fr) 58px 18px; align-items: center; gap: 12px; border-bottom: 1px solid rgba(23,23,23,.22); transition: color .15s ease, padding .15s ease; }
+.artist-row { min-height: 56px; display: grid; grid-template-columns: 36px minmax(120px, 1fr) minmax(110px, .8fr) minmax(92px, max-content) 18px; align-items: center; gap: 12px; border-bottom: 1px solid rgba(23,23,23,.22); transition: color .15s ease, padding .15s ease; }
 .artist-row:hover { color: var(--red); padding-left: 5px; }
 .artist-index, .artist-count { color: #726c64; font: 10px ui-monospace, monospace; }
 .artist-count > span, .artist-count > small { display: block; white-space: nowrap; line-height: 1.6; }
@@ -278,7 +279,7 @@ button { color: inherit; }
   .album-card h3 { font-size: 13px; }
   .album-card-compact .cover-frame { aspect-ratio: 1 / 1; }
   .artist-band { grid-template-columns: 1fr; gap: 28px; padding: 52px 20px; }
-  .artist-row { grid-template-columns: 25px minmax(95px, 1fr) minmax(80px, .85fr) 50px 15px; gap: 8px; min-height: 46px; }
+  .artist-row { grid-template-columns: 25px minmax(95px, 1fr) minmax(80px, .85fr) minmax(92px, max-content) 15px; gap: 8px; min-height: 54px; }
   .artist-row strong { font-size: 12px; }
   .artist-genre, .artist-count { font-size: 9px; }
   .filter-bar { flex-wrap: wrap; }
@@ -318,7 +319,7 @@ button { color: inherit; }
   .hero-kicker > span:last-child { margin-left: 1px; }
   .hero-content > p { font-size: 13px; }
   .hero-actions { gap: 15px; }
-  .artist-row { grid-template-columns: 19px minmax(90px,1fr) minmax(65px,.75fr) 50px 12px; gap: 5px; }
+  .artist-row { grid-template-columns: 19px minmax(74px,1fr) minmax(62px,.75fr) minmax(82px, max-content) 12px; gap: 5px; min-height: 52px; }
   .artist-row strong { font-size: 11px; }
   .api-result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .api-input-wrap button { padding: 0 9px; font-size: 10px; }

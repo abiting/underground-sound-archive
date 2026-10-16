@@ -6,10 +6,7 @@ import SiteLayout from "../components/SiteLayout";
 import { Score } from "../components/Cards";
 import SafeCover from "../components/SafeCover";
 import { albums, articles } from "../data/catalog";
-
-function artistSlug(artist: string) {
-  return artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
+import { artistSlug } from "../lib/catalogSearch";
 
 export default function AlbumPage({ id }: { id: string }) {
   const { base } = useRouter();
@@ -22,7 +19,7 @@ export default function AlbumPage({ id }: { id: string }) {
   return (
     <SiteLayout>
       <div className="detail-page album-page">
-        <div className="detail-topline"><a href={withBasePath("/#explore", base)}><ArrowLeft size={15} /> 回到唱片選輯</a><span>ALBUM REVIEW / {album.genre}</span></div>
+        <div className="detail-topline"><a href={withBasePath("/#explore", base)}><ArrowLeft size={15} /> 回到唱片選輯</a><span>ALBUM GUIDE / {album.genre}</span></div>
         <section className="album-detail-hero">
           <div className="album-detail-cover">
             <SafeCover src={album.coverUrl} alt={`${album.artist}《${album.title}》專輯封面`} />
@@ -36,7 +33,7 @@ export default function AlbumPage({ id }: { id: string }) {
             <div className="album-facts">
               <span><b>{album.year}</b><small>發行年份</small></span>
               <span><b>{album.trackCount}</b><small>曲目數</small></span>
-              <span><b>{album.genre}</b><small>場刊分類</small></span>
+              <span><b>{album.genre}</b><small>音樂類型</small></span>
               {article && <span><Score value={article.score} /><small>本刊主觀評分</small></span>}
             </div>
             <p className="album-lede">{article?.summary || album.summary}</p>
@@ -55,7 +52,7 @@ export default function AlbumPage({ id }: { id: string }) {
         </section>
         {(article || album.listeningNotes) && (
           <section className="album-review-section">
-            <div className="section-heading"><div><p className="section-kicker">THE LISTENING NOTES</p><h2>專輯導讀／評論</h2></div>{article && <Link href={`/article/${article.slug}`}>開啟獨立文章 <ArrowUpRight size={14} /></Link>}</div>
+            <div className="section-heading"><div><p className="section-kicker">THE LISTENING NOTES</p><h2>專輯導讀</h2></div>{article && <Link href={`/article/${article.slug}`}>以文章頁閱讀同一篇導讀 <ArrowUpRight size={14} /></Link>}</div>
             <div className="prose-panel album-review-copy">
               <EditorialBody content={article?.body || album.listeningNotes || ""} />
               <div className="article-sources">

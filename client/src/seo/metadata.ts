@@ -1,11 +1,12 @@
 import { albums, articles } from "../data/catalog";
+import { artistSlug } from "../lib/catalogSearch";
 import { normalizeBasePath, withBasePath } from "../lib/sitePaths";
 
 export const SITE_NAME = "破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌";
 export const BRAND_NAME = "破繭之聲";
 export const ENGLISH_NAME = "Underground Sound Archive";
 export const SITE_DESCRIPTION = "破繭之聲 Underground Sound Archive 是以繁體中文探索搖滾、重金屬與唱片文化的線上場刊。從 Queen、Metallica 到 Green Day 與 Ave Mujica，閱讀完整專輯故事、樂團背景、代表曲目與聲音脈絡，依類型或年代尋找下一張值得重播的唱片。";
-export const SITE_KEYWORDS = ["搖滾", "重金屬", "專輯導讀", "樂團介紹", "唱片評論", "音樂史", "破繭之聲"];
+export const SITE_KEYWORDS = ["搖滾", "重金屬", "專輯導讀", "樂團介紹", "唱片評論", "音樂史", "日本流行搖滾", "破繭之聲"];
 export const SOCIAL_IMAGE_PATH = "/images/underground-social.jpg";
 export const DEFAULT_SOCIAL_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663217818186/wjjvFTNJhRwXPVCd.jpg";
 
@@ -40,10 +41,6 @@ export function normalizePublicOrigin(value?: string): string | undefined {
     throw new Error("PUBLIC_SITE_ORIGIN 不可設定為內部位址或暫時預覽網址。");
   }
   return url.origin;
-}
-
-export function artistSlug(name: string): string {
-  return name.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
 export function getPublicPaths(): string[] {
@@ -91,7 +88,7 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
         description: `${article.summary} 本篇從 ${article.year} 年的作品脈絡、聲音風格與聆聽細節切入，附查證來源與延伸閱讀。`,
         keywords: uniqueKeywords([article.artist, article.category, ...article.tags, "專輯導讀", BRAND_NAME]),
         image: album?.coverUrl || socialImage,
-        imageAlt: album ? `${album.artist}《${album.title}》專輯封面` : "紅色燈光下的地下搖滾演出：Spitz〈美しい鰭〉文章配圖",
+        imageAlt: album ? `${album.artist}《${album.title}》專輯封面` : `${article.artist}文章頁的場刊主視覺`,
         ogType: "article",
       });
       mainEntity = {

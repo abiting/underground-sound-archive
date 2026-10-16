@@ -51,7 +51,7 @@ describe("GitHub Pages 專案目錄", () => {
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(54);
+    expect(urls).toHaveLength(56);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
     expect(urls.every(url => url.endsWith("/"))).toBe(true);
   });
@@ -84,7 +84,7 @@ describe("GitHub Pages 專案目錄", () => {
       expect(page.status).toBe(200);
       expect(page.html).toContain(album.title);
       expect(page.html).toContain(album.artist);
-      expect(page.html).toContain("專輯導讀／評論");
+      expect(page.html).toContain("專輯導讀");
       expect(page.html).toMatch(/href="\/underground-sound-archive\/artist\/(dreamshade|dream-theater)\/"/);
     }
     expect(albums.find(item => item.artist === "Dreamshade")?.year).toBe("2013");

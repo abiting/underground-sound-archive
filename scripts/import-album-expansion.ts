@@ -50,16 +50,21 @@ const records = expected.map(([id, artist]): Album => {
   const raw = JSON.parse(fs.readFileSync(file, "utf8"));
   const researchId = id === "metallica-black-album" ? "metallica-metallica-1991" : id;
   if (raw.id !== researchId || raw.artist !== artist) throw new Error(`${id}: 藝人或 ID 錯配`);
+  const reviewFile = path.resolve(`.research/album-expansion/reviewed/${id}.json`);
+  const review = JSON.parse(fs.readFileSync(reviewFile, "utf8"));
+  if (review.id !== researchId || review.artist !== artist || review.title !== raw.title) throw new Error(`${id}: 改寫故事與已核對專輯資料不符`);
   if (!raw.title || !/^\d{4}$/.test(raw.year) || !Number.isInteger(raw.trackCount) || raw.trackCount <= 0) throw new Error(`${id}: 發行或曲目欄位無效`);
-  const story = String(raw.listeningNotes || "").trim();
+  const story = String(review.listeningNotes || "").trim();
   const count = (story.match(/[\u3400-\u9fff]/g) ?? []).length;
   const paragraphs = story.split(/\n\s*\n/).filter(Boolean).length;
   if (count < 500 || count > 800 || paragraphs < 4 || paragraphs > 6) throw new Error(`${id}: 故事不符字數或段落 (${count}/${paragraphs})`);
-  if (!raw.summary || !Array.isArray(raw.tracks) || !raw.tracks.length) throw new Error(`${id}: 摘要或曲目資料缺漏`);
+  if (!review.summary || !Array.isArray(raw.tracks) || !raw.tracks.length) throw new Error(`${id}: 摘要或曲目資料缺漏`);
   const fullTrackList = raw.tracks.map((track: string | { title?: string }) => typeof track === "string" ? track : track?.title || "").filter(Boolean);
   const normalizeTrack = (track: string) => track.normalize("NFKC").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
   const tracks = (listeningStarts[id] || []).map((selected) => fullTrackList.find((track: string) => normalizeTrack(track) === normalizeTrack(selected)));
   if (tracks.length !== 3 || tracks.some(track => !track)) throw new Error(`${id}: 三首聽點未能與核實曲目表相符`);
+  const normalizedStory = normalizeTrack(story);
+  for (const track of tracks as string[]) if (!normalizedStory.includes(normalizeTrack(track))) throw new Error(`${id}: 聆聽故事未提及已核實聽點「${track}」`);
   if (!Array.isArray(raw.sources) || raw.sources.length < 2) throw new Error(`${id}: 查證來源不足`);
   for (const source of raw.sources) {
     if (!source.name) throw new Error(`${id}: 來源名稱缺漏`);
@@ -76,7 +81,7 @@ const records = expected.map(([id, artist]): Album => {
     musicbrainzUrl: raw.musicbrainzUrl ? requireHttps(raw.musicbrainzUrl, `${id} MusicBrainz`) : "",
     storeUrl: requireHttps(raw.storeUrl, `${id} store`),
     tracks: tracks as string[],
-    summary: raw.summary,
+    summary: String(review.summary).trim(),
     listeningNotes: story,
     sources: raw.sources.map((source: { name: string; url: string }) => ({ name: source.name, url: source.url })),
   };

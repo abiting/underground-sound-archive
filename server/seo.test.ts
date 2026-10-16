@@ -16,9 +16,9 @@ describe("破繭之聲 SEO metadata", () => {
     expect(SITE_NAME).toContain("破繭之聲 Underground");
   });
 
-  it("54 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
+  it("56 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
     const paths = getPublicPaths();
-    expect(paths).toHaveLength(54);
+    expect(paths).toHaveLength(56);
     const titles = new Set<string>();
     const descriptions = new Set<string>();
     for (const path of paths) {
@@ -40,8 +40,8 @@ describe("破繭之聲 SEO metadata", () => {
       titles.add(metadata.title);
       descriptions.add(metadata.description);
     }
-    expect(titles.size).toBe(54);
-    expect(descriptions.size).toBe(54);
+    expect(titles.size).toBe(56);
+    expect(descriptions.size).toBe(56);
   });
 
   it("未設定公開網域時不猜測 canonical，也不讓暫時預覽被收錄", () => {
@@ -56,7 +56,7 @@ describe("破繭之聲 SEO metadata", () => {
 
   it("正式 sitemap 與 robots 只包含實際公開路由，排除缺頁與 API", () => {
     const docs = renderSeoDocuments({ origin });
-    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(54);
+    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(56);
     expect(docs.sitemap).not.toContain("/404");
     expect(docs.sitemap).not.toContain("/api/");
     expect(docs.robots).toContain(`Sitemap: ${origin}/sitemap.xml`);
@@ -85,11 +85,13 @@ describe("不執行 JavaScript 的內容可見性", () => {
       }
       if (metadata.kind === "article") {
         const article = articles.find((item) => `/article/${item.slug}` === path)!;
-        expect(body).toContain(article.body.split("\n\n")[0]);
+        const firstParagraph = article.body.split("\n\n")[0].replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, "$1");
+        const visibleText = body.replace(/<!--[\s\S]*?-->/g, "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&");
+        expect(visibleText).toContain(firstParagraph);
       }
       if (metadata.kind === "album") {
         const album = albums.find((item) => `/album/${item.id}` === path)!;
-        expect(body).toContain("專輯導讀／評論");
+        expect(body).toContain("專輯導讀");
         expect(body).toContain(album.title.replace(/&/g, "&amp;"));
       }
     }

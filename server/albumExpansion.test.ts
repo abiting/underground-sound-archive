@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { describe, expect, it } from "vitest";
 import { albums, articles } from "../client/src/data/catalog";
-import { artistSlug, buildArtistIndex, catalogCategories, catalogDecades, filterAlbums } from "../client/src/lib/catalogSearch";
+import { artistSlug, buildArtistIndex, catalogCategories, catalogDecades, catalogGuideCount, filterAlbums } from "../client/src/lib/catalogSearch";
 import { escapeHtml, getPublicPaths, metadataForPath } from "../client/src/seo/metadata";
 import { renderDocument } from "../client/src/seo/renderPage";
 
@@ -34,7 +34,7 @@ describe("全樂團追加知名專輯", () => {
     }
     for (const artist of ["Green Day", "Ave Mujica"]) expect(newRecords.filter(album => album.artist === artist)).toHaveLength(1);
     expect(new Set(albums.map(album => `${album.artist}/${album.title}`)).size).toBe(27);
-    expect(articles).toHaveLength(11);
+    expect(articles).toHaveLength(12);
   });
 
   it("15 篇故事各有 500–800 中文字、4–6 段、至少 2 來源與 3 首聽點", () => {
@@ -57,10 +57,41 @@ describe("全樂團追加知名專輯", () => {
     }
   });
 
-  it("15 團索引與各樂團頁能找到對應專輯", () => {
+  it("16 團索引與各樂團頁能找到對應專輯", () => {
     const index = buildArtistIndex(albums, articles);
-    expect(index).toHaveLength(15);
+    expect(index).toHaveLength(16);
+    expect(index.every(artist => artist.guideCount >= artist.albumCount)).toBe(true);
+    expect(index.find(item => item.name === "Queen")?.guideCount).toBe(2);
+    expect(index.find(item => item.name === "生物股長")).toMatchObject({ slug: "ikimono-gakari", albumCount: 0, guideCount: 1 });
+    expect(index.find(item => item.name === "Spitz")).toMatchObject({ albumCount: 1, guideCount: 2 });
+    expect(catalogGuideCount(albums, articles)).toBe(29);
+    const queenAlbum = record("queen-opera");
+    const queenArticle = articles.find(article => article.id === queenAlbum.articleId)!;
+    const { articleId: _articleId, listeningNotes: _listeningNotes, ...queenAlbumWithoutGuide } = queenAlbum;
+    const { albumId: _albumId, ...queenArticleWithoutAlbum } = queenArticle;
+    expect(catalogGuideCount([queenAlbum], [queenArticle])).toBe(1);
+    expect(buildArtistIndex([{ ...queenAlbumWithoutGuide, articleId: queenArticle.id }], [queenArticleWithoutAlbum])[0].guideCount).toBe(1);
+    expect(buildArtistIndex([queenAlbumWithoutGuide], [queenArticle])[0].guideCount).toBe(1);
+    const songArtistPage = renderDocument(template, "/artist/ikimono-gakari", options);
+    expect(songArtistPage.status).toBe(200);
+    expect(songArtistPage.html).toContain("生物股長");
+    expect(songArtistPage.html).toContain("相關導讀");
+    const queenArtistPage = renderDocument(template, "/artist/queen", options);
+    expect(queenArtistPage.html).toMatch(/02(?:<!-- -->)? GUIDES/);
+    const queenAlbumPage = renderDocument(template, "/album/queen-opera", options);
+    const queenGuideArticlePage = renderDocument(template, `/article/${queenArticle.slug}`, options);
+    expect(queenAlbumPage.html).toContain("以文章頁閱讀同一篇導讀");
+    expect(queenGuideArticlePage.html).toContain("在專輯頁閱讀同一篇導讀");
+    for (const [artist, albumCount] of [["Dreamshade", 2], ["Dream Theater", 2], ["Green Day", 1], ["Ave Mujica", 1]] as const) {
+      expect(index.find(item => item.name === artist)?.guideCount).toBe(albumCount);
+    }
     const home = renderDocument(template, "/", options).html;
+    const readableHome = home.replace(/<!--[\s\S]*?-->/g, "");
+    expect(home).toMatch(/29(?:<!-- -->)? 篇導讀/);
+    expect(home).toMatch(/2(?:<!-- -->)? 篇導讀/);
+    expect(readableHome).toContain("不重複導讀 29 篇");
+    expect(home).toContain("場刊是本站的編輯風格");
+    expect(home).not.toContain("相關文章");
     for (const album of ids.map(record)) {
       const slug = artistSlug(album.artist);
       expect(home).toContain(`href="/underground-sound-archive/artist/${slug}/"`);
@@ -72,7 +103,7 @@ describe("全樂團追加知名專輯", () => {
   });
 
   it("每張新專輯的全部故事在初始 HTML，metadata 和回鏈正確", () => {
-    expect(getPublicPaths()).toHaveLength(54);
+    expect(getPublicPaths()).toHaveLength(56);
     for (const album of ids.map(record)) {
       const route = `/album/${album.id}`;
       const document = renderDocument(template, route, options);

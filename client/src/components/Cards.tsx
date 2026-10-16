@@ -50,7 +50,7 @@ export function ArticleCard({ article, index = 0 }: { article: Article; index?: 
         <div className="card-eyebrow">{article.category}<span>{article.year}</span></div>
         <h3>{article.title}</h3>
         <p>{article.summary}</p>
-        <span className="card-link">閱讀專題 <ArrowUpRight size={14} /></span>
+        <span className="card-link">閱讀導讀 <ArrowUpRight size={14} /></span>
       </div>
     </Link>
   );
