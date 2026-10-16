@@ -1,0 +1,142 @@
+import type { Album } from "./types";
+
+type AlbumSeed = Omit<Album, "coverUrl" | "coverSource" | "coverSourceUrl" | "musicbrainzUrl"> & {
+  releaseGroupId: string;
+};
+
+const musicbrainz = (releaseGroupId: string) => `https://musicbrainz.org/release-group/${releaseGroupId}`;
+const coverArt = (releaseGroupId: string) => `https://coverartarchive.org/release-group/${releaseGroupId}/front-500`;
+
+function makeAlbum(seed: AlbumSeed): Album {
+  const { releaseGroupId, ...album } = seed;
+  return {
+    ...album,
+    coverUrl: coverArt(releaseGroupId),
+    coverSource: "Cover Art Archive",
+    coverSourceUrl: coverArt(releaseGroupId),
+    musicbrainzUrl: musicbrainz(releaseGroupId),
+  };
+}
+
+export const albums: Album[] = [
+  makeAlbum({
+    id: "queen-opera",
+    title: "A Night at the Opera",
+    artist: "Queen",
+    year: "1975",
+    trackCount: 12,
+    genre: "經典搖滾",
+    releaseGroupId: "6b47c9a0-b9e1-3df9-a5e8-50a6ce0dbdbd",
+    storeUrl: "https://music.apple.com/tw/search?term=Queen%20A%20Night%20at%20the%20Opera",
+    tracks: ["Bohemian Rhapsody", "The Prophet's Song", "Love of My Life"],
+    articleId: "queen-opera",
+  }),
+  makeAlbum({
+    id: "pink-floyd-dark-side",
+    title: "The Dark Side of the Moon",
+    artist: "Pink Floyd",
+    year: "1973",
+    trackCount: 10,
+    genre: "前衛搖滾",
+    releaseGroupId: "f5093c06-23e3-404f-aeaa-40f72885ee3a",
+    storeUrl: "https://music.apple.com/tw/search?term=Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon",
+    tracks: ["Time", "Money", "The Great Gig in the Sky"],
+    articleId: "pink-floyd-dark-side",
+  }),
+  makeAlbum({
+    id: "led-zeppelin-four",
+    title: "Led Zeppelin IV",
+    artist: "Led Zeppelin",
+    year: "1971",
+    trackCount: 8,
+    genre: "硬式搖滾",
+    releaseGroupId: "2e61da88-39e9-3473-81d2-c964cb394952",
+    storeUrl: "https://music.apple.com/tw/search?term=Led%20Zeppelin%20Led%20Zeppelin%20IV",
+    tracks: ["Black Dog", "Stairway to Heaven", "When the Levee Breaks"],
+    articleId: "led-zeppelin-four",
+  }),
+  makeAlbum({
+    id: "nirvana-nevermind",
+    title: "Nevermind",
+    artist: "Nirvana",
+    year: "1991",
+    trackCount: 12,
+    genre: "另類搖滾",
+    releaseGroupId: "1b022e01-4da6-387b-8658-8678046e4cef",
+    storeUrl: "https://music.apple.com/tw/search?term=Nirvana%20Nevermind",
+    tracks: ["Smells Like Teen Spirit", "Come As You Are", "Lithium"],
+    articleId: "nirvana-nevermind",
+  }),
+  makeAlbum({
+    id: "radiohead-ok-computer",
+    title: "OK Computer",
+    artist: "Radiohead",
+    year: "1997",
+    trackCount: 12,
+    genre: "另類搖滾",
+    releaseGroupId: "b1392450-e666-3926-a536-22c65f834433",
+    storeUrl: "https://music.apple.com/tw/search?term=Radiohead%20OK%20Computer",
+    tracks: ["Paranoid Android", "Karma Police", "No Surprises"],
+    articleId: "radiohead-ok-computer",
+  }),
+  makeAlbum({
+    id: "black-sabbath-paranoid",
+    title: "Paranoid",
+    artist: "Black Sabbath",
+    year: "1970",
+    trackCount: 8,
+    genre: "重金屬",
+    releaseGroupId: "cc053745-c447-3566-8f27-bed5438c9133",
+    storeUrl: "https://music.apple.com/tw/search?term=Black%20Sabbath%20Paranoid",
+    tracks: ["War Pigs", "Paranoid", "Iron Man"],
+    articleId: "black-sabbath-paranoid",
+  }),
+  makeAlbum({
+    id: "iron-maiden-number",
+    title: "The Number of the Beast",
+    artist: "Iron Maiden",
+    year: "1982",
+    trackCount: 8,
+    genre: "重金屬",
+    releaseGroupId: "4ebfe175-e7ed-34cd-8e91-67c7e4a53579",
+    storeUrl: "https://music.apple.com/tw/search?term=Iron%20Maiden%20The%20Number%20of%20the%20Beast",
+    tracks: ["Run to the Hills", "The Number of the Beast", "Hallowed Be Thy Name"],
+    articleId: "iron-maiden-number",
+  }),
+  makeAlbum({
+    id: "metallica-puppets",
+    title: "Master of Puppets",
+    artist: "Metallica",
+    year: "1986",
+    trackCount: 8,
+    genre: "鞭擊金屬",
+    releaseGroupId: "3d00fb45-f8ab-3436-a8e1-b4bfc4d66913",
+    storeUrl: "https://music.apple.com/tw/search?term=Metallica%20Master%20of%20Puppets",
+    tracks: ["Battery", "Master of Puppets", "Orion"],
+    articleId: "metallica-puppets",
+  }),
+  makeAlbum({
+    id: "megadeth-rust",
+    title: "Rust in Peace",
+    artist: "Megadeth",
+    year: "1990",
+    trackCount: 9,
+    genre: "鞭擊金屬",
+    releaseGroupId: "19e7c9f3-7c4c-3a56-ba50-4156b39f76ca",
+    storeUrl: "https://music.apple.com/tw/search?term=Megadeth%20Rust%20in%20Peace",
+    tracks: ["Holy Wars... The Punishment Due", "Hangar 18", "Tornado of Souls"],
+    articleId: "megadeth-rust",
+  }),
+  makeAlbum({
+    id: "slipknot-iowa",
+    title: "Iowa",
+    artist: "Slipknot",
+    year: "2001",
+    trackCount: 14,
+    genre: "新金屬",
+    releaseGroupId: "082c68eb-d993-36cf-9b32-6663cba2d052",
+    storeUrl: "https://music.apple.com/tw/search?term=Slipknot%20Iowa",
+    tracks: ["People = Shit", "Left Behind", "Iowa"],
+    articleId: "slipknot-iowa",
+  }),
+];

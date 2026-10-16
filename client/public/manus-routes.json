@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"Riff Atlas｜搖滾與金屬唱片誌"},{"path":"/article/:slug","title":"文章｜Riff Atlas"},{"path":"/artist/:slug","title":"樂團索引｜Riff Atlas"},{"path":"/album/:id","title":"專輯評論｜Riff Atlas"}]}

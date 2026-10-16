@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#171717"/>
+  <path d="M0 0h512v138L0 390z" fill="#e6392f"/>
+  <path d="M0 422 512 172v56L0 478z" fill="#e6392f" opacity=".78"/>
+  <circle cx="256" cy="256" r="142" fill="#171717" stroke="#f0ece4" stroke-width="7"/>
+  <circle cx="256" cy="256" r="26" fill="#e6392f"/>
+  <circle cx="256" cy="256" r="74" fill="none" stroke="#f0ece4" stroke-opacity=".36" stroke-width="4"/>
+  <path d="M117 256h65l19-37 28 76 27-53 18 28h121" fill="none" stroke="#f0ece4" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <text x="256" y="453" text-anchor="middle" fill="#f0ece4" font-family="Arial Black,Impact,sans-serif" font-size="42" font-weight="900" letter-spacing="8">RIFF//ATLAS</text>
+</svg>
