@@ -26,4 +26,5 @@
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標仍為「把音量開到／失真以外。」，該區塊不再重複站名。
 - [x] 頁尾「資料來源與授權說明」使用 https://abiurl.me/Jc8uTl；專輯查證與封面來源連結不改。
 - [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abiting.cc。
-- [ ] GitHub 使用 Webdev 的目的儲存庫確認流程；未確認目的地前不傳輸程式碼。
+- [x] GitHub 使用 Webdev 的目的儲存庫確認流程；未確認目的地前不傳輸程式碼，並由平台驗證新的私人儲存庫已接收最新 checkpoint。
+- [x] 修正使用者回報的首頁 SSR hydration mismatch：通知元件只於初次 hydration 完成後在用戶端掛載，SSR/client 其餘頁面 DOM 一致。

@@ -97,6 +97,7 @@ describe("不執行 JavaScript 的內容可見性", () => {
 
   it("首頁大標不重複站名，保留原標語與精確電影外鏈", () => {
     const home = renderDocument(template, "/");
+    expect(home.html).not.toContain('aria-label="Notifications alt+T"');
     const h1 = home.html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1];
     expect(h1).toContain("把音量開到");
     expect(h1).toContain("失真以外。");

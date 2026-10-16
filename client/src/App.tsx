@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useLocation } from "wouter";
@@ -10,6 +11,12 @@ import AlbumPage from "./pages/AlbumPage";
 import NotFound from "./pages/NotFound";
 import SeoSync from "./seo/SeoSync";
 import { metadataForPath } from "./seo/metadata";
+
+function ClientToaster() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted ? <Toaster /> : null;
+}
 
 function PageRouter() {
   const [path] = useLocation();
@@ -26,7 +33,7 @@ export default function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
-          <Toaster />
+          <ClientToaster />
           <SeoSync />
           <PageRouter />
         </TooltipProvider>
