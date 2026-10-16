@@ -1,11 +1,13 @@
 import { renderToString } from "react-dom/server";
 import { Router } from "wouter";
 import App from "../App";
+import { normalizeBasePath, withBasePath } from "../lib/sitePaths";
 import { metadataForPath, renderSeoHead, jsonLdText, type SeoOptions } from "./metadata";
 
 export function renderPage(path: string, options: SeoOptions = {}) {
   const metadata = metadataForPath(path, options);
-  const body = renderToString(<Router ssrPath={metadata.path}><App /></Router>);
+  const base = normalizeBasePath(options.basePath);
+  const body = renderToString(<Router base={base} ssrPath={withBasePath(metadata.path, base)}><App /></Router>);
   return { metadata, body };
 }
 

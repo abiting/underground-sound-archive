@@ -28,3 +28,9 @@
 - [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abiting.cc。
 - [x] GitHub 使用 Webdev 的目的儲存庫確認流程；未確認目的地前不傳輸程式碼，並由平台驗證已確認的儲存庫已接收最新 checkpoint。
 - [x] 修正使用者回報的首頁 SSR hydration mismatch：通知元件只於初次 hydration 完成後在用戶端掛載，SSR/client 其餘頁面 DOM 一致。
+
+## GitHub Pages 目錄與新增選輯
+- [x] 導覽、返回目錄、專輯與文章連結使用 /underground-sound-archive/ 基底路徑；錨點定位正確，外部連結不改。
+- [x] Pages 建置提供各頁初始 HTML、正確 canonical、og:url、sitemap 和真正的 404 頁；保留 Manus 預覽的根目錄相容性。
+- [x] 新增 Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》，包含查證過的封面、年份、曲目數、代表聽點、简短導讀與來源連結；不存在的樂團頁不得產生壞連結。
+- [x] 首頁專輯數量隨資料更新，所有新增專輯進入專輯目錄與 sitemap；既有 11 篇文章不改寫。

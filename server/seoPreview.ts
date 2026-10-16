@@ -15,6 +15,7 @@ export function seoPreviewPlugin(projectRoot: string): Plugin {
         if (pathname !== "/robots.txt" && pathname !== "/sitemap.xml" && /\.[a-z0-9]+$/i.test(pathname)) return next();
         try {
           const options: SeoOptions = {
+            basePath: process.env.SITE_BASE_PATH || "/",
             origin: process.env.PUBLIC_SITE_ORIGIN || siteConfig.publicOrigin || undefined,
             socialImage: process.env.PUBLIC_SOCIAL_IMAGE_URL || siteConfig.socialImage || undefined,
           };

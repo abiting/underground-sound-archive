@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Router as WouterRouter, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -33,11 +33,9 @@ export default function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <ClientToaster />
             <SeoSync />
             <PageRouter />
-          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

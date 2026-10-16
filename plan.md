@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 11 篇文章、10 張專輯、樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺仍為「把音量開到／失真以外。」，不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 11 篇文章、12 張專輯、樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺仍為「把音量開到／失真以外。」，不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 33 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 35 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -29,3 +29,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 - server/_core/vite.ts：標準 production 的內容路由與 HTTP 404。
 - server/seo.test.ts、staticSeo.test.ts：metadata、初始正文、指定連結及 production 深連結測試。
 - client/public：favicon、分享圖片與路由清單。
+
+## GitHub Pages 子目錄
+
+使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。新增兩張唱片以簡短選輯筆記展示，不擅自新增長篇文章或不存在的樂團介紹頁。

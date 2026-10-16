@@ -1,4 +1,5 @@
 import { albums, articles } from "../data/catalog";
+import { normalizeBasePath, withBasePath } from "../lib/sitePaths";
 
 export const SITE_NAME = "破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌";
 export const BRAND_NAME = "破繭之聲";
@@ -23,7 +24,7 @@ export type PageMetadata = {
   structuredData: Record<string, unknown>[];
 };
 
-export type SeoOptions = { origin?: string; socialImage?: string };
+export type SeoOptions = { origin?: string; socialImage?: string; basePath?: string };
 
 export function normalizePublicOrigin(value?: string): string | undefined {
   if (!value?.trim()) return undefined;
@@ -61,6 +62,8 @@ function uniqueKeywords(values: string[]): string[] {
 export function metadataForPath(pathname: string, options: SeoOptions = {}): PageMetadata {
   const path = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
   const origin = normalizePublicOrigin(options.origin);
+  const basePath = normalizeBasePath(options.basePath);
+  const homeUrl = origin ? `${origin}${withBasePath("/", basePath)}` : undefined;
   const socialImage = options.socialImage || DEFAULT_SOCIAL_IMAGE;
   const metadata: PageMetadata = {
     kind: "not-found", path, title: `找不到頁面｜${BRAND_NAME} ${ENGLISH_NAME}`,
@@ -95,7 +98,7 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
     const album = albums.find((item) => path === `/album/${item.id}`);
     if (album) {
       Object.assign(metadata, {
-        kind: "album", status: 200, title: `${album.artist}《${album.title}》專輯導讀、曲目與聆聽指南｜${BRAND_NAME}`,
+        kind: "album", status: 200, title: `${album.artist}《${album.title}》${album.title.length > 25 ? "專輯導讀" : "專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`,
         description: `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：${album.genre} 聲音風格、${album.trackCount} 首曲目與代表聽點。閱讀原創專輯導讀、封面來源和相關樂團文章，找到完整唱片脈絡。`,
         keywords: uniqueKeywords([album.artist, album.title, album.genre, "專輯評論", "曲目介紹", BRAND_NAME]),
         image: album.coverUrl, imageAlt: `${album.artist}《${album.title}》專輯封面`,
@@ -122,10 +125,10 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
 
   if (metadata.status === 404) return metadata;
   metadata.robots = origin ? "index, follow, max-image-preview:large" : "noindex, follow";
-  if (origin) metadata.canonical = `${origin}${path}`;
+  if (origin) metadata.canonical = `${origin}${withBasePath(path, basePath)}`;
   const website: Record<string, unknown> = { "@context": "https://schema.org", "@type": "WebSite", name: SITE_NAME,
     alternateName: [BRAND_NAME, ENGLISH_NAME], description: SITE_DESCRIPTION, inLanguage: "zh-Hant" };
-  if (origin) website.url = origin;
+  if (homeUrl) website.url = homeUrl;
   metadata.structuredData.push(website);
   if (mainEntity) {
     mainEntity["@context"] = "https://schema.org";
@@ -134,7 +137,7 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
   }
   if (metadata.canonical && path !== "/") {
     metadata.structuredData.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-      { "@type": "ListItem", position: 1, name: BRAND_NAME, item: origin },
+      { "@type": "ListItem", position: 1, name: BRAND_NAME, item: homeUrl },
       { "@type": "ListItem", position: 2, name: metadata.title.split("｜")[0], item: metadata.canonical },
     ] });
   }
@@ -166,10 +169,11 @@ export function renderSeoHead(meta: PageMetadata): string {
 
 export function renderSeoDocuments(options: SeoOptions = {}) {
   const origin = normalizePublicOrigin(options.origin);
-  const urls = getPublicPaths();
+  const basePath = normalizeBasePath(options.basePath);
+  const urls = getPublicPaths().map(route => withBasePath(route, basePath));
   const sitemapTemplate = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((path) => `  <url><loc>{{PUBLIC_SITE_ORIGIN}}${path}</loc></url>`).join("\n")}\n</urlset>\n`;
   return {
-    robots: origin ? `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /__manus__/\nDisallow: /__system__/\nSitemap: ${origin}/sitemap.xml\n` : "User-agent: *\nDisallow: /\n",
+    robots: origin ? `User-agent: *\nAllow: /\nDisallow: ${withBasePath("/api/", basePath)}\nDisallow: ${withBasePath("/__manus__/", basePath)}\nDisallow: ${withBasePath("/__system__/", basePath)}\nSitemap: ${origin}${withBasePath("/sitemap.xml", basePath)}\n` : "User-agent: *\nDisallow: /\n",
     sitemap: origin ? sitemapTemplate.replaceAll("{{PUBLIC_SITE_ORIGIN}}", escapeHtml(origin)) : '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n',
     sitemapTemplate,
   };

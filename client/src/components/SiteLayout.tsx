@@ -1,9 +1,11 @@
+import { withBasePath } from "../lib/sitePaths";
 import { ArrowUpRight, Menu, Music2 } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useRouter } from "wouter";
 import type { ReactNode } from "react";
 import { SITE_NAME, BRAND_NAME, ENGLISH_NAME } from "../seo/metadata";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
+  const { base } = useRouter();
   return (
     <div className="site-shell">
       <div className="edition-strip">
@@ -16,11 +18,11 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <span className="brand-name"><strong>{BRAND_NAME}</strong>{" "}<small>{ENGLISH_NAME}</small></span>
         </Link>
         <nav className="main-nav" aria-label="主要導覽">
-          <a href="/#explore" title="探索搖滾與金屬專輯導讀">專輯導讀</a>
-          <a href="/#artists" title="搖滾與金屬樂團索引">樂團索引</a>
-          <a href="/#api" title="依樂團或專輯名稱搜尋唱片封面">封面搜尋</a>
+          <a href={withBasePath("/#explore", base)} title="探索搖滾與金屬專輯導讀">專輯導讀</a>
+          <a href={withBasePath("/#artists", base)} title="搖滾與金屬樂團索引">樂團索引</a>
+          <a href={withBasePath("/#api", base)} title="依樂團或專輯名稱搜尋唱片封面">封面搜尋</a>
         </nav>
-        <a href="/#explore" className="header-cta">打開場刊 <ArrowUpRight size={16} aria-hidden="true" /></a>
+        <a href={withBasePath("/#explore", base)} className="header-cta">打開場刊 <ArrowUpRight size={16} aria-hidden="true" /></a>
         <button className="mobile-menu" aria-label="切換主要導覽選單" onClick={() => document.querySelector(".main-nav")?.classList.toggle("nav-open")}>
           <Menu size={21} aria-hidden="true" />
         </button>

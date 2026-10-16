@@ -31,7 +31,11 @@ export type Album = {
   musicbrainzUrl: string;
   storeUrl: string;
   tracks: string[];
-  articleId: string;
+  articleId?: string;
+  summary?: string;
+  listeningNotes?: string;
+  trackCountNote?: string;
+  sources?: MusicSource[];
 };
 
 export type SearchAlbum = {

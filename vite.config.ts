@@ -173,6 +173,7 @@ const plugins = [vitePluginPublicPlatformConfig(), seoPreviewPlugin(PROJECT_ROOT
 
 export default defineConfig({
   plugins,
+  base: process.env.SITE_BASE_PATH || "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

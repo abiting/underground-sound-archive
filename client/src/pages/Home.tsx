@@ -74,13 +74,13 @@ export default function Home() {
       </section>
 
       <section className="issue-ribbon" id="explore">
-        <span>THIS ISSUE</span><b>經典唱片，從頭到尾聽一次</b><span>10 張選輯　／　11 篇導讀</span>
+        <span>THIS ISSUE</span><b>經典唱片，從頭到尾聽一次</b><span>{albums.length} 張選輯　／　{articles.length} 篇導讀</span>
       </section>
 
       <section className="section-block featured-section">
         <div className="section-heading">
           <div><p className="section-kicker">01 / THE RECORD SHELF</p><h2>本期開聲<span>／</span>唱片選輯</h2></div>
-          <p className="section-note">十張專輯，十種把聲音推遠的方法。</p>
+          <p className="section-note">{albums.length} 張專輯，從不同聲音找到下一張值得重播的唱片。</p>
         </div>
         <div className="album-grid">
           {albums.slice(0, 5).map((album) => <AlbumCard key={album.id} album={album} />)}

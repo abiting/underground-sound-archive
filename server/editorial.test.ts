@@ -10,7 +10,7 @@ const movieLink = "https://coai.abiting.cc/archives/1437";
 describe("Riff Atlas 唱片誌資料", () => {
   it("有 10 篇專輯文章及 1 篇指定的 Spitz 單曲文章", () => {
     expect(articles).toHaveLength(11);
-    expect(albums).toHaveLength(10);
+    expect(albums).toHaveLength(12);
     expect(new Set(articles.map((item) => item.slug)).size).toBe(11);
     expect(articles.filter((item) => item.albumId)).toHaveLength(10);
     const special = articles.find((item) => item.artist === "Spitz");
@@ -30,11 +30,16 @@ describe("Riff Atlas 唱片誌資料", () => {
     }
   });
 
-  it("所有專輯都連到對應文章與標示來源的封面", () => {
+  it("所有專輯都具有對應文章或選輯筆記，以及標示來源的封面", () => {
     for (const item of albums) {
       const article = articles.find((entry) => entry.id === item.articleId);
-      expect(article?.albumId).toBe(item.id);
-      expect(article?.artist).toBe(item.artist);
+      if (item.articleId) {
+        expect(article?.albumId).toBe(item.id);
+        expect(article?.artist).toBe(item.artist);
+      } else {
+        expect(item.summary).toBeTruthy();
+        expect(item.listeningNotes).toBeTruthy();
+      }
       expect(item.coverUrl).toMatch(/^https:\/\/coverartarchive\.org\/release-group\/[a-f0-9-]+\/front-500$/);
       expect(item.musicbrainzUrl).toMatch(/^https:\/\/musicbrainz\.org\/release-group\//);
       expect(item.coverSource).toBe("Cover Art Archive");

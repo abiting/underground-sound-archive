@@ -1,5 +1,6 @@
+import { withBasePath } from "../lib/sitePaths";
 import { ArrowLeft, ArrowUpRight, Headphones, Orbit } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useRouter } from "wouter";
 import SiteLayout from "../components/SiteLayout";
 import { AlbumCard, ArticleCard } from "../components/Cards";
 import { albums, articles } from "../data/catalog";
@@ -9,9 +10,10 @@ function slugify(value: string) {
 }
 
 export default function ArtistPage({ slug }: { slug: string }) {
+  const { base } = useRouter();
   const related = articles.filter((article) => slugify(article.artist) === slug);
   const artistName = related[0]?.artist;
-  if (!artistName) return <SiteLayout><div className="not-found-page"><h1>找不到這支樂團</h1><a href="/#artists">回到樂團索引 <ArrowUpRight size={15} /></a></div></SiteLayout>;
+  if (!artistName) return <SiteLayout><div className="not-found-page"><h1>找不到這支樂團</h1><a href={withBasePath("/#artists", base)}>回到樂團索引 <ArrowUpRight size={15} /></a></div></SiteLayout>;
   const records = albums.filter((album) => album.artist === artistName);
   const profile = related[0];
   const styleTags = Array.from(new Set(related.flatMap((article) => article.tags)));
@@ -19,7 +21,7 @@ export default function ArtistPage({ slug }: { slug: string }) {
   return (
     <SiteLayout>
       <div className="detail-page artist-page">
-        <div className="detail-topline"><a href="/#artists"><ArrowLeft size={15} /> 回到樂團索引</a><span>ARTIST FILE / {profile.category}</span></div>
+        <div className="detail-topline"><a href={withBasePath("/#artists", base)}><ArrowLeft size={15} /> 回到樂團索引</a><span>ARTIST FILE / {profile.category}</span></div>
         <section className="artist-hero">
           <div className="artist-hero-copy"><p className="section-kicker">BAND FILE / {String(records.length || 1).padStart(2, "0")}</p><span className="category-pill">{profile.category}</span><h1>{artistName}</h1><p>{profile.summary}</p><div className="article-tag-row">{styleTags.slice(0, 5).map((tag) => <span key={tag}>#{tag}</span>)}</div></div>
           <div className="artist-hero-art"><Orbit size={56} strokeWidth={1.1} /><span>LOUD<br />ARCHIVE</span><b>{String(related.length).padStart(2, "0")}</b></div>
