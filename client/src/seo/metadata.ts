@@ -50,9 +50,17 @@ export function getPublicPaths(): string[] {
   return [
     "/",
     ...articles.map((article) => `/article/${article.slug}`),
-    ...Array.from(new Set(articles.map((article) => `/artist/${artistSlug(article.artist)}`))),
+    ...Array.from(new Set([
+      ...articles.map((article) => `/artist/${artistSlug(article.artist)}`),
+      ...albums.map((album) => `/artist/${artistSlug(album.artist)}`),
+    ])),
     ...albums.map((album) => `/album/${album.id}`),
   ];
+}
+
+function publicPagePath(path: string, basePath: string): string {
+  const prefixed = withBasePath(path, basePath).replace(/\/+$/, "");
+  return `${prefixed}/` || "/";
 }
 
 function uniqueKeywords(values: string[]): string[] {
@@ -109,23 +117,28 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
     }
   } else if (path.startsWith("/artist/")) {
     const related = articles.filter((item) => path === `/artist/${artistSlug(item.artist)}`);
-    if (related.length) {
-      const artist = related[0].artist;
-      const album = albums.find((item) => item.artist === artist);
+    const records = albums.filter((item) => path === `/artist/${artistSlug(item.artist)}`);
+    if (related.length || records.length) {
+      const artist = related[0]?.artist ?? records[0].artist;
+      const category = related[0]?.category ?? records[0].genre;
+      const representative = records[0];
+      const tagKeywords = related[0]?.tags ?? ["代表專輯"];
       Object.assign(metadata, {
         kind: "artist", status: 200, title: `${artist} 樂團介紹與代表專輯｜${BRAND_NAME} ${ENGLISH_NAME}`,
-        description: `認識 ${artist} 的${related[0].category}聲音風格、代表作品與唱片脈絡。破繭之聲樂團索引彙整原創專輯導讀、代表曲目和可核對的發行資料，帶你從樂團名字開始深入探索搖滾與金屬。`,
-        keywords: uniqueKeywords([artist, related[0].category, "樂團介紹", "代表專輯", ...related[0].tags, BRAND_NAME]),
-        image: album?.coverUrl || socialImage,
-        imageAlt: album ? `${artist} 代表專輯《${album.title}》封面` : "紅色燈光下的地下搖滾演出：Spitz 樂團頁配圖",
+        description: related[0]
+          ? `認識 ${artist} 的${category}聲音風格、代表作品與唱片脈絡。破繭之聲樂團索引彙整原創專輯導讀、代表曲目和可核對的發行資料，帶你從樂團名字開始深入探索搖滾與金屬。`
+          : `查看破繭之聲收錄的 ${artist} 專輯資料、曲目重點與封面來源。從《${representative.title}》開始，認識這張 ${representative.year} 年的${category}代表作品。`,
+        keywords: uniqueKeywords([artist, category, "樂團介紹", "代表專輯", ...tagKeywords, BRAND_NAME]),
+        image: representative?.coverUrl || socialImage,
+        imageAlt: representative ? `${artist} 代表專輯《${representative.title}》封面` : "紅色燈光下的地下搖滾演出：樂團索引頁配圖",
       });
-      mainEntity = { "@type": "MusicGroup", name: artist, genre: related[0].category, description: metadata.description };
+      mainEntity = { "@type": "MusicGroup", name: artist, genre: category, description: metadata.description };
     }
   }
 
   if (metadata.status === 404) return metadata;
   metadata.robots = origin ? "index, follow, max-image-preview:large" : "noindex, follow";
-  if (origin) metadata.canonical = `${origin}${withBasePath(path, basePath)}`;
+  if (origin) metadata.canonical = `${origin}${publicPagePath(path, basePath)}`;
   const website: Record<string, unknown> = { "@context": "https://schema.org", "@type": "WebSite", name: SITE_NAME,
     alternateName: [BRAND_NAME, ENGLISH_NAME], description: SITE_DESCRIPTION, inLanguage: "zh-Hant" };
   if (homeUrl) website.url = homeUrl;
@@ -170,7 +183,7 @@ export function renderSeoHead(meta: PageMetadata): string {
 export function renderSeoDocuments(options: SeoOptions = {}) {
   const origin = normalizePublicOrigin(options.origin);
   const basePath = normalizeBasePath(options.basePath);
-  const urls = getPublicPaths().map(route => withBasePath(route, basePath));
+  const urls = getPublicPaths().map(route => publicPagePath(route, basePath));
   const sitemapTemplate = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((path) => `  <url><loc>{{PUBLIC_SITE_ORIGIN}}${path}</loc></url>`).join("\n")}\n</urlset>\n`;
   return {
     robots: origin ? `User-agent: *\nAllow: /\nDisallow: ${withBasePath("/api/", basePath)}\nDisallow: ${withBasePath("/__manus__/", basePath)}\nDisallow: ${withBasePath("/__system__/", basePath)}\nSitemap: ${origin}${withBasePath("/sitemap.xml", basePath)}\n` : "User-agent: *\nDisallow: /\n",

@@ -42,14 +42,36 @@ describe("GitHub Pages 專案目錄", () => {
   it("canonical、麵包屑與 sitemap 都指向實際 Pages 網址", () => {
     for (const route of getPublicPaths()) {
       const meta = metadataForPath(route, options);
-      expect(meta.canonical).toBe(`${origin}${withBasePath(route, basePath)}`);
+      const canonicalPath = withBasePath(route, basePath).replace(/\/+$/, "") + "/";
+      expect(meta.canonical).toBe(`${origin}${canonicalPath}`);
       expect(meta.structuredData[0].url).toBe(`${origin}/underground-sound-archive/`);
     }
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(35);
+    expect(urls).toHaveLength(37);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
+    expect(urls.every(url => url.endsWith("/"))).toBe(true);
+  });
+
+  it("Dreamshade 與 Dream Theater 都出現在樂團索引並有真實詳情頁", () => {
+    for (const [slug, artist, albumId] of [
+      ["dreamshade", "Dreamshade", "dreamshade-gift-of-life"],
+      ["dream-theater", "Dream Theater", "dream-theater-six-degrees"],
+    ]) {
+      const route = `/artist/${slug}`;
+      expect(getPublicPaths()).toContain(route);
+      expect(metadataForPath(route, options).status).toBe(200);
+      const page = renderDocument(template, route, options);
+      expect(page.status).toBe(200);
+      expect(page.html).toContain(artist);
+      expect(page.html).toContain(`href="/underground-sound-archive/album/${albumId}"`);
+      expect(page.html).toContain("代表專輯");
+    }
+    const home = renderDocument(template, "/", options).html;
+    expect(home).toContain("Dreamshade");
+    expect(home).toContain("Dream Theater");
+    expect(home).toContain("1 張專輯");
   });
 
   it("兩張新專輯有封面與筆記，不連結不存在的藝人頁", () => {

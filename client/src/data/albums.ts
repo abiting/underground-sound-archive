@@ -150,7 +150,11 @@ export const albums: Album[] = [
     storeUrl: "https://music.apple.com/us/album/the-gift-of-life/1669979239",
     tracks: ["Photographs", "Your Voice", "The Gift of Life"],
     summary: "在重型節奏與清晰旋律之間找平衡：Dreamshade 的《The Gift of Life》以緊湊的 10 首曲目，呈現旋律金屬核兼具衝擊與記憶點的聲音。",
-    listeningNotes: "《The Gift of Life》於 2013 年發行，MusicBrainz 的原始 CD 與數位版本均列出 10 首曲目。這次選輯聚焦作品本身，不將商店重新上架日期當作原始發行年份。\n\n可以先從〈Photographs〉進入，再接〈Your Voice〉與同名曲。聆聽時留意厚重吉他與旋律段落如何切換：節奏的衝擊並沒有蓋住歌曲線條，反而讓明亮的旋律更容易被記住。依自己的聆聽習慣逐首重播，比急著替它貼上單一曲風標籤更有意思。",
+    sources: [
+      { name: "同期評論與團員訪談（RAMzine）", url: "https://ramzine.co.uk/reviews/dreamshade-the-gift-of-life-album-review/" },
+      { name: "同期專輯評論（The Circle Pit）", url: "https://thecirclepit.com/2013/02/dreamshade-the-gift-of-life-album-review/" },
+    ],
+    listeningNotes: `《The Gift of Life》是瑞士金屬樂團 Dreamshade 的第二張專輯，於 2013 年由 Spinefarm Records 發行，製作由 Jacob Hansen 負責。標題不是對生命的簡單讚歌，而是把「生命是一份禮物」放回日常的疑問和選擇裡。吉他手 Rocco Ghielmini 在同期訪談談到，歌詞寫生活中的疑問、煎熬、目標與現實，也坦白樂團自己的錯誤；他們無意替聽者上人生課，而是想說人會從經驗中學習。這段話替整張唱片提供了核心線索：歌曲沒有一段連續劇情，卻反覆在挫折、記憶和珍惜之間往返。\n\n開場〈Photographs〉與〈Your Voice〉先把這種矛盾寫進聲音。快速鼓點、厚重 riff 和尖聲嘶吼把歌曲推向前方；清亮的旋律則讓段落不只剩下攻擊性。同期評論特別點出主唱 Kevin Calì 在粗獷與清亮唱法之間切換的能力，也指出兩首歌很快就建立「重與輕」的平衡。〈Photographs〉像是用照片留住過去；〈Your Voice〉則讓記憶以聲音回來。這是讀專輯的聽覺入口，不必先知道每段歌詞的出處，也能感覺記憶既溫柔又不安。\n\n同名曲把合成器放進更現代的金屬編排，沒有中止吉他與人聲的推拉，而是替音色再添一層光澤。曲序也不一路維持同一個速度：〈Our Flame〉刻意放慢，給耳朵一段呼吸；接著〈Late Confessions〉又將重量和速度拉回來，最後由〈Wants and Needs〉收束。這些轉折讓十首曲目像一段有起伏的日常，而非十次重複同一種爆發。所謂旋律性不是把金屬磨平，而是使每次加速、停頓與轉調更容易被聽見。\n\n重聽時可以先完整播放一次，再回到三處：〈Photographs〉如何把旋律帶進快節奏，〈Our Flame〉如何改變整張唱片的呼吸，〈Late Confessions〉又怎樣把前面的柔軟重新推入重擊。不同評論對曲風標籤並不完全一致，因為作品在旋律死亡金屬、metalcore 和現代旋律搖滾之間取材；若只把它聽成單一子類型，便會略過歌曲的流動。從歌詞訪談的角度回看，聲音的起伏像把「生活給人什麼」改成更具體的問題：犯錯後留下什麼，又如何再向前。這種不替聽者下結論的寫法，讓專輯標題在結尾仍保持開放。`,
   }),
   makeAlbum({
     id: "dream-theater-six-degrees",
@@ -159,12 +163,15 @@ export const albums: Album[] = [
     year: "2002",
     trackCount: 13,
     trackCountNote: "雙 CD：第一碟 5 首，第二碟同名長曲分為 8 段。",
-    sources: [{ name: "Dream Theater 官方專輯介紹", url: "https://dreamtheater.net/discography-item/six-degrees-of-inner-turbulence/" }],
+    sources: [
+      { name: "Dream Theater 官方專輯介紹", url: "https://dreamtheater.net/discography-item/six-degrees-of-inner-turbulence/" },
+      { name: "The Prog Report：專輯創作回顧與 Jordan Rudess 訪談", url: "https://progreport.com/dream-theater-release-the-ambitious-six-degrees-of-inner-turbulence-15-years-ago/" },
+    ],
     genre: "前衛金屬",
     releaseGroupId: "74a4416f-1c7f-3f67-8208-b978c7b9379d",
     storeUrl: "https://music.apple.com/us/album/six-degrees-of-inner-turbulence/282703295",
     tracks: ["The Glass Prison", "Misunderstood", "Six Degrees of Inner Turbulence"],
     summary: "Dream Theater 在 2002 年的雙碟作品，把五首獨立曲目與一首分成八段的長篇組曲並置，讓前衛金屬的技術性服務於情緒與敘事。",
-    listeningNotes: "Dream Theater 官方將《Six Degrees of Inner Turbulence》列為 2002 年 1 月 29 日發行的第六張錄音室專輯。第一碟包含五首獨立曲目；第二碟的同名作品長約 42 分鐘，分為八個段落。網站的 13 首曲目數採用雙 CD 的分軌方式，不表示它是 13 首彼此無關的作品。\n\n先聽〈The Glass Prison〉的推進，再讓〈Misunderstood〉的空間感緩下速度，最後完整聽一次第二碟。官方提到組曲融合古典、民謠、爵士與金屬影響；值得注意的不只是演奏難度，而是段落如何回應不同情緒。這是一張適合留出整段時間聆聽，而不是只抽取炫技片段的唱片。",
+    listeningNotes: `《Six Degrees of Inner Turbulence》於 2002 年 1 月 29 日發行，是 Dream Theater 第六張錄音室專輯，也是接在《Metropolis Pt. 2: Scenes from a Memory》之後的一次形式轉向。前作以完整故事串起曲目，這張則用兩張 CD 對照兩種尺度：第一碟的五首歌各自落在不同情境，第二碟以約 42 分鐘的同名作品分成八段，形成一篇長篇組曲。它不是把前一張的劇情繼續往下寫，而是將聽者帶進彼此呼應的心理處境，讓個別歌曲與整體長曲並置。\n\n第一碟透過曲目間的對比建立張力。〈The Glass Prison〉一開始便把節奏和吉他推到最前；接下來的歌曲在信念、自我隔絕與生命意義等題目間移動。〈Misunderstood〉把注意力拉向溝通失靈的孤立感，〈Disappear〉則讓終點和失去浮上來。官方將這些歌的關注範圍概括為酒癮、失去信仰、自我隔絕、生命神聖性與死亡。與其替每首曲目套上固定劇情，不如把它們聽成五個不同視角：編曲各自改變速度、空間和重量，主題卻都指向人在壓力下如何理解自己。\n\nJordan Rudess 回憶，樂團想處理不同的心理健康個案，同時希望音樂和《Scenes from a Memory》有所區別。他提到 John Petrucci 曾請他在錄音室即興彈出悲傷、優美等截然不同的情緒，錄下來的片段成為後續音樂的種子。這個做法說明，長曲不只是把複雜拍號和高難度演奏堆在一起；它從情緒提示出發，再由樂團把素材發展成段落。作品因此有明顯的戲劇性，但每種情緒都由旋律、音色和速度具體化，而不是只靠標題告知。\n\n第二碟〈Six Degrees of Inner Turbulence〉把六個人物的心理困境排成八個部分。官方指出其中動用古典、民謠、爵士與金屬等多種影響；聽感會從鋼琴和弦樂色彩，走向厚重合奏，再回到更安靜的段落。這些變化不是裝飾，而是讓不同人物的處境各有音樂表情。重聽時先別急著比較哪個樂手最亮眼，可以留意動機如何回歸、段落如何相接，以及長篇組曲如何在結尾回收能量。依原始雙碟順序完整聽一次，會比把八段拆開播放更容易感受到全曲的敘事弧線。`,
   }),
 ];

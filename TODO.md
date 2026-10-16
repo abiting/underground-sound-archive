@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁補齊 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；所有有內容的圖片均有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、11 篇文章、11 個樂團頁及10張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、11 篇文章、13 個樂團頁及 12 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；未設定正式網域時預覽 noindex，提供 robots 與 sitemap 模板，錯誤頁 noindex 並在預覽返回 HTTP 404。
 - [x] SEO 更新經型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為正式收錄，不擅自完成待確認的 GitHub 轉移或公開發佈。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標仍為「把音量開到／失真以外。」，該區塊不再重複站名。
@@ -32,5 +32,9 @@
 ## GitHub Pages 目錄與新增選輯
 - [x] 導覽、返回目錄、專輯與文章連結使用 /underground-sound-archive/ 基底路徑；錨點定位正確，外部連結不改。
 - [x] Pages 建置提供各頁初始 HTML、正確 canonical、og:url、sitemap 和真正的 404 頁；保留 Manus 預覽的根目錄相容性。
-- [x] 新增 Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》，包含查證過的封面、年份、曲目數、代表聽點、简短導讀與來源連結；不存在的樂團頁不得產生壞連結。
+- [x] 新增 Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》，包含查證過的封面、年份、曲目數、代表聽點、完整故事導讀與來源連結；兩團均有有效樂團索引頁。
 - [x] 首頁專輯數量隨資料更新，所有新增專輯進入專輯目錄與 sitemap；既有 11 篇文章不改寫。
+
+## 樂團索引
+- [x] 樂團索引同步納入新增唱片所屬的 Dreamshade 與 Dream Theater；每個索引連結須能開啟該團的樂團頁並列出代表專輯；公開路由、canonical 與 sitemap 同步更新。
+- [x] Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》各有完整繁體中文專輯故事，涵蓋發行／創作背景、曲目及聲音脈絡、可採用的聆聽線索，並附可核對的來源連結。

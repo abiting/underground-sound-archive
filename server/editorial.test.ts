@@ -46,6 +46,18 @@ describe("Riff Atlas 唱片誌資料", () => {
       expect(item.tracks.length).toBeGreaterThan(0);
     }
   });
+
+  it("兩張新增專輯各有完整故事與可核對來源", () => {
+    for (const id of ["dreamshade-gift-of-life", "dream-theater-six-degrees"]) {
+      const album = albums.find((item) => item.id === id)!;
+      const count = (album.listeningNotes?.match(/[\u3400-\u9fff]/g) ?? []).length;
+      const paragraphs = album.listeningNotes?.split(/\n\s*\n/).filter(Boolean) ?? [];
+      expect(count, album.artist).toBeGreaterThanOrEqual(500);
+      expect(count, album.artist).toBeLessThanOrEqual(800);
+      expect(paragraphs.length, album.artist).toBeGreaterThanOrEqual(4);
+      expect(album.sources?.length, album.artist).toBeGreaterThanOrEqual(2);
+    }
+  });
 });
 
 describe("安全正文與指定外鏈", () => {

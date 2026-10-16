@@ -16,9 +16,9 @@ describe("破繭之聲 SEO metadata", () => {
     expect(SITE_NAME).toContain("破繭之聲 Underground");
   });
 
-  it("35 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
+  it("37 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
     const paths = getPublicPaths();
-    expect(paths).toHaveLength(35);
+    expect(paths).toHaveLength(37);
     const titles = new Set<string>();
     const descriptions = new Set<string>();
     for (const path of paths) {
@@ -34,14 +34,14 @@ describe("破繭之聲 SEO metadata", () => {
       for (const key of ["og:type", "og:title", "og:description", "og:url", "og:site_name", "og:image", "og:image:alt", "twitter:card", "twitter:title", "twitter:description", "twitter:image", "twitter:image:alt"]) {
         expect(head, `${path} ${key}`).toContain(`"${key}"`);
       }
-      expect(metadata.canonical).toBe(`${origin}${path}`);
+      expect(metadata.canonical).toBe(`${origin}${path === "/" ? "/" : `${path}/`}`);
       expect(metadata.image).toMatch(/^https:\/\//);
       expect(metadata.structuredData.length).toBeGreaterThan(0);
       titles.add(metadata.title);
       descriptions.add(metadata.description);
     }
-    expect(titles.size).toBe(35);
-    expect(descriptions.size).toBe(35);
+    expect(titles.size).toBe(37);
+    expect(descriptions.size).toBe(37);
   });
 
   it("未設定公開網域時不猜測 canonical，也不讓暫時預覽被收錄", () => {
@@ -56,7 +56,7 @@ describe("破繭之聲 SEO metadata", () => {
 
   it("正式 sitemap 與 robots 只包含實際公開路由，排除缺頁與 API", () => {
     const docs = renderSeoDocuments({ origin });
-    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(35);
+    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(37);
     expect(docs.sitemap).not.toContain("/404");
     expect(docs.sitemap).not.toContain("/api/");
     expect(docs.robots).toContain(`Sitemap: ${origin}/sitemap.xml`);

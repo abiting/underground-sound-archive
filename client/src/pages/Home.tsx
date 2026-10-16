@@ -34,10 +34,22 @@ export default function Home() {
     return matchesQuery && matchesCategory && matchesDecade;
   }), [query, category, decade]);
 
-  const artists = useMemo(() => Array.from(new Map(articles.map((article) => {
-    const slug = article.artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    return [slug, { slug, name: article.artist, category: article.category, count: articles.filter((item) => item.artist === article.artist).length }];
-  })).values()), []);
+  const artists = useMemo(() => {
+    const index = new Map<string, { slug: string; name: string; category: string; count: number; albumCount: number }>();
+    for (const article of articles) {
+      const slug = article.artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const entry = index.get(slug) || { slug, name: article.artist, category: article.category, count: 0, albumCount: 0 };
+      entry.count += 1;
+      index.set(slug, entry);
+    }
+    for (const album of albums) {
+      const slug = album.artist.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const entry = index.get(slug) || { slug, name: album.artist, category: album.genre, count: 0, albumCount: 0 };
+      entry.albumCount += 1;
+      index.set(slug, entry);
+    }
+    return Array.from(index.values());
+  }, []);
 
   async function handleApiSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -94,11 +106,11 @@ export default function Home() {
         <div className="artist-band-title"><p className="section-kicker">02 / BAND INDEX</p><h2>樂團索引<span>，</span><br />從名字開始挖。</h2></div>
         <div className="artist-list">
           {artists.map((artist, index) => (
-            <Link key={artist.slug} href={`/artist/${artist.slug}`} className="artist-row">
+            <Link key={artist.slug} href={`/artist/${artist.slug}/`} className="artist-row">
               <span className="artist-index">{String(index + 1).padStart(2, "0")}</span>
               <strong>{artist.name}</strong>
               <span className="artist-genre">{artist.category}</span>
-              <span className="artist-count">{artist.count} 篇</span>
+              <span className="artist-count">{artist.count ? `${artist.count} 篇` : `${artist.albumCount} 張專輯`}</span>
               <ArrowUpRight size={16} />
             </Link>
           ))}
