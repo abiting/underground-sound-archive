@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 12 篇文章、27 張專輯、16 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 12 篇文章、28 張專輯、17 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 56 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 58 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -54,3 +54,9 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 ## 單曲導讀
 
 加入生物股長 2013 年單曲《笑顏》（《笑顔》）的獨立文章和 artist route。把指定的「蓋諾賽克特」連結嵌在電影標題文字中；日本團名使用固定 `ikimono-gakari` slug。更新目錄、SEO、初始 HTML 和 GitHub Pages 清單，保持單曲文章與專輯型錄分離。總計 12 篇文章、27 張專輯、16 個樂團、56 個公開頁面。
+
+## 四分衛《Deep Blue》（2026-10-17）
+
+四分衛 2001 年專輯新增至獨立 `taiwanAlbums.ts`，由共用 catalog 聚合，避免後續追加選輯匯入器覆蓋資料。以〈雨和眼淚〉為導讀核心，另選〈魔毯〉和〈項鍊〉作為聆聽起點；500–800 個中文字的原創故事放在 `listeningNotes`，由既有頁面產生 HTML 段落與 h2，不另開重複文章頁。Apple Music、Hit FM、五大唱片和 Freshmusic 核對原始曲序；註明 12 首歌曲加隱藏演奏曲，共 13 軌。採同一專輯的 Apple artwork，明確列來源，不捏造 MusicBrainz ID。中文團名固定映射至 `quarterback`，讓索引、專輯回鏈及 SEO 使用同一個有效網址。
+
+現有全文搜尋和動態分類可自動收錄新內容，新增〈雨和眼淚〉歌曲關鍵字至專輯 metadata。全站現在是 28 張專輯、17 個樂團、12 個文章頁、30 篇不重複導讀和 58 個公開頁面，Pages 子目錄、頁尾及首頁主標保持不變。

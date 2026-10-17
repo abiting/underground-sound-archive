@@ -117,6 +117,10 @@
       "title": "Ave Mujica 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
     },
     {
+      "path": "/artist/quarterback",
+      "title": "四分衛 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
+    },
+    {
       "path": "/album/queen-opera",
       "title": "Queen《A Night at the Opera》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
     },
@@ -223,6 +227,10 @@
     {
       "path": "/album/ave-mujica-completeness",
       "title": "Ave Mujica《Completeness》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/quarterback-deep-blue",
+      "title": "四分衛《Deep Blue》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
     }
   ]
 }

@@ -11,7 +11,7 @@ const genesectLink = "https://list.abitingpokedex.com/pokemon/genesect/zh";
 describe("Riff Atlas 唱片誌資料", () => {
   it("有 10 篇專輯文章及 2 篇指定的 Spitz／生物股長單曲文章", () => {
     expect(articles).toHaveLength(12);
-    expect(albums).toHaveLength(27);
+    expect(albums).toHaveLength(28);
     expect(new Set(articles.map((item) => item.slug)).size).toBe(12);
     expect(articles.filter((item) => item.albumId)).toHaveLength(10);
     const special = articles.find((item) => item.artist === "Spitz");

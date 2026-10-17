@@ -105,7 +105,7 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
       Object.assign(metadata, {
         kind: "album", status: 200, title: `${album.artist}《${album.title}》${album.title.length > 25 ? "專輯導讀" : "完整專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`,
         description: `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：以${album.genre}為聲音底色，收錄 ${album.trackCount} 首曲目與代表聽點。閱讀完整專輯故事、封面來源和相關樂團文章，深入唱片脈絡。`,
-        keywords: uniqueKeywords([album.artist, album.title, album.genre, "專輯評論", "曲目介紹", BRAND_NAME]),
+        keywords: uniqueKeywords([album.artist, album.title, album.genre, ...album.tracks.slice(0, 1), "專輯評論", "曲目介紹", BRAND_NAME]),
         image: album.coverUrl, imageAlt: `${album.artist}《${album.title}》專輯封面`,
       });
       mainEntity = { "@type": "MusicAlbum", name: album.title, byArtist: { "@type": "MusicGroup", name: album.artist },

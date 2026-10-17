@@ -5,6 +5,7 @@ export type CatalogFilters = { query: string; category: string; decade: string }
 const artistSlugOverrides: Record<string, string> = {
   "生物股長": "ikimono-gakari",
   "いきものがかり": "ikimono-gakari",
+  "四分衛": "quarterback",
 };
 
 export function artistSlug(name: string) {

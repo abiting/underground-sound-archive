@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、12 篇文章、16 個樂團頁及 27 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、12 篇文章、17 個樂團頁及 28 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -60,3 +60,8 @@
 - [x] 逐篇補強 Queen《News of the World》、Pink Floyd《Wish You Were Here》、Led Zeppelin《Led Zeppelin II》、Nirvana《In Utero》、Radiohead《Kid A》、Black Sabbath《Master of Reality》、Iron Maiden《Powerslave》、Metallica《Metallica》、Megadeth《Countdown to Extinction》、Slipknot《Vol. 3: (The Subliminal Verses)》、Dreamshade《What Silence Hides》、Dream Theater《Images and Words》、Spitz《ハチミツ》、Green Day《American Idiot》及 Ave Mujica《Completeness》的故事導讀。
 - [x] 每篇補強後維持 500–800 個中文字、4–6 段，加入可核對的專輯脈絡、具體曲目／聲音分析、曲序或風格轉折與實際聆聽線索；保留各專輯已查證的 ID、年份、曲目、封面和來源，不加入來源不支持的主張。
 - [x] 整合回型別化資料與網站專輯頁，確保首頁搜尋能找到正文，SEO 初始 HTML、canonical、sitemap 及子目錄路由保持同步。
+
+## 四分衛《Deep Blue》與〈雨和眼淚〉
+- [x] 新增四分衛 2001 年專輯《Deep Blue》，〈雨和眼淚〉為主要聆聽起點；專輯共 13 軌，註明 12 首歌曲加末尾隱藏演奏曲的版本計數，保留正確封面和作品來源。
+- [x] 有 500–800 個中文字、4–6 段的原創完整專輯導讀，包含發行背景、〈雨和眼淚〉／〈魔毯〉／〈項鍊〉的音樂與曲序脈絡、實際聆聽線索及至少 2 個可核對來源。
+- [x] 四分衛使用穩定 /artist/quarterback/ 樂團頁；專輯、樂團索引、全文搜尋、分類、導讀去重計數、SEO 初始 HTML、canonical 與 sitemap 同步更新，維持 Pages 子目錄和首頁標語無句點。
