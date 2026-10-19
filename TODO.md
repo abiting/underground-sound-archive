@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、12 篇文章、17 個樂團頁及 28 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、12 篇文章、18 個樂團頁及 29 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -65,3 +65,9 @@
 - [x] 新增四分衛 2001 年專輯《Deep Blue》，〈雨和眼淚〉為主要聆聽起點；專輯共 13 軌，註明 12 首歌曲加末尾隱藏演奏曲的版本計數，保留正確封面和作品來源。
 - [x] 有 500–800 個中文字、4–6 段的原創完整專輯導讀，包含發行背景、〈雨和眼淚〉／〈魔毯〉／〈項鍊〉的音樂與曲序脈絡、實際聆聽線索及至少 2 個可核對來源。
 - [x] 四分衛使用穩定 /artist/quarterback/ 樂團頁；專輯、樂團索引、全文搜尋、分類、導讀去重計數、SEO 初始 HTML、canonical 與 sitemap 同步更新，維持 Pages 子目錄和首頁標語無句點。
+
+## Ceramic Animal《Cosmic Eraser》與〈Eyes On You〉
+- [x] 新增 Ceramic Animal《Cosmic Eraser》專輯頁與樂團頁；〈Eyes On You〉是主要聆聽起點，並標示它是專輯第 2 首、3 分 33 秒，且先於專輯發行成為單曲。
+- [x] 完整導讀為 500–800 個中文字、4–6 段原創內容，涵蓋專輯創作／錄製脈絡、〈Eyes On You〉在曲序中的位置、可核對的聲音風格背景和具體聆聽路徑；不得杜撰歌詞意義或未有來源的音色細節。
+- [x] 正確顯示 2024 年 11 月 22 日發行、8 首曲目、約 30 分鐘及曲序；保留同一作品的 Apple Music 封面並清楚標示來源，不捏造 MusicBrainz ID。
+- [x] 專輯與樂團加入首頁索引、全文搜尋、搖滾／迷幻曲風分類、去重導讀篇數、路由清單、初始 HTML、SEO metadata、canonical 和 sitemap，沿用 GitHub Pages 專案目錄。

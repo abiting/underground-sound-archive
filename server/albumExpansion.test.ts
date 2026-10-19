@@ -25,7 +25,7 @@ function record(id: string) {
 
 describe("全樂團追加知名專輯", () => {
   it("舊 13 團各多一張，新增 2 團各一張，沒有重複專輯", () => {
-    expect(albums).toHaveLength(28);
+    expect(albums).toHaveLength(29);
     expect(ids).toHaveLength(15);
     const newRecords = ids.map(record);
     for (const artist of existingArtists) {
@@ -33,7 +33,7 @@ describe("全樂團追加知名專輯", () => {
       expect(albums.filter(album => album.artist === artist), artist).toHaveLength(artist === "Spitz" ? 1 : 2);
     }
     for (const artist of ["Green Day", "Ave Mujica"]) expect(newRecords.filter(album => album.artist === artist)).toHaveLength(1);
-    expect(new Set(albums.map(album => `${album.artist}/${album.title}`)).size).toBe(28);
+    expect(new Set(albums.map(album => `${album.artist}/${album.title}`)).size).toBe(29);
     expect(articles).toHaveLength(12);
   });
 
@@ -59,12 +59,12 @@ describe("全樂團追加知名專輯", () => {
 
   it("17 團索引與各樂團頁能找到對應專輯", () => {
     const index = buildArtistIndex(albums, articles);
-    expect(index).toHaveLength(17);
+    expect(index).toHaveLength(18);
     expect(index.every(artist => artist.guideCount >= artist.albumCount)).toBe(true);
     expect(index.find(item => item.name === "Queen")?.guideCount).toBe(2);
     expect(index.find(item => item.name === "生物股長")).toMatchObject({ slug: "ikimono-gakari", albumCount: 0, guideCount: 1 });
     expect(index.find(item => item.name === "Spitz")).toMatchObject({ albumCount: 1, guideCount: 2 });
-    expect(catalogGuideCount(albums, articles)).toBe(30);
+    expect(catalogGuideCount(albums, articles)).toBe(31);
     const queenAlbum = record("queen-opera");
     const queenArticle = articles.find(article => article.id === queenAlbum.articleId)!;
     const { articleId: _articleId, listeningNotes: _listeningNotes, ...queenAlbumWithoutGuide } = queenAlbum;
@@ -87,9 +87,9 @@ describe("全樂團追加知名專輯", () => {
     }
     const home = renderDocument(template, "/", options).html;
     const readableHome = home.replace(/<!--[\s\S]*?-->/g, "");
-    expect(home).toMatch(/30(?:<!-- -->)? 篇導讀/);
+    expect(home).toMatch(/31(?:<!-- -->)? 篇導讀/);
     expect(home).toMatch(/2(?:<!-- -->)? 篇導讀/);
-    expect(readableHome).toContain("不重複導讀 30 篇");
+    expect(readableHome).toContain("不重複導讀 31 篇");
     expect(home).toContain("場刊是本站的編輯風格");
     expect(home).not.toContain("相關文章");
     for (const album of ids.map(record)) {
@@ -103,7 +103,7 @@ describe("全樂團追加知名專輯", () => {
   });
 
   it("每張新專輯的全部故事在初始 HTML，metadata 和回鏈正確", () => {
-    expect(getPublicPaths()).toHaveLength(58);
+    expect(getPublicPaths()).toHaveLength(60);
     for (const album of ids.map(record)) {
       const route = `/album/${album.id}`;
       const document = renderDocument(template, route, options);
@@ -128,9 +128,11 @@ describe("全樂團追加知名專輯", () => {
   it("分類與年代包含新資料，2010 年代和龐克搖滾確實可篩選", () => {
     expect(catalogCategories(albums, articles)).toContain("龐克搖滾");
     expect(catalogCategories(albums, articles)).toContain("日本金屬");
+    expect(catalogCategories(albums, articles)).toContain("迷幻搖滾");
     expect(catalogDecades(albums, articles)).toContain("2010s");
     expect(filterAlbums(albums, { ...unfiltered, category: "龐克搖滾" }).map(item => item.id)).toContain("green-day-american-idiot");
     expect(filterAlbums(albums, { ...unfiltered, decade: "2010s" }).map(item => item.id)).toContain("dreamshade-what-silence-hides");
     expect(filterAlbums(albums, { ...unfiltered, query: "Ave Mujica", decade: "2020s" }).map(item => item.id)).toContain("ave-mujica-completeness");
+    expect(filterAlbums(albums, { ...unfiltered, category: "迷幻搖滾" }).map(item => item.id)).toContain("ceramic-animal-cosmic-eraser");
   });
 });
