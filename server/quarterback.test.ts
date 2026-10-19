@@ -44,22 +44,22 @@ describe("四分衛《Deep Blue》與〈雨和眼淚〉", () => {
     expect(artistSlug("Quarterback")).toBe("quarterback");
     const index = buildArtistIndex(albums, articles);
     expect(index.find(item => item.name === "四分衛")).toMatchObject({ slug: "quarterback", albumCount: 1, guideCount: 1 });
-    expect(index).toHaveLength(18);
-    expect(catalogGuideCount(albums, articles)).toBe(31);
+    expect(index).toHaveLength(19);
+    expect(catalogGuideCount(albums, articles)).toBe(32);
     for (const query of ["四分衛", "Quarterback", "Deep Blue", "雨和眼淚", "現實與夢想"]) {
       const results = filterAlbums(albums, { query, category: "台灣搖滾", decade: "2000s" });
       expect(results.map(item => item.id), query).toContain(album.id);
     }
     const home = renderDocument(template, "/", options).html;
     expect(home).toContain('href="/underground-sound-archive/artist/quarterback/"');
-    expect(home.replace(/<!--[\s\S]*?-->/g, "")).toContain("不重複導讀 31 篇");
+    expect(home.replace(/<!--[\s\S]*?-->/g, "")).toContain("不重複導讀 32 篇");
     const artistPage = renderDocument(template, artistPath, options);
     expect(artistPage.status).toBe(200);
     expect(artistPage.html).toContain(`href="/underground-sound-archive${albumPath}"`);
   });
 
   it("兩個新頁有初始 HTML、歌曲 keywords、正確 alt、canonical 和 sitemap", () => {
-    expect(getPublicPaths()).toHaveLength(60);
+    expect(getPublicPaths()).toHaveLength(62);
     for (const path of [albumPath, artistPath]) {
       expect(getPublicPaths()).toContain(path);
       const page = renderDocument(template, path, options);
@@ -76,7 +76,7 @@ describe("四分衛《Deep Blue》與〈雨和眼淚〉", () => {
     const metadata = metadataForPath(albumPath, options);
     expect(metadata.keywords).toContain("雨和眼淚");
     const sitemap = renderSeoDocuments(options).sitemap;
-    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(60);
+    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(62);
     expect(sitemap).toContain("https://abiting.github.io/underground-sound-archive/album/quarterback-deep-blue/");
     expect(sitemap).toContain("https://abiting.github.io/underground-sound-archive/artist/quarterback/");
   });

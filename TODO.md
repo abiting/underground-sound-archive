@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、12 篇文章、18 個樂團頁及 29 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、13 篇文章、19 個樂團頁及 29 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -71,3 +71,8 @@
 - [x] 完整導讀為 500–800 個中文字、4–6 段原創內容，涵蓋專輯創作／錄製脈絡、〈Eyes On You〉在曲序中的位置、可核對的聲音風格背景和具體聆聽路徑；不得杜撰歌詞意義或未有來源的音色細節。
 - [x] 正確顯示 2024 年 11 月 22 日發行、8 首曲目、約 30 分鐘及曲序；保留同一作品的 Apple Music 封面並清楚標示來源，不捏造 MusicBrainz ID。
 - [x] 專輯與樂團加入首頁索引、全文搜尋、搖滾／迷幻曲風分類、去重導讀篇數、路由清單、初始 HTML、SEO metadata、canonical 和 sitemap，沿用 GitHub Pages 專案目錄。
+
+## My Chemical Romance〈Disenchanted〉歌曲導讀
+- [x] 新增 My Chemical Romance（MCR）〈Disenchanted〉獨立歌曲導讀，核實 2006 年《The Black Parade》收錄曲身分與曲序；不宣稱它曾獨立發行為商業單曲，不新增未要求的專輯目錄頁或 albumId。
+- [x] 正文為 500–800 個中文字、4–6 段原創內容，涵蓋作品背景、聲音動態、曲序對照與實際聆聽線索；至少 2 個已閱讀的 HTTPS 來源，區分可靠資料和本文詮釋，不把粉絲解讀寫成唯一歌意，不引用歌詞。
+- [x] 新文章可由首頁、全文搜尋（MCR／Disenchanted／正文）與 My Chemical Romance 樂團索引找到；文章和 artist route 具完整初始 HTML、route-specific metadata、canonical、JSON-LD、sitemap 及 GitHub Pages 子目錄連結，路由清單同步成 62 條，維持 29 張專輯、19 團及 32 篇唯一導讀。

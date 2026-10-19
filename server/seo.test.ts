@@ -16,9 +16,9 @@ describe("破繭之聲 SEO metadata", () => {
     expect(SITE_NAME).toContain("破繭之聲 Underground");
   });
 
-  it("60 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
+  it("62 個公開頁面各有獨立 title、description 與完整分享 metadata", () => {
     const paths = getPublicPaths();
-    expect(paths).toHaveLength(60);
+    expect(paths).toHaveLength(62);
     const titles = new Set<string>();
     const descriptions = new Set<string>();
     for (const path of paths) {
@@ -40,8 +40,8 @@ describe("破繭之聲 SEO metadata", () => {
       titles.add(metadata.title);
       descriptions.add(metadata.description);
     }
-    expect(titles.size).toBe(60);
-    expect(descriptions.size).toBe(60);
+    expect(titles.size).toBe(62);
+    expect(descriptions.size).toBe(62);
   });
 
   it("未設定公開網域時不猜測 canonical，也不讓暫時預覽被收錄", () => {
@@ -56,7 +56,7 @@ describe("破繭之聲 SEO metadata", () => {
 
   it("正式 sitemap 與 robots 只包含實際公開路由，排除缺頁與 API", () => {
     const docs = renderSeoDocuments({ origin });
-    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(60);
+    expect((docs.sitemap.match(/<loc>/g) || []).length).toBe(62);
     expect(docs.sitemap).not.toContain("/404");
     expect(docs.sitemap).not.toContain("/api/");
     expect(docs.robots).toContain(`Sitemap: ${origin}/sitemap.xml`);

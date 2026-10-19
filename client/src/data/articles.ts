@@ -347,3 +347,30 @@ articles.push({
 
 重聽時先完整播放一次，再留心歌曲如何在收束與展開之間維持誠懇。可以把它放在日本流行搖滾與動畫主題曲交會的一頁：它不以炫技搶眼，而由簡潔旋律、穩定節奏和逐步開展的歌聲，讓訊息慢慢站穩。吉岡聖恵明亮而延伸的歌聲，讓這種動態不需堆疊失真也能傳達力量。離開銀幕後，《笑顏》仍像一封寫給重要之人的信；希望對方能好過一點，本身就是有力量的行動。`,
 });
+
+articles.push({
+  id: "my-chemical-romance-disenchanted",
+  title: "〈Disenchanted〉：黑色遊行裡的回望與失落",
+  slug: "my-chemical-romance-disenchanted",
+  category: "另類搖滾",
+  summary: "從第 12 首的位置、4 分 55 秒的長度，到撥弦開場與末段情緒的對照，讀 My Chemical Romance 如何在《The Black Parade》留下較內省的一頁。",
+  year: "2006",
+  tags: ["MCR", "Disenchanted", "The Black Parade"],
+  score: 4.5,
+  artist: "My Chemical Romance",
+  sources: [
+    { name: "Apple Music：《The Black Parade》專輯曲序與編輯介紹", url: "https://music.apple.com/us/album/the-black-parade/209388277" },
+    { name: "Apple Music：〈Disenchanted〉歌曲資料與創作名單", url: "https://music.apple.com/us/song/disenchanted/209389027" },
+    { name: "Alternative Press：The Black Parade 專訪（重刊 2006 年訪談）", url: "https://www.altpress.com/my-chemical-romance-the-black-parade-interview/" },
+    { name: "Kerrang!：《The Black Parade》逐曲回顧", url: "https://www.kerrang.com/every-song-on-my-chemical-romances-the-black-parade-ranked-from-worst-to-best" },
+  ],
+  body: `〈Disenchanted〉收錄於 My Chemical Romance（MCR）2006 年的《The Black Parade》。Apple Music 正式目錄列出它是標準版第 12 首，長 4 分 55 秒；前一首〈Teenagers〉、後一首〈Famous Last Words〉。本文把它當作專輯裡的一首歌來讀，不把它另列為獨立發行的商業單曲。這個位置與長度是可核對資料，也提供了聆聽它時最清楚的座標。
+
+若先聽曲序，〈Teenagers〉的節奏更短促，〈Disenchanted〉則暫時收斂，然後〈Famous Last Words〉再把聲音推向更昂揚的收束。Kerrang! 的逐曲評論把〈Disenchanted〉形容為大型抒情曲，並注意到開頭沉思的撥弦；那是評論者的聽感，不等於官方曲風標籤。實際播放時可先注意起始吉他，再聽鼓與人聲怎麼把歌曲從低聲部帶往寬闊的段落，感覺每次加厚是否把情緒推向下一個階段。
+
+Apple Music credits 將 Gerard Way 列為主唱，Ray Toro 列為主奏吉他與木吉他；五位團員均列在創作者名單，製作名單包括全團與 Rob Cavallo。從這些正式資料出發，聽者可以留意吉他與歌聲的分工，卻不必把每個音色細節說成樂團的自述。對我而言，前段的撥弦先留出空間，後段較飽滿的樂團聲響則形成反差；這是聆聽描述，而非器材或錄音技術的斷言。
+
+《The Black Parade》的大框架帶有戲劇性：Apple Music 將它概述為一名臨終青年走向死後世界的概念專輯；Alternative Press 重刊 2006 年訪談時，也記錄了 Patient 這個核心角色與關係破裂、個人失敗、錯失機會等主題。這些資料能說明專輯整體的敘事野心，卻不足以替〈Disenchanted〉下唯一答案。本文將它讀成面對理想落差時的回望，屬於本文詮釋；歌曲可以容納其他聆聽者的理解。
+
+訪談裡，Ray Toro 說樂團想做一張經得起時間、能傳給下一代的作品；Apple Music 的專輯介紹則指出，作品把龐克的粗礪與經典搖滾的規模放在一起。放在這種大場面的中後段，〈Disenchanted〉的克制讓情緒暫時往內收。建議先單聽它，再連播〈Teenagers〉、〈Disenchanted〉與〈Famous Last Words〉，比較曲序如何從直接的節奏走向較沉思的段落，最後再把它放回完整專輯，聽這次停頓如何替收束留出空間。`,
+});
