@@ -3,6 +3,37 @@ import type { Album } from "./types";
 // 不由批次研究匯入器管理的獨立／迷幻搖滾選輯。
 export const indieAlbums: Album[] = [
   {
+    id: "my-chemical-romance-black-parade",
+    artist: "My Chemical Romance",
+    title: "The Black Parade",
+    year: "2006",
+    genre: "另類搖滾",
+    trackCount: 14,
+    trackCountNote: "依 My Chemical Romance 官方 Warner Records 標準 CD 曲目表計為 14 軌；第 14 軌〈Blood〉標示為隱藏曲。Apple Music 標準專輯頁也列出 14 首、全長約 51 分鐘；不混計豪華版或週年版加收曲。",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/99/8a/56998a1c-efe7-fdf0-2b1d-e2da88d8df52/093624917724.jpg/600x600bb.jpg",
+    coverSource: "Apple Music／iTunes 專輯 artwork",
+    coverSourceUrl: "https://music.apple.com/us/album/the-black-parade/1156310650",
+    musicbrainzUrl: "",
+    storeUrl: "https://music.apple.com/us/album/the-black-parade/1156310650",
+    tracks: ["The End.", "Welcome to the Black Parade", "Disenchanted", "Famous Last Words"],
+    summary: "My Chemical Romance《The Black Parade》完整專輯導讀：從 Patient 概念、經典搖滾與劇場影響，到〈Welcome to the Black Parade〉、〈Disenchanted〉的曲序聆聽路徑，重聽 2006 年標準版 14 軌如何構成一張戲劇化概念專輯。",
+    listeningNotes: `《The Black Parade》是 My Chemical Romance（MCR）於 2006 年推出的第三張錄音室專輯。Apple Music 的美國標準版頁列 14 首、全長 51 分鐘，唱片公司為 Reprise Records；官方 CD 曲目表同樣列出 14 軌，末尾〈Blood〉標為隱藏曲。以下以這個標準版計數，不把豪華版和週年再版的額外內容混進來。Apple Music 與 Alternative Press 都把唱片放在臨終青年 Patient 的概念脈絡中，但這是整張專輯的舞台設定，不等於每首歌都只有一種解法。
+
+製作上，Alternative Press 重刊 2006 年訪談記載，樂團先在紐約寫歌與前期製作，之後搬到加州 Paramour 錄音。訪談中的 Ray Toro 提到 Queen、Journey、Pink Floyd，也提及音樂劇等參照；這些是團員談到的創作座標。The Guardian 同期評論則以歌劇式戲劇性概括專輯，屬評論者判斷。把兩種說法放在一起，可以理解這張唱片為何把龐克的直衝、經典搖滾的規模與舞台敘事並置，而不必把它簡化成單一曲風。
+
+曲序的入口先從〈The End.〉開始。它為唱片揭幕，第二首〈Dead!〉把開場往更高張力推，接著〈This Is How I Disappear〉和〈The Sharpest Lives〉延續前段，直到第五首才迎來〈Welcome to the Black Parade〉。我會把前五首連著聽，留意序曲如何讓位給主題曲，而不是只抽出最熟悉的單曲；這個「逐步開場」是本文對曲序效果的讀法，歌曲位置則可在官方曲目表核對。
+
+下半張唱片還可以把〈Teenagers〉、〈Disenchanted〉、〈Famous Last Words〉三首接著播放。它們分別排在第 11、12、13 首，結尾再接隱藏曲〈Blood〉。〈Disenchanted〉的位置讓我想先把節奏放慢，聽完再進入〈Famous Last Words〉；與其預先把它們套進 Patient 故事的某個確定情節，不如觀察相鄰歌曲如何改變聆聽重心。這條曲序路徑建立在官方曲目表上，情緒上的收放則是個人聽感。
+
+專輯野心不只在角色設定，也在把歌曲安排成一場由序幕、群眾合唱到尾聲的演出。Alternative Press 所載訪談談到團員追求做出耐久、夠大的作品；The Guardian 的評論注意到戲劇、吉他與不同歌曲氣質之間的反差。這些都是來源所記錄的觀點，不取代聽者自己的判斷。建議先完整播放 14 軌，再回頭比較〈The End.〉、〈Welcome to the Black Parade〉和〈Disenchanted〉，最後不要跳過末尾的〈Blood〉，就能同時留意角色敘事、曲序起伏和隱藏曲如何改變標準版的收尾。`,
+    sources: [
+      { name: "Apple Music：The Black Parade 標準專輯、曲序與年份", url: "https://music.apple.com/us/album/the-black-parade/1156310650" },
+      { name: "My Chemical Romance 官方 Warner Records 商店：標準 CD 曲目表", url: "https://mychemicalromance.warnerrecords.com/products/the-black-parade-cd" },
+      { name: "Alternative Press：MCR《The Black Parade》專訪，重刊 2006 年封面訪談", url: "https://www.altpress.com/my-chemical-romance-the-black-parade-interview/" },
+      { name: "The Guardian：Betty Clarke 2006 年同期專輯評論", url: "https://www.theguardian.com/music/2006/oct/20/popandrock.shopping" },
+    ],
+  },
+  {
     id: "ceramic-animal-cosmic-eraser",
     artist: "Ceramic Animal",
     title: "Cosmic Eraser",

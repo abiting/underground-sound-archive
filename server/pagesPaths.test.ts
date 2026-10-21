@@ -51,7 +51,7 @@ describe("GitHub Pages 專案目錄", () => {
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(62);
+    expect(urls).toHaveLength(63);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
     expect(urls.every(url => url.endsWith("/"))).toBe(true);
   });

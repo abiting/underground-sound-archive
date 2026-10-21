@@ -46,7 +46,7 @@ describe("My Chemical Romance《Disenchanted》文章導讀", () => {
     expect(filterArticles(articles, { query: "MCR", category: "全部", decade: "全部年代" })).toContain(article);
     expect(filterArticles(articles, { query: "Teenagers", category: "全部", decade: "全部年代" })).toContain(article);
     const entry = buildArtistIndex(albums, articles).find((artist) => artist.slug === "my-chemical-romance");
-    expect(entry).toMatchObject({ name: "My Chemical Romance", albumCount: 0, guideCount: 1 });
+    expect(entry).toMatchObject({ name: "My Chemical Romance", albumCount: 1, guideCount: 2 });
   });
 
   it("文章與藝人頁納入公開路由，SSR 輸出五段正文及子目錄回鏈", () => {

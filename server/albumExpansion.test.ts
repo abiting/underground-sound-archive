@@ -25,7 +25,7 @@ function record(id: string) {
 
 describe("全樂團追加知名專輯", () => {
   it("舊 13 團各多一張，新增 2 團各一張，沒有重複專輯", () => {
-    expect(albums).toHaveLength(29);
+    expect(albums).toHaveLength(30);
     expect(ids).toHaveLength(15);
     const newRecords = ids.map(record);
     for (const artist of existingArtists) {
@@ -33,7 +33,7 @@ describe("全樂團追加知名專輯", () => {
       expect(albums.filter(album => album.artist === artist), artist).toHaveLength(artist === "Spitz" ? 1 : 2);
     }
     for (const artist of ["Green Day", "Ave Mujica"]) expect(newRecords.filter(album => album.artist === artist)).toHaveLength(1);
-    expect(new Set(albums.map(album => `${album.artist}/${album.title}`)).size).toBe(29);
+    expect(new Set(albums.map(album => `${album.artist}/${album.title}`)).size).toBe(30);
     expect(articles).toHaveLength(13);
   });
 
@@ -64,7 +64,7 @@ describe("全樂團追加知名專輯", () => {
     expect(index.find(item => item.name === "Queen")?.guideCount).toBe(2);
     expect(index.find(item => item.name === "生物股長")).toMatchObject({ slug: "ikimono-gakari", albumCount: 0, guideCount: 1 });
     expect(index.find(item => item.name === "Spitz")).toMatchObject({ albumCount: 1, guideCount: 2 });
-    expect(catalogGuideCount(albums, articles)).toBe(32);
+    expect(catalogGuideCount(albums, articles)).toBe(33);
     const queenAlbum = record("queen-opera");
     const queenArticle = articles.find(article => article.id === queenAlbum.articleId)!;
     const { articleId: _articleId, listeningNotes: _listeningNotes, ...queenAlbumWithoutGuide } = queenAlbum;
@@ -87,9 +87,9 @@ describe("全樂團追加知名專輯", () => {
     }
     const home = renderDocument(template, "/", options).html;
     const readableHome = home.replace(/<!--[\s\S]*?-->/g, "");
-    expect(home).toMatch(/32(?:<!-- -->)? 篇導讀/);
+    expect(home).toMatch(/33(?:<!-- -->)? 篇導讀/);
     expect(home).toMatch(/2(?:<!-- -->)? 篇導讀/);
-    expect(readableHome).toContain("不重複導讀 32 篇");
+    expect(readableHome).toContain("不重複導讀 33 篇");
     expect(home).toContain("場刊是本站的編輯風格");
     expect(home).not.toContain("相關文章");
     for (const album of ids.map(record)) {
@@ -103,7 +103,7 @@ describe("全樂團追加知名專輯", () => {
   });
 
   it("每張新專輯的全部故事在初始 HTML，metadata 和回鏈正確", () => {
-    expect(getPublicPaths()).toHaveLength(62);
+    expect(getPublicPaths()).toHaveLength(63);
     for (const album of ids.map(record)) {
       const route = `/album/${album.id}`;
       const document = renderDocument(template, route, options);

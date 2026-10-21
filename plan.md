@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 13 篇文章、29 張專輯、19 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 13 篇文章、30 張專輯、19 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 62 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 63 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -32,7 +32,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## GitHub Pages 子目錄
 
-使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。現收錄 29 張專輯與 19 個樂團、32 篇唯一導讀及 62 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
+使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。現收錄 30 張專輯與 19 個樂團、33 篇唯一導讀及 63 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
 
 既有 15 張新增專輯各有 500–800 個中文字的故事導讀，涵蓋創作／發行背景、曲目結構和聆聽脈絡，並列出至少兩筆外部可核對來源。樂團索引與詳情頁使用相同的唯一導讀計數；一篇同時出現在專輯頁及文章頁的內容只計一次，獨立歌曲導讀各計一次。
 
@@ -68,3 +68,8 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 ## My Chemical Romance〈Disenchanted〉單曲導讀（2026-10-19）
 
 將〈Disenchanted〉作為獨立文章追加至 `articles.ts`，artist 使用 My Chemical Romance、穩定 slug 為 `my-chemical-romance`，不新增未要求的《The Black Parade》專輯目錄資料，也不設定 `albumId`。文章資料自動加入首頁、全文搜尋、藝人索引、文章與藝人靜態頁；沿用 SSR／預渲染、SEO metadata、canonical、JSON-LD、sitemap 和 GitHub Pages 子目錄設定。曲目年份與所屬版本以 Apple Music 正式目錄核實；歌意不採用粉絲推論，本文聽感明確標示為編輯詮釋。完成後總計 29 張專輯、13 篇文章、19 個樂團、32 篇唯一導讀及 62 個公開路由。
+## My Chemical Romance《The Black Parade》（2026-10-21）
+
+將 2006 年標準版收進獨立 `indieAlbums.ts`，沿用 catalog 聚合、ArtistPage、AlbumPage、全文搜尋、去重導讀計數與既有 SEO 靜態預渲染器。以 Apple Music 公開正式 artwork URL 作封面並標示來源；Apple 美國目錄的 600×600 圖已核對可用。使用 My Chemical Romance 官方 Warner Records 商店的 14 軌標準 CD 曲目表，明確把末軌〈Blood〉列為隱藏曲，不混計 Deluxe 或 20 週年版加收曲；無法確認的 MusicBrainz release-group ID 保持空值。
+
+新增一篇 500–800 個中文字、4–6 段的完整專輯故事，將 Apple Music 發行／曲序資料、Alternative Press 2006 專訪及 Guardian 同期評論與本文聆聽觀察分開表述。專輯導讀使用獨立 `listeningNotes`，保留〈Disenchanted〉單曲文章為不同內容、不以 `articleId`／`albumId` 誤作同一篇；MCR 藝人頁呈現一張專輯及兩篇不同導讀。更新後網站共 30 張專輯、19 個樂團、33 篇唯一導讀及 63 個公開路由。

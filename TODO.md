@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、13 篇文章、19 個樂團頁及 29 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、13 篇文章、19 個樂團頁及 30 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -75,4 +75,10 @@
 ## My Chemical Romance〈Disenchanted〉歌曲導讀
 - [x] 新增 My Chemical Romance（MCR）〈Disenchanted〉獨立歌曲導讀，核實 2006 年《The Black Parade》收錄曲身分與曲序；不宣稱它曾獨立發行為商業單曲，不新增未要求的專輯目錄頁或 albumId。
 - [x] 正文為 500–800 個中文字、4–6 段原創內容，涵蓋作品背景、聲音動態、曲序對照與實際聆聽線索；至少 2 個已閱讀的 HTTPS 來源，區分可靠資料和本文詮釋，不把粉絲解讀寫成唯一歌意，不引用歌詞。
-- [x] 新文章可由首頁、全文搜尋（MCR／Disenchanted／正文）與 My Chemical Romance 樂團索引找到；文章和 artist route 具完整初始 HTML、route-specific metadata、canonical、JSON-LD、sitemap 及 GitHub Pages 子目錄連結，路由清單同步成 62 條，維持 29 張專輯、19 團及 32 篇唯一導讀。
+- [x] 新文章可由首頁、全文搜尋（MCR／Disenchanted／正文）與 My Chemical Romance 樂團索引找到；文章和 artist route 具完整初始 HTML、route-specific metadata、canonical、JSON-LD、sitemap 及 GitHub Pages 子目錄連結，路由清單同步成 63 條，維持 30 張專輯、19 團及 33 篇唯一導讀。
+
+
+## My Chemical Romance《The Black Parade》專輯補入
+- [x] 新增 My Chemical Romance 2006 年《The Black Parade》標準版專輯資料，使用 14 軌 CD 版本並註明第 14 軌〈Blood〉是隱藏曲；不混入豪華版或 20 週年版加收曲目，沒有查證的 MusicBrainz ID 留空。
+- [x] 撰寫 500–800 個中文字、4–6 段的原創完整專輯導讀，涵蓋 Patient 專輯概念、曲序與具體聆聽路徑；以已讀至少 2 個 HTTPS 來源支撐可核對事實，明確區分評論者觀點和本文聽感，不把專輯概念套成每首歌唯一歌意、不引用歌詞。
+- [x] 使用 Apple Music 正式方形 artwork 並標示封面來源；專輯頁、MCR 藝人索引、首頁、搜尋、年代／類型篩選、SEO 初始 HTML、canonical、JSON-LD、sitemap 及路由 manifest 同步。保留〈Disenchanted〉獨立單曲導讀，專輯故事另計為一篇；全站更新為 30 張專輯、19 個樂團、33 篇唯一導讀、63 個公開路由。
