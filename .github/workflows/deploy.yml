@@ -31,8 +31,8 @@ jobs:
 
       - run: pnpm build:static
         env:
-          SITE_BASE_PATH: /${{ github.event.repository.name }}/
-          PUBLIC_SITE_ORIGIN: https://${{ github.repository_owner }}.github.io
+          SITE_BASE_PATH: /
+          PUBLIC_SITE_ORIGIN: https://chrysalismusicusa.com
 
       - uses: actions/upload-pages-artifact@v3
         with:
