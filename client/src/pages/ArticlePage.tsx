@@ -23,7 +23,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             <h1>{article.title}</h1>
             <p className="article-lede">{article.summary}</p>
             <div className="article-tag-row">{article.tags.map((tag) => <span key={tag}>#{tag}</span>)}</div>
-            {album && <Link className="button-red article-album-button" href={`/album/${album.id}`}>在專輯頁閱讀同一篇導讀 <ArrowUpRight size={15} /></Link>}
+            {album && <Link className="button-red article-album-button" href={`/album/${album.id}`}>{album.articleId === article.id ? "在專輯頁閱讀同一篇導讀" : "查看所屬專輯介紹"} <ArrowUpRight size={15} /></Link>}
           </div>
           <div className="article-detail-cover">
             {album ? <SafeCover src={album.coverUrl} alt={`${album.artist}《${album.title}》專輯封面`} /> : <div className="cover-fallback cover-fallback-large"><span>聲音<br />檔案</span></div>}
@@ -38,8 +38,8 @@ export default function ArticlePage({ slug }: { slug: string }) {
               <h2>查證與延伸</h2>
               <p>本文為原創導讀；基本資料與脈絡參考以下來源。</p>
               {article.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
-              {album && <a href={album.musicbrainzUrl} target="_blank" rel="noreferrer">專輯資料：MusicBrainz<ArrowUpRight size={13} /></a>}
-              {album && <a href={album.coverSourceUrl} target="_blank" rel="noreferrer">封面來源：Cover Art Archive<ArrowUpRight size={13} /></a>}
+              {album?.musicbrainzUrl && <a href={album.musicbrainzUrl} target="_blank" rel="noreferrer">專輯資料：MusicBrainz<ArrowUpRight size={13} /></a>}
+              {album && <a href={album.coverSourceUrl} target="_blank" rel="noreferrer">封面來源：{album.coverSource}<ArrowUpRight size={13} /></a>}
               {album && <a href={album.storeUrl} target="_blank" rel="noreferrer">在 Apple Music 查看作品<ArrowUpRight size={13} /></a>}
             </div>
           </article>

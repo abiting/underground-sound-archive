@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、13 篇文章、19 個樂團頁及 30 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、14 篇文章、20 個樂團頁及 31 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -30,7 +30,7 @@
 - [x] 修正首頁 SSR hydration mismatch：通知 live-region 僅在 hydration 後於用戶端掛載，其餘頁面 DOM 保持一致。
 
 ## GitHub Pages 目錄與既有新增選輯
-- [x] 導覽、返回目錄、專輯與文章連結使用 /underground-sound-archive/ 基底路徑；錨點定位正確，外部連結不改。
+- [x] Pages 保留歷史 /underground-sound-archive/ 子目錄支援，也驗證目前 https://chrysalismusicusa.com 根路徑正式部署；站內錨點和外部連結定位正確。
 - [x] Pages 建置提供各頁初始 HTML、正確 canonical、og:url、sitemap 和真正的 404 頁；保留 Manus 預覽根目錄相容性。
 - [x] Dreamshade《The Gift of Life》與 Dream Theater《Six Degrees of Inner Turbulence》有查證過的封面、年份、曲目數、聽點、完整故事導讀及來源；兩團均有有效索引頁。
 - [x] 首頁專輯數量隨資料更新；已新增選輯進入專輯目錄與 sitemap。
@@ -82,3 +82,8 @@
 - [x] 新增 My Chemical Romance 2006 年《The Black Parade》標準版專輯資料，使用 14 軌 CD 版本並註明第 14 軌〈Blood〉是隱藏曲；不混入豪華版或 20 週年版加收曲目，沒有查證的 MusicBrainz ID 留空。
 - [x] 撰寫 500–800 個中文字、4–6 段的原創完整專輯導讀，涵蓋 Patient 專輯概念、曲序與具體聆聽路徑；以已讀至少 2 個 HTTPS 來源支撐可核對事實，明確區分評論者觀點和本文聽感，不把專輯概念套成每首歌唯一歌意、不引用歌詞。
 - [x] 使用 Apple Music 正式方形 artwork 並標示封面來源；專輯頁、MCR 藝人索引、首頁、搜尋、年代／類型篩選、SEO 初始 HTML、canonical、JSON-LD、sitemap 及路由 manifest 同步。保留〈Disenchanted〉獨立單曲導讀，專輯故事另計為一篇；全站更新為 30 張專輯、19 個樂團、33 篇唯一導讀、63 個公開路由。
+
+## 小男孩樂團〈轉身以後〉與《第三個願望》
+- [x] 新增小男孩樂團〈轉身以後〉歌曲導讀及所屬《第三個願望 The 3rd Wish》獨立專輯介紹；使用 2019 年 6 月 12 日標準版的 10 首曲序，明確標示歌曲是第 4 首、3 分 54 秒，專輯約 36 分鐘；不混算 11 首分享典藏版加收曲。
+- [x] 歌曲文章與專輯故事各自為 500–800 個中文字、4–6 段的原創內容，各列至少 2 個已讀 HTTPS 來源；採滾石唱片官方 MV、Apple Music、Hit FM 及滾石商品資料核實歌曲發行、曲序、歌曲合作與編曲背景。清楚區分唱片公司對歌曲的描述與本刊聆聽詮釋，不引用歌詞、不臆測真實戀情、不捏造 MusicBrainz ID；使用 Apple Music 同張專輯的方形 artwork，標明封面來源。
+- [x] 歌曲文章連到所屬專輯，專輯頁回連歌曲導讀，兩篇不同故事分開計入小男孩樂團導讀數；站內搜尋可依團名、歌曲、專輯與正文找到內容，繁中團名使用穩定小男孩樂團頁 slug。更新首頁索引、類型／年代、初始 SSR HTML、metadata、canonical、JSON-LD、sitemap 和 manifest；正式網域沿用 https://chrysalismusicusa.com 與根路徑 /，完成後為 31 張專輯、14 篇文章、20 個樂團、35 篇唯一導讀及 66 個公開路由。

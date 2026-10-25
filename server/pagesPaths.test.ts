@@ -51,7 +51,7 @@ describe("GitHub Pages 專案目錄", () => {
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(63);
+    expect(urls).toHaveLength(66);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
     expect(urls.every(url => url.endsWith("/"))).toBe(true);
   });
@@ -89,5 +89,31 @@ describe("GitHub Pages 專案目錄", () => {
     }
     expect(albums.find(item => item.artist === "Dreamshade")?.year).toBe("2013");
     expect(albums.find(item => item.artist === "Dream Theater")?.trackCount).toBe(13);
+  });
+});
+
+describe("目前正式自訂網域根路徑部署", () => {
+  const rootOrigin = "https://chrysalismusicusa.com";
+  const rootOptions = { origin: rootOrigin, basePath: "/" };
+
+  it("全部 66 個路由在根網域都有正確 canonical、JSON-LD 與站內連結", () => {
+    const paths = getPublicPaths();
+    expect(paths).toHaveLength(66);
+    for (const route of paths) {
+      const page = renderDocument(template, route, rootOptions);
+      expect(page.status, route).toBe(200);
+      for (const href of [...page.html.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1])) {
+        if (href.startsWith("/")) expect(href, `${route} ${href}`).not.toMatch(/^\/underground-sound-archive(?:\/|$)/);
+      }
+      const metadata = metadataForPath(route, rootOptions);
+      const path = route === "/" ? "/" : `${route}/`;
+      expect(metadata.canonical, route).toBe(`${rootOrigin}${path}`);
+      expect(metadata.structuredData[0].url, route).toBe(`${rootOrigin}/`);
+    }
+    const docs = renderSeoDocuments(rootOptions);
+    expect(docs.robots).toContain(`Sitemap: ${rootOrigin}/sitemap.xml`);
+    const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+    expect(urls).toHaveLength(66);
+    expect(urls.every(url => url.startsWith(`${rootOrigin}/`))).toBe(true);
   });
 });

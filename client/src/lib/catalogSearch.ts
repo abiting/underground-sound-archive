@@ -6,10 +6,21 @@ const artistSlugOverrides: Record<string, string> = {
   "生物股長": "ikimono-gakari",
   "いきものがかり": "ikimono-gakari",
   "四分衛": "quarterback",
+  "小男孩樂團": "men-envy-children",
+  "Men Envy Children": "men-envy-children",
 };
 
 export function artistSlug(name: string) {
   return artistSlugOverrides[name] ?? name.toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+const artistSearchAliases: Record<string, string[]> = {
+  "小男孩樂團": ["Men Envy Children", "MEC", "MECBand"],
+  "Men Envy Children": ["小男孩樂團", "MEC", "MECBand"],
+};
+
+function searchNames(artist: string) {
+  return [artist, ...(artistSearchAliases[artist] ?? [])];
 }
 
 export function decadeOf(year: string) {
@@ -25,14 +36,14 @@ function matches(text: string, genre: string, year: string, filters: CatalogFilt
 
 export function filterAlbums(records: Album[], filters: CatalogFilters) {
   return records.filter(album => matches(
-    [album.title, album.artist, album.genre, album.summary, album.listeningNotes, ...album.tracks].filter(Boolean).join(" "),
+    [album.title, ...searchNames(album.artist), album.genre, album.summary, album.listeningNotes, ...album.tracks].filter(Boolean).join(" "),
     album.genre, album.year, filters,
   ));
 }
 
 export function filterArticles(notes: Article[], filters: CatalogFilters) {
   return notes.filter(article => matches(
-    [article.title, article.artist, article.category, article.summary, article.body, ...article.tags].join(" "),
+    [article.title, ...searchNames(article.artist), article.category, article.summary, article.body, ...article.tags].join(" "),
     article.category, article.year, filters,
   ));
 }
@@ -55,18 +66,17 @@ export function buildArtistIndex(records: Album[], notes: Article[]) {
     return entry;
   };
   const articleIds = new Set(notes.map(note => note.id));
-  const articleAlbumIds = new Set(notes.flatMap(note => note.albumId ? [note.albumId] : []));
-  const albumIds = new Set(records.map(record => record.id));
   for (const note of notes) {
     const linkedAlbum = (note.albumId && records.find(record => record.id === note.albumId))
       || records.find(record => record.articleId === note.id);
     const entry = getEntry(linkedAlbum?.artist ?? note.artist, linkedAlbum?.genre ?? note.category);
-    entry.guideKeys.add(linkedAlbum ? `album:${linkedAlbum.id}` : `article:${note.id}`);
+    const isAlbumArticle = linkedAlbum?.articleId === note.id;
+    entry.guideKeys.add(isAlbumArticle ? `album:${linkedAlbum.id}` : `article:${note.id}`);
   }
   for (const record of records) {
     const entry = getEntry(record.artist, record.genre);
     entry.albumCount += 1;
-    if (record.listeningNotes?.trim() || (record.articleId && articleIds.has(record.articleId)) || articleAlbumIds.has(record.id)) {
+    if (record.listeningNotes?.trim() || (record.articleId && articleIds.has(record.articleId))) {
       entry.guideKeys.add(`album:${record.id}`);
     }
   }

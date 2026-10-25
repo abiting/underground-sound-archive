@@ -33,4 +33,35 @@ Freshmusic 的回顧提到，〈雨和眼淚〉由陳偉製作，讓阿山的詞
       { name: "Freshmusic：四分衛 Deep Blue 專輯回顧", url: "https://freshmusic.sg/2012/01/25/freshmusic-10年100大專輯-026-四分衛-《deep-blue》/" },
     ],
   },
+  {
+    id: "men-envy-children-third-wish",
+    artist: "小男孩樂團",
+    title: "第三個願望 The 3rd Wish",
+    year: "2019",
+    trackCount: 10,
+    genre: "台灣流行搖滾",
+    trackCountNote: "採 Apple Music 與滾石唱片標準版曲序相同的 2019 年 6 月 12 日 10 首版本；分享典藏版另加〈站在你的左邊〉，不混入本頁曲數。〈轉身以後〉位於第 4 首，長 3 分 54 秒。",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/eb/1b/80/eb1b8062-fba1-1855-046e-4749b7cb3292/4710149672278.jpg/600x600bb.jpg",
+    coverSource: "Apple Music／iTunes 專輯 artwork",
+    coverSourceUrl: "https://music.apple.com/tw/album/%E7%AC%AC%E4%B8%89%E5%80%8B%E6%84%BF%E6%9C%9B/1466752361",
+    musicbrainzUrl: "",
+    storeUrl: "https://music.apple.com/tw/album/%E7%AC%AC%E4%B8%89%E5%80%8B%E6%84%BF%E6%9C%9B/1466752361",
+    tracks: ["征服 Conquer", "轉身以後", "Goodbye My Friend"],
+    summary: "從第三張創作專輯的「第三個願望」概念，到第 4 首〈轉身以後〉與後半的友情、影集歌曲，回看小男孩樂團如何把七年玩團歷程與人生體會收進 2019 年《第三個願望 The 3rd Wish》。",
+    listeningNotes: `《第三個願望 The 3rd Wish》是小男孩樂團於 2019 年推出的第三張創作專輯。Apple Music 標準版目錄列出 10 首歌、全長約 36 分鐘，發行日期為 6 月 12 日；滾石唱片商城也以 RD2070 標示同日發行。本文依這個 10 首標準版介紹，與後來增加歌曲的「分享典藏版」分開計算，避免把再版曲目混入原始曲序。
+
+滾石的專輯文案以「一、二、三個願望」描述作品架構：先從理想人生與夢想說起，再落到做最想做的事，第三個願望則指向心中最重要的目標。唱片公司也把這張專輯定位成累積約七年玩團歷程後的新里程碑，記錄樂團走過的酸甜苦辣與人生體會。這是發行方為專輯寫下的企劃語言；我會把「願望」當成貫穿全輯的線索，而不替每首歌指定同一個答案。
+
+標準版從〈征服〉、〈男孩與獅王〉和〈我的驕傲〉走入前段，第四首〈轉身以後〉將情緒轉向關係中的離開，之後接上〈旅行公路〉與〈薛丁格的貓〉。把這段連著播放，會感到第 4 首像讓步伐稍微停頓，再重新往前；這是根據官方曲序做的編輯觀察，不代表唱片公司宣告了明確的章節設計。另一個入口是首曲和第三首，先聽專輯開場如何建立不同於告別曲的方向。
+
+後半段由〈Goodbye My Friend〉、〈Never the Point〉、〈We Are〉與〈Rise and Shine〉繼續展開。滾石資料提到，〈征服〉與〈We Are〉曾作為 Lamigo 桃猿年度歌曲，〈Never the Point〉是影集《雙城故事》的片尾曲中文版，〈轉身以後〉則是《月下－為愛墜落的祂》的插曲。這些歌曲的媒介背景各不相同，顯示專輯既收入樂團的創作，也把作品帶往戲劇與運動現場；它們在曲序裡仍共同構成一張唱片。
+
+重聽時建議先完整播放 10 首，再回頭比較〈征服〉、〈轉身以後〉和〈Goodbye My Friend〉：從行動、告別到友情，作品的關係視角逐漸轉換。標準版在第 10 首〈Rise and Shine〉收尾；如果手上聽的是 11 首分享典藏版，則還多了〈站在你的左邊〉，那是另一個經滾石說明的發行版本。把版本辨清之後，《第三個願望》既能讀作七年樂團歷程的整理，也能聽成仍向前許願的開放結尾。`,
+    sources: [
+      { name: "Apple Music：《第三個願望》標準版、日期與曲序", url: "https://music.apple.com/tw/album/%E7%AC%AC%E4%B8%89%E5%80%8B%E6%84%BF%E6%9C%9B/1466752361" },
+      { name: "滾石唱片商城：《第三個願望 The 3rd Wish》標準版曲目與介紹", url: "https://shop.rockmall.com.tw/product_view.php?id=59857" },
+      { name: "Hit FM：《第三個願望 The 3rd Wish》專輯資料與曲序", url: "https://www.hitoradio.com/newweb/17208album" },
+      { name: "滾石唱片商城：《第三個願望》分享典藏版與加收曲說明", url: "https://shop.rockmall.com.tw/product_view.php?id=60640" },
+    ],
+  },
 ];

@@ -15,6 +15,7 @@ export default function AlbumPage({ id }: { id: string }) {
     return <SiteLayout><div className="not-found-page"><h1>找不到這張唱片</h1><a href={withBasePath("/#explore", base)}>回到唱片選輯 <ArrowUpRight size={15} /></a></div></SiteLayout>;
   }
   const article = articles.find((item) => item.id === album.articleId);
+  const relatedArticles = articles.filter((item) => item.albumId === album.id && item.id !== album.articleId);
 
   return (
     <SiteLayout>
@@ -50,6 +51,14 @@ export default function AlbumPage({ id }: { id: string }) {
             {album.tracks.map((track, index) => <div className="track-row" key={track}><span>{String(index + 1).padStart(2, "0")}</span><Music2 size={15} /><b>{track}</b><span>聽點</span></div>)}
           </div>
         </section>
+        {relatedArticles.length > 0 && <section className="track-note-section related-song-guides">
+          <div className="track-note-heading"><Music2 size={19} /><div><p className="section-kicker">RELATED SONG GUIDES</p><h2>所屬歌曲導讀</h2></div></div>
+          <div className="track-list">
+            {relatedArticles.map((relatedArticle, index) => <Link className="track-row" href={`/article/${relatedArticle.slug}`} key={relatedArticle.id}>
+              <span>{String(index + 1).padStart(2, "0")}</span><Music2 size={15} /><b>{relatedArticle.title}</b><span>閱讀歌曲導讀</span>
+            </Link>)}
+          </div>
+        </section>}
         {(article || album.listeningNotes) && (
           <section className="album-review-section">
             <div className="section-heading"><div><p className="section-kicker">THE LISTENING NOTES</p><h2>專輯導讀</h2></div>{article && <Link href={`/article/${article.slug}`}>以文章頁閱讀同一篇導讀 <ArrowUpRight size={14} /></Link>}</div>

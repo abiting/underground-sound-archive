@@ -1,14 +1,14 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 13 篇文章、30 張專輯、19 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 14 篇文章、31 張專輯、20 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 63 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 66 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
-正式公開網域尚未設定。以 site.config.ts 的 publicOrigin 或 PUBLIC_SITE_ORIGIN 產生 canonical、og:url、正式 sitemap 和可索引 robots；未設定時省略 canonical／og:url、預覽 noindex、robots 禁止抓取，並提供 sitemap 模板。拒絕已知暫時預覽網域、本機位址、帳密、查詢及路徑。正式發佈後需核對 gateway 的真實 sitemap、robots 與缺頁回應，不將預覽驗證誤報為搜尋收錄。
+正式網域為 https://chrysalismusicusa.com，由 GitHub Actions 的 PUBLIC_SITE_ORIGIN 提供給 canonical、og:url、正式 sitemap 和可索引 robots；目前 Pages 網站根路徑為 /，預覽未設定網域時仍 noindex，並提供 sitemap 模板。拒絕已知暫時預覽網域、本機位址、帳密、查詢及路徑。正式發佈後需核對 gateway 的真實 sitemap、robots 與缺頁回應，不將預覽驗證誤報為搜尋收錄。
 
 ## Hydration 相容性
 
@@ -30,11 +30,11 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 - server/seo.test.ts、staticSeo.test.ts：metadata、初始正文、指定連結及 production 深連結測試。
 - client/public：favicon、分享圖片與路由清單。
 
-## GitHub Pages 子目錄
+## GitHub Pages 自訂網域
 
-使用者現已部署至 https://abiting.github.io/underground-sound-archive/。保留其 GitHub Actions workflow，但建置改為既有靜態預渲染流程。由 SITE_BASE_PATH 驅動 Vite、Wouter 與 SEO 的子目錄前綴，PUBLIC_SITE_ORIGIN 為 https://abiting.github.io；預覽預設仍為根目錄及 noindex。原生章節連結使用 Router 的 base，專輯／文章 Link 由 Wouter 統一產生。sitemap、canonical、JSON-LD 與頁內路由均指向同一專案目錄。現收錄 30 張專輯與 19 個樂團、33 篇唯一導讀及 63 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
+目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 31 張專輯與 20 個樂團、35 篇唯一導讀及 66 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
 
-既有 15 張新增專輯各有 500–800 個中文字的故事導讀，涵蓋創作／發行背景、曲目結構和聆聽脈絡，並列出至少兩筆外部可核對來源。樂團索引與詳情頁使用相同的唯一導讀計數；一篇同時出現在專輯頁及文章頁的內容只計一次，獨立歌曲導讀各計一次。
+專輯與文章內文皆有 500–800 個中文字的原創導讀，含可核對發行來源和具體聆聽線索。樂團索引統計相同內容跨專輯與文章路由只計一次；專輯故事與其所屬歌曲的不同導讀分開計數。
 
 ## 全樂團追加選輯（2026-10-16）
 
@@ -52,7 +52,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## 單曲導讀
 
-加入生物股長 2013 年單曲《笑顏》（《笑顔》）的獨立文章和 artist route。把指定的「蓋諾賽克特」連結嵌在電影標題文字中；日本團名使用固定 `ikimono-gakari` slug。更新目錄、SEO、初始 HTML 和 GitHub Pages 清單，保持單曲文章與專輯型錄分離。現有文章數保持 12 篇。
+加入生物股長 2013 年單曲《笑顏》（《笑顔》）的獨立文章和 artist route。把指定的「蓋諾賽克特」連結嵌在電影標題文字中；日本團名使用固定 `ikimono-gakari` slug。更新目錄、SEO、初始 HTML 和 GitHub Pages 清單，保持單曲文章與專輯型錄分離；當時已有 12 篇文章，後續篇數以本計畫開頭的目前總數為準。
 
 ## 四分衛《Deep Blue》（2026-10-17）
 
@@ -73,3 +73,9 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 將 2006 年標準版收進獨立 `indieAlbums.ts`，沿用 catalog 聚合、ArtistPage、AlbumPage、全文搜尋、去重導讀計數與既有 SEO 靜態預渲染器。以 Apple Music 公開正式 artwork URL 作封面並標示來源；Apple 美國目錄的 600×600 圖已核對可用。使用 My Chemical Romance 官方 Warner Records 商店的 14 軌標準 CD 曲目表，明確把末軌〈Blood〉列為隱藏曲，不混計 Deluxe 或 20 週年版加收曲；無法確認的 MusicBrainz release-group ID 保持空值。
 
 新增一篇 500–800 個中文字、4–6 段的完整專輯故事，將 Apple Music 發行／曲序資料、Alternative Press 2006 專訪及 Guardian 同期評論與本文聆聽觀察分開表述。專輯導讀使用獨立 `listeningNotes`，保留〈Disenchanted〉單曲文章為不同內容、不以 `articleId`／`albumId` 誤作同一篇；MCR 藝人頁呈現一張專輯及兩篇不同導讀。更新後網站共 30 張專輯、19 個樂團、33 篇唯一導讀及 63 個公開路由。
+
+## 小男孩樂團〈轉身以後〉與《第三個願望》（2026-10-25）
+
+將小男孩樂團（Men Envy Children）〈轉身以後〉歌篇掛接到 2019 年標準版《第三個願望 The 3rd Wish》，而非把歌曲誤當同名單曲專輯。標準版 10 首、36 分鐘；〈轉身以後〉第 4 首、3 分 54 秒。由 Apple Music、滾石唱片商品資料、Hit FM 和滾石官方 MV 核實版本、曲序、署名與歌曲說明；封面沿用已驗證的 Apple Music 600×600 artwork 並標來源，不捏造 MusicBrainz ID。
+
+歌曲導讀與專輯故事是兩篇各 500–800 個中文字、4–6 段的不同內容。歌曲文章連結專輯頁，專輯頁列出相關歌曲導讀；導讀計數只合併同一篇專輯文章，不合併獨立歌曲故事與該專輯的獨立 listeningNotes。使用既有 ArtistPage、ArticlePage、AlbumPage、站內搜尋、繁中樂團 slug 映射與 SEO 靜態渲染。完成後共 31 張專輯、14 篇文章、20 個樂團、35 篇唯一導讀與 66 個公開路由。
