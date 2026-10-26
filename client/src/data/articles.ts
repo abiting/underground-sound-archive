@@ -1,4 +1,5 @@
 import type { Article } from "./types";
+import { batch51Articles } from "./batch51Articles";
 
 export const articles: Article[] = [
   {
@@ -403,3 +404,5 @@ articles.push({
 
 回到曲序，前面的〈我的驕傲〉之後接〈轉身以後〉，再轉入〈旅行公路〉，第四首就成了開場與後段之間一個短暫回身的節點。可以先連聽這三首，再播放完整 10 首標準版，觀察離別的歌如何改變專輯的步伐。歌曲的力道不只在副歌寫下的情緒，也在編曲讓速度變慢的那一刻：身體仍往前走，心卻需要多一點時間鬆開。`,
 });
+
+articles.push(...batch51Articles);

@@ -11,6 +11,20 @@ export default function ArticlePage({ slug }: { slug: string }) {
   const article = articles.find((item) => item.slug === slug);
   if (!article) return <SiteLayout><div className="not-found-page"><h1>找不到這篇導讀</h1><Link href="/">回到首頁 <ArrowUpRight size={15} /></Link></div></SiteLayout>;
   const album = albums.find((item) => item.id === article.albumId);
+  const availableSources = [
+    ...article.sources,
+    ...(album?.musicbrainzUrl ? [{ name: "專輯資料：MusicBrainz", url: album.musicbrainzUrl }] : []),
+    ...(album ? [
+      { name: `封面來源：${album.coverSource}`, url: album.coverSourceUrl },
+      { name: "在 Apple Music 查看作品", url: album.storeUrl },
+    ] : []),
+  ];
+  const seenSourceUrls = new Set<string>();
+  const sourceLinks = availableSources.filter((source) => {
+    if (seenSourceUrls.has(source.url)) return false;
+    seenSourceUrls.add(source.url);
+    return true;
+  });
 
   return (
     <SiteLayout>
@@ -37,10 +51,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             <div className="article-sources">
               <h2>查證與延伸</h2>
               <p>本文為原創導讀；基本資料與脈絡參考以下來源。</p>
-              {article.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
-              {album?.musicbrainzUrl && <a href={album.musicbrainzUrl} target="_blank" rel="noreferrer">專輯資料：MusicBrainz<ArrowUpRight size={13} /></a>}
-              {album && <a href={album.coverSourceUrl} target="_blank" rel="noreferrer">封面來源：{album.coverSource}<ArrowUpRight size={13} /></a>}
-              {album && <a href={album.storeUrl} target="_blank" rel="noreferrer">在 Apple Music 查看作品<ArrowUpRight size={13} /></a>}
+              {sourceLinks.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
             </div>
           </article>
         </div>

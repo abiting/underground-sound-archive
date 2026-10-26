@@ -16,6 +16,12 @@ export default function AlbumPage({ id }: { id: string }) {
   }
   const article = articles.find((item) => item.id === album.articleId);
   const relatedArticles = articles.filter((item) => item.albumId === album.id && item.id !== album.articleId);
+  const seenSourceUrls = new Set<string>([album.coverSourceUrl, album.storeUrl, ...(album.musicbrainzUrl ? [album.musicbrainzUrl] : [])]);
+  const researchSources = [...(article?.sources || []), ...(album.sources || [])].filter((source) => {
+    if (seenSourceUrls.has(source.url)) return false;
+    seenSourceUrls.add(source.url);
+    return true;
+  });
 
   return (
     <SiteLayout>
@@ -69,7 +75,7 @@ export default function AlbumPage({ id }: { id: string }) {
                 <p>封面來源為 {album.coverSource}，作品權利屬於原權利人。發行與創作資料附於下列來源，作品資訊可在 Apple Music 查看。</p>
                 <a href={album.coverSourceUrl} target="_blank" rel="noopener noreferrer">封面來源：{album.coverSource} <ArrowUpRight size={13} /></a>
                 {album.musicbrainzUrl && <a href={album.musicbrainzUrl} target="_blank" rel="noopener noreferrer">專輯中繼資料：MusicBrainz <ArrowUpRight size={13} /></a>}
-                {[...(article?.sources || []), ...(album.sources || [])].map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
+                {researchSources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.name}<ArrowUpRight size={13} /></a>)}
               </div>
             </div>
           </section>

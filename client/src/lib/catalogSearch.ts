@@ -8,6 +8,7 @@ const artistSlugOverrides: Record<string, string> = {
   "四分衛": "quarterback",
   "小男孩樂團": "men-envy-children",
   "Men Envy Children": "men-envy-children",
+  "Motörhead": "motorhead",
 };
 
 export function artistSlug(name: string) {

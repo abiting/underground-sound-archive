@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 14 篇文章、31 張專輯、20 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 65 篇文章、82 張專輯、71 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 66 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 219 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -32,7 +32,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## GitHub Pages 自訂網域
 
-目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 31 張專輯與 20 個樂團、35 篇唯一導讀及 66 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
+目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 82 張專輯與 71 個樂團、137 篇唯一導讀及 219 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
 
 專輯與文章內文皆有 500–800 個中文字的原創導讀，含可核對發行來源和具體聆聽線索。樂團索引統計相同內容跨專輯與文章路由只計一次；專輯故事與其所屬歌曲的不同導讀分開計數。
 
@@ -79,3 +79,14 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 將小男孩樂團（Men Envy Children）〈轉身以後〉歌篇掛接到 2019 年標準版《第三個願望 The 3rd Wish》，而非把歌曲誤當同名單曲專輯。標準版 10 首、36 分鐘；〈轉身以後〉第 4 首、3 分 54 秒。由 Apple Music、滾石唱片商品資料、Hit FM 和滾石官方 MV 核實版本、曲序、署名與歌曲說明；封面沿用已驗證的 Apple Music 600×600 artwork 並標來源，不捏造 MusicBrainz ID。
 
 歌曲導讀與專輯故事是兩篇各 500–800 個中文字、4–6 段的不同內容。歌曲文章連結專輯頁，專輯頁列出相關歌曲導讀；導讀計數只合併同一篇專輯文章，不合併獨立歌曲故事與該專輯的獨立 listeningNotes。使用既有 ArtistPage、ArticlePage、AlbumPage、站內搜尋、繁中樂團 slug 映射與 SEO 靜態渲染。完成後共 31 張專輯、14 篇文章、20 個樂團、35 篇唯一導讀與 66 個公開路由。
+
+
+## 50 個新樂團選輯與 DEEN〈君がいない夏〉（2026-10-26）
+
+本次新增 50 個既有目錄未收錄且彼此不同的樂團，各一張專輯頁與一首所屬歌曲導讀；再為 DEEN 新增《SINGLES +1》專輯頁及〈君がいない夏〉歌曲文章，故合計 51 張專輯、51 首歌篇。候選清單保存於 `.research/batch51-candidates.json`，前 50 團排除現有 20 團，DEEN 為第 51 團；候選涵蓋經典／硬式／前衛搖滾、後龐克、另類／油漬搖滾、重金屬與日本搖滾。候選曲目與年份僅為研究方向，正式值以研究時實際閱讀的多個來源為準；《SINGLES +1》須辨識為精選合輯，不誤稱錄音室原創專輯。這次明確的 51 首批次需求優先於平日每日五篇偏好，不另外建立排程。
+
+以同一工作流逐項分派，每個專輯及其指定歌曲由一位独立研究者負責，採隔離瀏覽器，傳回相同型別化結構及每一主張的來源筆記。每組需核對原始發行年份、採用版次及全曲數、指定歌曲隸屬與曲序、可核實的創作／製作背景和準確方形封面。至少閱讀兩個可靠 HTTPS 來源，其中包含官方／唱片公司／正式串流目錄；背景另參考可靠媒體訪談或評論。不得以搜尋片段、粉絲論壇、維基百科單一來源直接生成故事；不猜 MusicBrainz ID、不引用歌詞、不把主觀歌意當唯一事實。真實封面以搜尋找到並視覺核對的官方 artwork 或已核實 Cover Art Archive 為準，保留来源與原權利人聲明。
+
+每張專輯有獨立 500–800 個中文字、4–6 段完整介紹；歌曲另有同規格獨立導讀，使用自然中長尾標題、摘要及關鍵字、繁體中文、全形括號與中英數字間隔。正文沿用純文字與既有安全連結解析，不插入 Markdown 標題或粗體。DEEN 歌曲文章必須核實並明確寫出〈君がいない夏〉是《名偵探柯南》第 71 集 ～ 第 83 集片尾曲，將這段關聯文字連到 https://coai.abiting.cc 。
+
+主代理以受控匯入腳本將已完成研究聚合為獨立 `batch51Albums.ts`、`batch51Articles.ts`，由 `catalog.ts` 和 `articles.ts` 接入，不改寫原有唱片資料。51 首歌曲文章以 `albumId` 指向各自所屬專輯，專輯不設定 `articleId`，讓專輯故事與歌曲文章各自計數；既有 ArticlePage／AlbumPage 回鏈與封面顯示沿用。新樂團 slug 與英文／繁中文搜索別名一致，Motörhead 等非 ASCII 藝名用明確穩定映射。本次完成並核對共 82 張專輯、65 篇文章、71 個樂團、137 篇唯一導讀及 219 個公開路由。沿用 https://chrysalismusicusa.com 根路徑、GitHub Actions 和既有 SSR 靜態預渲染，同步每頁 metadata、canonical、JSON-LD、manifest、sitemap、robots 及 noindex 404；在共用 `client/index.html` head 放置使用者提供的 Ahrefs async script，所有靜態頁只出現一次，發布後核對 data-key 與外部腳本回應；不要更換品牌或網站設計。保留所有歷史未追蹤研究與參考檔；只提交此次必要資料、程式、測試、計畫與待辦。

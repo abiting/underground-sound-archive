@@ -64,6 +64,16 @@ function uniqueKeywords(values: string[]): string[] {
   return Array.from(new Set(values)).slice(0, 8);
 }
 
+function boundedDescription(preferred: string, fallback: string): string {
+  const trimToLimit = (value: string) => `${value.slice(0, 159).trimEnd()}…`;
+  const primary = preferred.trim();
+  const alternate = fallback.trim();
+  if (primary.length >= 50 && primary.length <= 160) return primary;
+  if (alternate.length >= 50) return alternate.length <= 160 ? alternate : trimToLimit(alternate);
+  if (primary.length >= 50) return primary.length <= 160 ? primary : trimToLimit(primary);
+  return `${primary} ${alternate}`.slice(0, 160);
+}
+
 export function metadataForPath(pathname: string, options: SeoOptions = {}): PageMetadata {
   const path = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
   const origin = normalizePublicOrigin(options.origin);
@@ -83,9 +93,13 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
     const article = articles.find((item) => path === `/article/${item.slug}`);
     if (article) {
       const album = albums.find((item) => item.id === article.albumId);
+      const preferredTitle = `${article.title}｜${BRAND_NAME}`;
+      const articleTitle = preferredTitle.length > 60
+        ? article.title
+        : preferredTitle.length < 30 ? `${article.title} 歌曲導讀｜${BRAND_NAME} ${ENGLISH_NAME}` : preferredTitle;
       Object.assign(metadata, {
-        kind: "article", status: 200, title: article.albumId ? `${article.title}｜${BRAND_NAME}` : `${article.title}｜${BRAND_NAME} ${ENGLISH_NAME}`,
-        description: `${article.summary} 本篇從 ${article.year} 年的作品脈絡、聲音風格與聆聽細節切入，附查證來源與延伸閱讀。`,
+        kind: "article", status: 200, title: articleTitle,
+        description: boundedDescription(`${article.summary} 本篇從 ${article.year} 年的作品脈絡、聲音風格與聆聽細節切入，附查證來源與延伸閱讀。`, article.summary),
         keywords: uniqueKeywords([article.artist, article.category, ...article.tags, "專輯導讀", BRAND_NAME]),
         image: album?.coverUrl || socialImage,
         imageAlt: album ? `${album.artist}《${album.title}》專輯封面` : `${article.artist}文章頁的場刊主視覺`,
@@ -102,9 +116,13 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
   } else if (path.startsWith("/album/")) {
     const album = albums.find((item) => path === `/album/${item.id}`);
     if (album) {
+      const albumTitleCore = `${album.artist}《${album.title}》`;
+      const detailedAlbumTitle = `${albumTitleCore}${album.title.length > 25 ? "專輯導讀" : "完整專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`;
+      const albumTitle = detailedAlbumTitle.length <= 60 ? detailedAlbumTitle : `${albumTitleCore}｜${BRAND_NAME}`;
+      const albumDescription = `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：以${album.genre}為聲音底色，收錄 ${album.trackCount} 首曲目與代表聽點。閱讀完整專輯故事、封面來源和相關樂團文章，深入唱片脈絡。`;
       Object.assign(metadata, {
-        kind: "album", status: 200, title: `${album.artist}《${album.title}》${album.title.length > 25 ? "專輯導讀" : "完整專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`,
-        description: `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：以${album.genre}為聲音底色，收錄 ${album.trackCount} 首曲目與代表聽點。閱讀完整專輯故事、封面來源和相關樂團文章，深入唱片脈絡。`,
+        kind: "album", status: 200, title: albumTitle,
+        description: boundedDescription(albumDescription, album.summary || albumDescription),
         keywords: uniqueKeywords([album.artist, album.title, album.genre, ...album.tracks.slice(0, 1), "專輯評論", "曲目介紹", BRAND_NAME]),
         image: album.coverUrl, imageAlt: `${album.artist}《${album.title}》專輯封面`,
       });
@@ -120,11 +138,16 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
       const category = related[0]?.category ?? records[0].genre;
       const representative = records[0];
       const tagKeywords = related[0]?.tags ?? ["代表專輯"];
+      const preferredArtistTitle = `${artist} 樂團介紹與代表專輯｜${BRAND_NAME} ${ENGLISH_NAME}`;
+      const artistTitle = preferredArtistTitle.length <= 60 ? preferredArtistTitle : `${artist} 樂團介紹與代表專輯｜${BRAND_NAME}`;
       Object.assign(metadata, {
-        kind: "artist", status: 200, title: `${artist} 樂團介紹與代表專輯｜${BRAND_NAME} ${ENGLISH_NAME}`,
-        description: related[0]
-          ? `認識 ${artist} 的${category}聲音風格、代表作品與唱片脈絡。破繭之聲樂團索引彙整原創專輯導讀、代表曲目和可核對的發行資料，帶你從樂團名字開始深入探索搖滾與金屬。`
-          : `查看破繭之聲收錄的 ${artist} 專輯資料、曲目重點與封面來源。從《${representative.title}》開始，認識這張 ${representative.year} 年的${category}代表作品。`,
+        kind: "artist", status: 200, title: artistTitle,
+        description: boundedDescription(
+          related[0]
+            ? `認識 ${artist} 的${category}聲音風格、代表作品與唱片脈絡。破繭之聲樂團索引彙整原創專輯導讀、代表曲目和可核對的發行資料，帶你從樂團名字開始深入探索搖滾與金屬。`
+            : `查看破繭之聲收錄的 ${artist} 專輯資料、曲目重點與封面來源。從《${representative.title}》開始，認識這張 ${representative.year} 年的${category}代表作品。`,
+          `${artist} 的樂團索引整理代表專輯、曲目重點與歌曲導讀，並連結可核對的發行資料與封面來源。`,
+        ),
         keywords: uniqueKeywords([artist, category, "樂團介紹", "代表專輯", ...tagKeywords, BRAND_NAME]),
         image: representative?.coverUrl || socialImage,
         imageAlt: representative ? `${artist} 代表專輯《${representative.title}》封面` : "紅色燈光下的地下搖滾演出：樂團索引頁配圖",

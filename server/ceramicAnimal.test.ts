@@ -45,10 +45,10 @@ describe("Ceramic Animal《Cosmic Eraser》與〈Eyes On You〉", () => {
   it("新增樂團、完整搜尋、曲風與年代篩選及去重導讀計數", () => {
     expect(artistSlug("Ceramic Animal")).toBe("ceramic-animal");
     const index = buildArtistIndex(albums, articles);
-    expect(albums).toHaveLength(31);
-    expect(index).toHaveLength(20);
+    expect(albums).toHaveLength(82);
+    expect(index).toHaveLength(71);
     expect(index.find(item => item.name === "Ceramic Animal")).toMatchObject({ slug: "ceramic-animal", albumCount: 1, guideCount: 1 });
-    expect(catalogGuideCount(albums, articles)).toBe(35);
+    expect(catalogGuideCount(albums, articles)).toBe(137);
     expect(catalogCategories(albums, articles)).toContain("迷幻搖滾");
     expect(catalogDecades(albums, articles)).toContain("2020s");
     for (const query of ["Ceramic Animal", "Cosmic Eraser", "Eyes On You", bodyLead(album.listeningNotes!)]) {
@@ -58,10 +58,10 @@ describe("Ceramic Animal《Cosmic Eraser》與〈Eyes On You〉", () => {
     expect(filterAlbums(albums, { query: "", category: "全部", decade: "2020s" }).map(item => item.id)).toContain(album.id);
   });
 
-  it("66 條公開路由、初始 HTML、封面 alt、SEO、藝人回鏈與 sitemap 同步", () => {
+  it("219 條公開路由、初始 HTML、封面 alt、SEO、藝人回鏈與 sitemap 同步", () => {
     const albumPath = `/album/${album.id}`;
     const artistPath = "/artist/ceramic-animal";
-    expect(getPublicPaths()).toHaveLength(66);
+    expect(getPublicPaths()).toHaveLength(219);
     expect(getPublicPaths()).toContain(albumPath);
     expect(getPublicPaths()).toContain(artistPath);
     const page = renderDocument(template, albumPath, options);
@@ -80,10 +80,10 @@ describe("Ceramic Animal《Cosmic Eraser》與〈Eyes On You〉", () => {
     expect(artistPage.html).toMatch(/01(?:<!-- -->)? GUIDES/);
     expect(metadataForPath(albumPath, options).structuredData.some(item => (item as { sameAs?: string[] }).sameAs)).toBe(false);
     const sitemap = renderSeoDocuments(options).sitemap;
-    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(66);
+    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(219);
     expect(sitemap).toContain(`https://abiting.github.io/underground-sound-archive${albumPath}/`);
     const manifest = JSON.parse(fs.readFileSync(new URL("../client/public/manus-routes.json", import.meta.url), "utf8")) as { routes: Array<{ path: string }> };
-    expect(manifest.routes).toHaveLength(66);
+    expect(manifest.routes).toHaveLength(219);
     expect(manifest.routes.map(route => route.path)).toContain(albumPath);
     expect(manifest.routes.map(route => route.path)).toContain(artistPath);
   });
