@@ -46,15 +46,15 @@
     },
     {
       "path": "/article/spitz-beautiful-fin",
-      "title": "美しい鰭：《黑鐵的魚影》片尾｜破繭之聲 Underground Sound Archive"
+      "title": "美しい鰭：《黑鐵的魚影》片尾 歌曲導讀｜破繭之聲 Underground Sound Archive"
     },
     {
       "path": "/article/ikimono-gakari-egao",
-      "title": "生物股長《笑顏》：把希望唱進電影片尾｜破繭之聲 Underground Sound Archive"
+      "title": "生物股長《笑顏》：把希望唱進電影片尾 歌曲導讀｜破繭之聲 Underground Sound Archive"
     },
     {
       "path": "/article/my-chemical-romance-disenchanted",
-      "title": "〈Disenchanted〉：黑色遊行裡的回望與失落｜破繭之聲 Underground Sound Archive"
+      "title": "〈Disenchanted〉：黑色遊行裡的回望與失落｜破繭之聲"
     },
     {
       "path": "/article/men-envy-children-turn-my-back",
@@ -198,7 +198,7 @@
     },
     {
       "path": "/article/tool-lateralus-song",
-      "title": "Tool 〈Schism〉：在斷裂節拍裡尋回連結｜破繭之聲"
+      "title": "Tool 〈Schism〉：在斷裂節拍裡尋回連結 歌曲導讀｜破繭之聲 Underground Sound Archive"
     },
     {
       "path": "/article/system-of-a-down-toxicity-song",
@@ -549,6 +549,10 @@
       "title": "Ceramic Animal 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
     },
     {
+      "path": "/artist/mygo",
+      "title": "MyGO!!!!! 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
+    },
+    {
       "path": "/album/queen-opera",
       "title": "Queen《A Night at the Opera》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
     },
@@ -875,6 +879,26 @@
     {
       "path": "/album/deen-singles-plus-one",
       "title": "DEEN《SINGLES +1》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/quarterback-rise",
+      "title": "四分衛《起來》 專輯導讀｜破繭之聲 Underground Sound Archive"
+    },
+    {
+      "path": "/album/mygo-meisekiha",
+      "title": "MyGO!!!!!《迷跡波》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/ave-mujica-elements",
+      "title": "Ave Mujica《ELEMENTS》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/linkin-park-meteora",
+      "title": "Linkin Park《Meteora》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/aerosmith-rocks",
+      "title": "Aerosmith《Rocks》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
     }
   ]
 }

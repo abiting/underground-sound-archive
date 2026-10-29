@@ -51,7 +51,7 @@ describe("GitHub Pages 專案目錄", () => {
     const docs = renderSeoDocuments(options);
     expect(docs.robots).toContain("Sitemap: https://abiting.github.io/underground-sound-archive/sitemap.xml");
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(219);
+    expect(urls).toHaveLength(225);
     expect(urls.every(url => url.startsWith(`${origin}/underground-sound-archive/`))).toBe(true);
     expect(urls.every(url => url.endsWith("/"))).toBe(true);
   });
@@ -96,9 +96,9 @@ describe("目前正式自訂網域根路徑部署", () => {
   const rootOrigin = "https://chrysalismusicusa.com";
   const rootOptions = { origin: rootOrigin, basePath: "/" };
 
-  it("全部 219 個路由在根網域都有正確 canonical、JSON-LD 與站內連結", () => {
+  it("全部 225 個路由在根網域都有正確 canonical、JSON-LD 與站內連結", () => {
     const paths = getPublicPaths();
-    expect(paths).toHaveLength(219);
+    expect(paths).toHaveLength(225);
     for (const route of paths) {
       const page = renderDocument(template, route, rootOptions);
       expect(page.status, route).toBe(200);
@@ -113,7 +113,7 @@ describe("目前正式自訂網域根路徑部署", () => {
     const docs = renderSeoDocuments(rootOptions);
     expect(docs.robots).toContain(`Sitemap: ${rootOrigin}/sitemap.xml`);
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    expect(urls).toHaveLength(219);
+    expect(urls).toHaveLength(225);
     expect(urls.every(url => url.startsWith(`${rootOrigin}/`))).toBe(true);
   });
 });

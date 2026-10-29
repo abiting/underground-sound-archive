@@ -60,14 +60,14 @@ describe("小男孩樂團〈轉身以後〉與《第三個願望》", () => {
     const entry = buildArtistIndex(albums, articles).find((item) => item.slug === artistSlug("小男孩樂團"));
     expect(entry).toMatchObject({ name: "小男孩樂團", albumCount: 1, guideCount: 2 });
     expect(articles.filter((item) => item.albumId === albumId)).toEqual([article]);
-    expect(catalogGuideCount(albums, articles)).toBe(137);
-    expect(albums).toHaveLength(82);
+    expect(catalogGuideCount(albums, articles)).toBe(142);
+    expect(albums).toHaveLength(87);
     expect(articles).toHaveLength(65);
-    expect(buildArtistIndex(albums, articles)).toHaveLength(71);
+    expect(buildArtistIndex(albums, articles)).toHaveLength(72);
   });
 
   it("歌曲文章和專輯頁互相連結，兩篇全文都在正式網域初始 HTML", () => {
-    expect(getPublicPaths()).toHaveLength(219);
+    expect(getPublicPaths()).toHaveLength(225);
     expect(getPublicPaths()).toEqual(expect.arrayContaining([albumPath, articlePath, artistPath]));
     const albumPage = renderDocument(template, albumPath, options);
     const articlePage = renderDocument(template, articlePath, options);
@@ -100,9 +100,9 @@ describe("小男孩樂團〈轉身以後〉與《第三個願望》", () => {
     expect(sitemap).toContain(`https://chrysalismusicusa.com${albumPath}/`);
     expect(sitemap).toContain(`https://chrysalismusicusa.com${articlePath}/`);
     expect(sitemap).toContain(`https://chrysalismusicusa.com${artistPath}/`);
-    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(219);
+    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(225);
     const manifest = JSON.parse(fs.readFileSync(new URL("../client/public/manus-routes.json", import.meta.url), "utf8")) as { routes: Array<{ path: string }> };
-    expect(manifest.routes).toHaveLength(219);
+    expect(manifest.routes).toHaveLength(225);
     expect(manifest.routes.map((route) => route.path)).toEqual(expect.arrayContaining([albumPath, articlePath, artistPath]));
   });
 });

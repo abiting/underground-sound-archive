@@ -20,7 +20,7 @@
 ## 破繭之聲站名與 SEO
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、65 篇文章、71 個樂團頁及 82 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、65 篇文章、72 個樂團頁及 87 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -96,3 +96,8 @@
 - [x] 〈君がいない夏〉特別說明是《名偵探柯南》第 71 集 ～ 第 83 集片尾曲，核對此關聯並把「《名偵探柯南》第 71 集 ～ 第 83 集片尾曲」超連結至 https://coai.abiting.cc 。
 - [x] 51 篇歌曲文章和各自專輯頁互相連結；專輯長文和歌曲導讀分開計數。完整加入樂團索引、首頁、團名／專輯／歌名／正文搜尋及類型年代篩選。Motörhead 等名稱使用穩定 slug，所有新增頁初始 HTML 含完整內容與來源、圖片 alt、metadata、canonical、JSON-LD；manifest 與 sitemap 全同步，沿用 https://chrysalismusicusa.com 根路徑與既有 GitHub Pages。完整新增後為 82 張專輯、65 篇文章、71 團、137 篇唯一導讀及 219 條公開路由；保留既有內容、品牌、舊路徑相容與真正 404。
 - [x] 將使用者提供的 Ahrefs analytics `<script>` 放在共用 HTML `<head>`，讓全部預渲染頁只載入一次；正式發布後確認頁面原始 HTML 含精確 src、data-key、async，並確認 analytics.ahrefs.com 腳本 URL 可取得正常 HTTP 回應。
+
+## 五張追加選輯（2026-10-29）
+- [x] 仔細研究後再增加五張專輯：四分衛再一張、新增 MyGO!!!!! 一張、Ave Mujica 再一張、Linkin Park 再一張、史密斯飛船（Aerosmith）一張。五張均不與原目錄重複；史密斯飛船沿用既有 Aerosmith 索引而不另建同一樂團，加入中文搜尋別名。
+- [x] 每張各有一篇 500–800 個中文字、4–6 段的完整繁中原創專輯導讀，含作品背景、曲序與具體聆聽路徑。正文不含 Markdown 標題／粗體，不引用歌詞，不把詮釋當唯一歌意；各附至少兩個實際閱讀的可靠 HTTPS 來源，含官方／唱片公司／正式串流目錄，核對年份、採用版次、全曲數及代表歌曲。EP／迷你專輯如採用，需明確標示，不混算影像、豪華版與再版加收內容。
+- [x] 五張使用各自準確的真實方形封面，標明來源與權利，不捏造 MusicBrainz ID。保留既有資料與設計；新作品可經首頁、全文搜尋、類型／年代及樂團索引找到，MyGO!!!!! 使用穩定 mygo slug。專輯頁初始 HTML 有全文與來源，含 alt、metadata、canonical、JSON-LD，完整同步 route manifest、sitemap 與正式 chrysalismusicusa.com 根路徑；維持 Ahrefs script、舊路徑相容及真正 noindex 404。預期 87 張專輯、65 篇文章、72 團、142 篇唯一導讀與 225 條公開路由。

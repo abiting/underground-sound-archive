@@ -9,6 +9,8 @@ const artistSlugOverrides: Record<string, string> = {
   "小男孩樂團": "men-envy-children",
   "Men Envy Children": "men-envy-children",
   "Motörhead": "motorhead",
+  "MyGO!!!!!": "mygo",
+  "史密斯飛船": "aerosmith",
 };
 
 export function artistSlug(name: string) {
@@ -18,6 +20,8 @@ export function artistSlug(name: string) {
 const artistSearchAliases: Record<string, string[]> = {
   "小男孩樂團": ["Men Envy Children", "MEC", "MECBand"],
   "Men Envy Children": ["小男孩樂團", "MEC", "MECBand"],
+  "Aerosmith": ["史密斯飛船", "史密斯飛船樂團"],
+  "史密斯飛船": ["Aerosmith"],
 };
 
 function searchNames(artist: string) {

@@ -118,7 +118,9 @@ export function metadataForPath(pathname: string, options: SeoOptions = {}): Pag
     if (album) {
       const albumTitleCore = `${album.artist}《${album.title}》`;
       const detailedAlbumTitle = `${albumTitleCore}${album.title.length > 25 ? "專輯導讀" : "完整專輯導讀、曲目與聆聽指南"}｜${BRAND_NAME}`;
-      const albumTitle = detailedAlbumTitle.length <= 60 ? detailedAlbumTitle : `${albumTitleCore}｜${BRAND_NAME}`;
+      const albumTitle = detailedAlbumTitle.length < 30
+        ? `${albumTitleCore} 專輯導讀｜${BRAND_NAME} ${ENGLISH_NAME}`
+        : detailedAlbumTitle.length <= 60 ? detailedAlbumTitle : `${albumTitleCore}｜${BRAND_NAME}`;
       const albumDescription = `探索 ${album.artist} 在 ${album.year} 年推出的《${album.title}》：以${album.genre}為聲音底色，收錄 ${album.trackCount} 首曲目與代表聽點。閱讀完整專輯故事、封面來源和相關樂團文章，深入唱片脈絡。`;
       Object.assign(metadata, {
         kind: "album", status: 200, title: albumTitle,

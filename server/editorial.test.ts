@@ -11,7 +11,7 @@ const genesectLink = "https://list.abitingpokedex.com/pokemon/genesect/zh";
 describe("Riff Atlas 唱片誌資料", () => {
   it("保留原有 10 篇專輯文章及 4 篇指定單曲文章，含 Spitz、生物股長、MCR 與小男孩樂團", () => {
     expect(articles).toHaveLength(65);
-    expect(albums).toHaveLength(82);
+    expect(albums).toHaveLength(87);
     expect(new Set(articles.map((item) => item.slug)).size).toBe(65);
     expect(articles.filter((item) => item.albumId)).toHaveLength(62);
     const special = articles.find((item) => item.artist === "Spitz");
