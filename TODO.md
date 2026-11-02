@@ -25,7 +25,7 @@
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
 - [x] 頁尾「資料來源與授權說明」使用 https://abiurl.me/Jc8uTl；專輯查證與封面來源連結不改。
-- [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abiting.cc。
+- [x] 頁尾增加「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abitingdiscord.com。
 - [x] 使用者已確認 abiting/underground-sound-archive 為 GitHub 目標儲存庫；Webdev 驗證切換完成，後續保存使用該儲存庫。
 - [x] 修正首頁 SSR hydration mismatch：通知 live-region 僅在 hydration 後於用戶端掛載，其餘頁面 DOM 保持一致。
 

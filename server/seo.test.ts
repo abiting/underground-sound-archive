@@ -108,7 +108,7 @@ describe("不執行 JavaScript 的內容可見性", () => {
     expect(h1).not.toContain("破繭之聲");
     expect(home.html).toContain('href="https://abiurl.me/Jc8uTl"');
     expect(home.html).toContain("資料來源與授權說明");
-    expect(home.html).toContain('href="https://abiting.cc"');
+    expect(home.html).toContain('href="https://abitingdiscord.com"');
     expect(home.html).toContain("本站由");
     expect(home.html).toContain("協助架設與維護");
     const special = renderDocument(template, "/article/spitz-beautiful-fin");

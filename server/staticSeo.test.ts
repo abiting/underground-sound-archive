@@ -36,7 +36,7 @@ describe("標準正式靜態伺服器 SEO", () => {
       expect(html.match(/<title[^>]*>(.*?)<\/title>/)?.[1], path).toContain(title);
       expect(html).toContain("application/ld+json");
       expect(html).toContain("<h1");
-      expect(html).toContain('href="https://abiting.cc"');
+      expect(html).toContain('href="https://abitingdiscord.com"');
     }
   });
 
