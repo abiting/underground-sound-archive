@@ -34,6 +34,10 @@ describe("GitHub Pages 專案目錄", () => {
         }
       }
       expect(page.html).toContain('href="/underground-sound-archive/#artists"');
+      const footerBrand = page.html.match(/<div class="footer-brand">([\s\S]*?)<\/div>/)?.[1] ?? "";
+      expect(footerBrand).toContain('href="/underground-sound-archive/"');
+      expect(footerBrand).toContain('aria-label="破繭之聲 回到首頁"');
+      expect(footerBrand).toContain(">破繭之聲</a>");
       expect(page.html).toContain('href="https://abiurl.me/Jc8uTl"');
       expect(page.html).toContain('href="https://abitingdiscord.com"');
       expect(page.html).toContain("封面由資料來源提供；作品權利屬於原權利人；本站為音樂導讀與評論用途");
@@ -111,6 +115,10 @@ describe("目前正式自訂網域根路徑部署", () => {
       expect(metadata.structuredData[0].url, route).toBe(`${rootOrigin}/`);
     }
     const docs = renderSeoDocuments(rootOptions);
+    const home = renderDocument(template, "/", rootOptions).html;
+    const footerBrand = home.match(/<div class="footer-brand">([\s\S]*?)<\/div>/)?.[1] ?? "";
+    expect(footerBrand).toContain('href="/"');
+    expect(footerBrand).toContain('aria-label="破繭之聲 回到首頁"');
     expect(docs.robots).toContain(`Sitemap: ${rootOrigin}/sitemap.xml`);
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
     expect(urls).toHaveLength(225);

@@ -16,7 +16,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## 頁尾與 GitHub
 
-「資料來源與授權說明」連到 https://abiurl.me/Jc8uTl，原有專輯與封面查證連結維持不變。頁尾另有「本站由阿比丁協助架設與維護」，其中「阿比丁」連到 https://abitingdiscord.com。
+「資料來源與授權說明」連到 https://abiurl.me/Jc8uTl，原有專輯與封面查證連結維持不變。頁尾品牌「破繭之聲」連回首頁，使用 Wouter Link 延續 GitHub Pages 子目錄相容性；「本站由阿比丁協助架設與維護」中的「阿比丁」連到 https://abitingdiscord.com。
 
 使用者已經由 Webdev 確認 abiting/underground-sound-archive，程式先傳送至授權暫存 remote，再經 complete 驗證切換。後續提交使用新的 GitHub origin/main；未追蹤的參考檔與機密不納入轉移。儲存庫連接不等同公開網站發佈，自動發佈設定維持關閉。
 

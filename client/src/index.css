@@ -342,6 +342,7 @@ button { color: inherit; }
 .brand-name small { display: block; margin-top: 5px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; font-weight: 500; letter-spacing: .035em; white-space: nowrap; }
 .footer-brand { font-family: "Noto Sans TC", "PingFang TC", sans-serif; font-size: 18px; font-weight: 800; }
 .footer-brand small { display: block; margin-top: 5px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; font-weight: 400; letter-spacing: .02em; }
+.footer-brand a { display: inline; color: inherit; font: inherit; white-space: normal; }
 @media (max-width: 720px) { .brand-name strong { font-size: 20px; } .brand-name small { font-size: 8px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 
