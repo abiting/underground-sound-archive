@@ -26,11 +26,11 @@ describe("50 個新樂團專輯與 DEEN 第 51 組資料", () => {
     expect(new Set(batch51Albums.map((item) => item.artist)).size).toBe(51);
     expect(new Set(batch51Albums.map((item) => item.id)).size).toBe(51);
     expect(new Set(batch51Articles.map((item) => item.slug)).size).toBe(51);
-    expect(albums).toHaveLength(87);
-    expect(articles).toHaveLength(65);
-    expect(buildArtistIndex(albums, articles)).toHaveLength(72);
-    expect(catalogGuideCount(albums, articles)).toBe(142);
-    expect(getPublicPaths()).toHaveLength(225);
+    expect(albums).toHaveLength(89);
+    expect(articles).toHaveLength(67);
+    expect(buildArtistIndex(albums, articles)).toHaveLength(74);
+    expect(catalogGuideCount(albums, articles)).toBe(146);
+    expect(getPublicPaths()).toHaveLength(231);
 
     const oldArtists = new Set([
       ...albums.filter((item) => !albumIds.has(item.id) && !laterAlbumIds.has(item.id)).map((item) => normalizeArtist(item.artist)),

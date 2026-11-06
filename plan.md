@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 65 篇文章、87 張專輯、72 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 67 篇文章、89 張專輯、74 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 225 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 231 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -32,7 +32,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## GitHub Pages 自訂網域
 
-目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 87 張專輯與 72 個樂團、142 篇唯一導讀及 225 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
+目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 89 張專輯與 74 個樂團、146 篇唯一導讀及 231 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
 
 專輯與文章內文皆有 500–800 個中文字的原創導讀，含可核對發行來源和具體聆聽線索。樂團索引統計相同內容跨專輯與文章路由只計一次；專輯故事與其所屬歌曲的不同導讀分開計數。
 
@@ -98,3 +98,12 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 以獨立 `october29Albums.ts` 接入共用 catalog，導讀存 `listeningNotes`，每篇 500–800 個中文字、4–6 段，至少兩個已讀 HTTPS 來源且區分史實和聆聽觀察。不設 articleId、不重寫歷史目錄，既有 AlbumPage 和 ArtistPage 直接呈現。新增 `mygo` 固定 slug 與史密斯飛船／Aerosmith 搜尋別名，共用全文搜尋、索引、SSR、metadata、root path helpers，manifest 和 sitemap 從 getPublicPaths 重生。目前完成並核對共 87 張專輯、65 篇文章、72 個樂團、142 篇唯一導讀及 225 個公開路由；沿用 GitHub Pages、正式網域、Ahrefs 與既有視覺。
 
 本批實際選入四分衛《起來》（1999，14 軌）、MyGO!!!!!《迷跡波》（2023，13 軌）、Ave Mujica《ELEMENTS》（2024，5 軌迷你專輯）、Linkin Park《Meteora》（2003，13 軌）與 Aerosmith《Rocks》（1976，9 軌）。《ELEMENTS》取正式五首音訊版，影像內容另計；其餘以各自標準曲序為準。每篇核實為 507–664 個漢字，4–5 段，來源證據保存於本次研究資料，封面採相符的 Apple 官方 artwork CDN。
+
+
+## 22-20s、Babybird 與舊網址永久轉址（2026-11-06）
+
+新增 22-20s《22-20s》同名首張專輯及〈Devil In Me〉獨立歌曲導讀；專輯採 Apple Music 11 首目錄版，〈Devil In Me〉為第 1 首。另新增 Babybird《Ugly Beautiful》標準版與〈Candy Girl〉獨立導讀；採 Apple Music 15 首版，〈Candy Girl〉為第 2 首，不混用 26 首 Expanded 版。四篇均為 500–800 個中文字、4–6 段，使用已閱讀的 Apple Music 正式目錄、BBC 同期評論、The Independent 同期評論及 AllMusic 專輯評論，並把聆聽觀察與史實區隔、不引用歌詞。
+
+沿用 Album.listeningNotes 存兩篇專輯故事、以各自 Article.albumId 建立兩篇歌曲文章；ArtistPage、AlbumPage、ArticlePage、全文搜尋、索引、canonical、metadata、JSON-LD、route manifest 與 sitemap 由既有目錄生成。使用 Apple Music 同版方形 artwork 並標出來源。新增兩個 artist route、兩個 album route、兩個 article route；預期全站 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀及 231 個公開路由。
+
+兩個舊網址需導向各自歌曲文章：`/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。GitHub Pages 靜態輸出本身無法保證 HTTP 301；在正式頁面 live 後，須透過目前代理正式網域的 Cloudflare Single Redirects 對指定 host/path 建立兩條 301 規則，保留既有規則，並逐一以 HTTP 回應狀態與 Location 驗證。若 Cloudflare API 權限尚未授權，需使用安全授權流程，絕不把 JavaScript／meta refresh 誤報為 301。

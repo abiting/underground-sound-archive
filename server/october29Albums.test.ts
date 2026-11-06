@@ -17,14 +17,14 @@ describe("2026-10-29 五張選輯與完整導讀", () => {
   it("五張不重複選輯保留舊資料且只增加五篇專輯導讀", () => {
     expect(october29Albums).toHaveLength(5);
     expect(new Set(october29Albums.map((item) => item.artist)).size).toBe(5);
-    expect(albums.filter((item) => !newIds.has(item.id))).toHaveLength(82);
-    expect(albums).toHaveLength(87);
-    expect(articles).toHaveLength(65);
-    expect(new Set(albums.map((item) => item.id)).size).toBe(87);
-    expect(new Set(albums.map((item) => `${item.artist}/${item.title}`)).size).toBe(87);
-    expect(catalogGuideCount(albums, articles)).toBe(142);
-    expect(buildArtistIndex(albums, articles)).toHaveLength(72);
-    expect(getPublicPaths()).toHaveLength(225);
+    expect(albums.filter((item) => !newIds.has(item.id))).toHaveLength(84);
+    expect(albums).toHaveLength(89);
+    expect(articles).toHaveLength(67);
+    expect(new Set(albums.map((item) => item.id)).size).toBe(89);
+    expect(new Set(albums.map((item) => `${item.artist}/${item.title}`)).size).toBe(89);
+    expect(catalogGuideCount(albums, articles)).toBe(146);
+    expect(buildArtistIndex(albums, articles)).toHaveLength(74);
+    expect(getPublicPaths()).toHaveLength(231);
     expect(record("quarterback-rise")).toMatchObject({ artist: "四分衛", title: "起來", year: "1999", trackCount: 14 });
     expect(record("mygo-meisekiha")).toMatchObject({ artist: "MyGO!!!!!", title: "迷跡波", year: "2023", trackCount: 13 });
     expect(record("ave-mujica-elements")).toMatchObject({ artist: "Ave Mujica", title: "ELEMENTS", year: "2024", trackCount: 5 });
@@ -95,19 +95,19 @@ describe("2026-10-29 五張選輯與完整導讀", () => {
     expect(artistPage.status).toBe(200);
     expect(artistPage.html).toContain('href="/album/mygo-meisekiha"');
     const home = readable(renderDocument(template, "/", options).html);
-    expect(home).toContain("不重複導讀 142 篇");
+    expect(home).toContain("不重複導讀 146 篇");
     expect(home).toContain("MyGO!!!!!");
   });
 
   it("225 條 sitemap 與 manifest 同步，保留正式 robots 及 noindex 404", () => {
     const docs = renderSeoDocuments(options);
     const urls = [...docs.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-    expect(urls).toHaveLength(225);
-    expect(new Set(urls).size).toBe(225);
+    expect(urls).toHaveLength(231);
+    expect(new Set(urls).size).toBe(231);
     for (const album of october29Albums) expect(urls).toContain(`${options.origin}/album/${album.id}/`);
     expect(urls).toContain(`${options.origin}/artist/mygo/`);
     const manifest = JSON.parse(fs.readFileSync(new URL("../client/public/manus-routes.json", import.meta.url), "utf8"));
-    expect(manifest.routes).toHaveLength(225);
+    expect(manifest.routes).toHaveLength(231);
     expect(manifest.routes.map((item: { path: string }) => item.path)).toEqual(getPublicPaths());
     expect(docs.robots).toContain(`Sitemap: ${options.origin}/sitemap.xml`);
     const missing = renderDocument(template, "/not-a-real-album", options);

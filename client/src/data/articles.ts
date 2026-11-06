@@ -406,3 +406,57 @@ articles.push({
 });
 
 articles.push(...batch51Articles);
+
+
+articles.push({
+  id: "22-20s-devil-in-me",
+  title: "〈Devil In Me〉歌曲導讀：22-20s 藍調開場的內在張力",
+  slug: "22-20s-devil-in-me",
+  category: "藍調搖滾",
+  summary: "從《22-20s》第一首的粗礪吉他、鼓點與現場感切入，聽 22-20s 如何把藍調根源帶進 2004 年的同名首張專輯。",
+  year: "2004",
+  tags: ["22-20s", "Devil In Me", "藍調搖滾", "英國搖滾", "22-20s 首張專輯"],
+  score: 8.0,
+  artist: "22-20s",
+  albumId: "22-20s-self-titled",
+  sources: [
+    { name: "Apple Music：〈Devil In Me〉曲目資料與演出者", url: "https://music.apple.com/au/song/devil-in-me/693205747" },
+    { name: "BBC Music：〈Devil In Me〉與同名專輯同期評論", url: "https://www.bbc.co.uk/music/reviews/xzxm/" },
+  ],
+  body: `〈Devil In Me〉是 22-20s 同名首張專輯的第 1 首，也是開場曲。Apple Music 將專輯日期列為 2004 年 9 月 20 日，收錄 11 首；歌曲頁則列出它約 4 分 16 秒。開頭沒有先長時間鋪陳，而是讓帶砂礫感的吉他與鼓聲直接站到前景，使聽者很快進入唱片的聲音世界。BBC 把它稱作帶有怒氣的開場，這是評論者對演奏效果的觀察；曲序和發行資料則能在正式目錄查證。
+
+BBC 評論指出，歌曲中有像是向誘惑發聲的強烈張力；這是評論者對作品的閱讀，不是已知的樂團官方歌意。歌名讓人想到內心衝動或難以擺脫的陰影，但不必因此斷定它只在描述某個特定人物或事件。我的聽法是把它當成整張專輯踏進來時的一道門：角色感很強，卻保留足夠空間，讓不同聽者把自己的矛盾放進聲音裡。
+
+具體聽時可以先追蹤吉他重複推進的 riff，再注意人聲如何在節拍上咬住句尾。BBC 用粗糙的吉他與有力的鼓輪廓描述錄音，也將主唱的表現形容為銳利；這些形容來自同期評論。耳朵不妨從第一遍整體感受開始，第二遍再把焦點放在鼓落下來的重拍，感覺重複節奏怎樣堆出前進感。這是一條聆聽路徑，不是對錄音器材或混音手法的推測。
+
+Apple Music 的曲目資料把 Martin Trimble 列為〈Devil In Me〉的作曲者，歌曲頁也列出吉他、貝斯、鼓與主唱等演出者。BBC 則指出專輯由 Brendan Lynch 協助製作，並把樂團的聲音放在經典藍調與粗礪搖滾之間。這些背景能幫助理解歌曲為何聽來既直接又帶有藍調彎曲感，但不需要將某一種分類當成全部答案；它仍是一支樂團在當時演出能量的錄音呈現。
+
+作為第一首，〈Devil In Me〉提供了明確的進場速度。接著連聽第二首〈Such a Fool〉與第三首〈Baby Brings Bad News〉，再跳到第五首〈Friends〉，可以比較專輯如何在緊繃與放鬆之間變換。曲目名稱與順序以 Apple Music 同名專輯目錄為準，情緒起伏則是我對連續播放的感受。若只記得一首歌，不妨回到它的開頭，聽第一個吉他與鼓聲如何替整張首作定下粗礪的基調。`,
+});
+
+articles.push({
+  id: "babybird-candy-girl",
+  title: "〈Candy Girl〉歌曲導讀：Babybird 把甜美寫成反差",
+  slug: "babybird-candy-girl",
+  category: "另類流行",
+  summary: "Babybird 以〈Candy Girl〉展現《Ugly Beautiful》的俏皮與不安：從第二首的位置、Stephen Jones 的創作署名到完整樂團編曲，重聽 1996 年的反差感。",
+  year: "1996",
+  tags: ["Babybird", "Candy Girl", "Ugly Beautiful", "英倫另類流行", "Stephen Jones"],
+  score: 8.1,
+  artist: "Babybird",
+  albumId: "babybird-ugly-beautiful",
+  sources: [
+    { name: "Apple Music：〈Candy Girl〉曲目、演出與製作資料", url: "https://music.apple.com/us/song/candy-girl/1436093717" },
+    { name: "The Independent：1996 年《Ugly Beautiful》同期評論及〈Candy Girl〉觀察", url: "https://www.the-independent.com/arts-entertainment/babybird-ugly-beautiful-echo-ech-cd11-review-1358900.html" },
+    { name: "AllMusic：《Ugly Beautiful》專輯評論", url: "https://www.allmusic.com/album/ugly-beautiful-mw0000028349" },
+  ],
+  body: `〈Candy Girl〉收錄於 Babybird 1996 年的《Ugly Beautiful》，在 Apple Music 所列的 15 首標準版中排第 2 首，長度約 3 分 57 秒。首曲〈Goodnight〉之後立刻接上它，再轉入〈Jesus Is My Girlfriend〉，讓這首歌出現在專輯早段，替作品的文字遊戲先定下一個方向。Apple Music 目錄與正式歌曲頁可核對曲序、日期和所屬；此處不把它誤作後來的 Expanded 版內容。
+
+正式曲目資料將 Stephen Christopher Jones 列為作曲與填詞者，也列出 Stephen Jones、Steve Power 共同製作。演出名單則包括主唱、吉他、貝斯、鼓與鍵盤，反映歌曲不是只有一把吉他與人聲的孤身錄音。The Independent 的同期評論特別注意到〈Candy Girl〉的荒誕押韻和戲謔效果；本文只概括評論的觀察，不複製歌詞，也不把記者對雙關的閱讀說成創作者唯一想傳達的意思。
+
+這首歌的吸引力，在我耳中來自輕巧旋律與稍微不安的內容並肩出現。標題看起來甜，但詞曲與演唱留下的轉折，會使聽者重新檢查「可愛」是否只是表面。The Independent 把歌曲放在帶有性暗示的幽默脈絡裡，AllMusic 則從整張專輯談到 Babybird 早期古怪感與更清晰編曲的張力；這些都是評論觀點。聆聽時可以留意聲音越顯親切，文字越是否把氣氛輕輕扭歪。
+
+與其先替歌詞找一個固定答案，不如把注意力放在節奏和人聲的表情。歌曲帶有流行歌曲容易記住的旋律，完整樂團演奏讓其輪廓比早期 lo-fi 個人錄音更清楚；這個「清楚」與「怪異」同時存在，正是 Babybird 轉向較完整製作後值得比較的地方。若對照 AllMusic 和《The Independent》的不同評語，也會發現兩篇評論在欣賞旋律之外，仍保留對它是否過度精緻的疑問。
+
+建議先連聽專輯前三首，再把〈Candy Girl〉和第七首〈You're Gorgeous〉放在一起比較。前者使用更直接的戲謔感，後者則在流行旋律下藏著較難安放的情緒；這是聆聽上的對照，不是對歌曲意義的裁決。接著可以播放全長 15 首的《Ugly Beautiful》，聽第二首如何在專輯早段建立語氣，也留意後面的歌曲如何延展或打破這種期待。`,
+});

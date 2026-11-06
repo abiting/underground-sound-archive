@@ -21,7 +21,7 @@
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 頁尾「破繭之聲」品牌名稱可點擊並返回首頁；正式網域目標為 `/`，GitHub Pages 子目錄目標為 `/underground-sound-archive/`。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、65 篇文章、72 個樂團頁及 87 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、67 篇文章、74 個樂團頁及 89 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -102,3 +102,10 @@
 - [x] 仔細研究後再增加五張專輯：四分衛再一張、新增 MyGO!!!!! 一張、Ave Mujica 再一張、Linkin Park 再一張、史密斯飛船（Aerosmith）一張。五張均不與原目錄重複；史密斯飛船沿用既有 Aerosmith 索引而不另建同一樂團，加入中文搜尋別名。
 - [x] 每張各有一篇 500–800 個中文字、4–6 段的完整繁中原創專輯導讀，含作品背景、曲序與具體聆聽路徑。正文不含 Markdown 標題／粗體，不引用歌詞，不把詮釋當唯一歌意；各附至少兩個實際閱讀的可靠 HTTPS 來源，含官方／唱片公司／正式串流目錄，核對年份、採用版次、全曲數及代表歌曲。EP／迷你專輯如採用，需明確標示，不混算影像、豪華版與再版加收內容。
 - [x] 五張使用各自準確的真實方形封面，標明來源與權利，不捏造 MusicBrainz ID。保留既有資料與設計；新作品可經首頁、全文搜尋、類型／年代及樂團索引找到，MyGO!!!!! 使用穩定 mygo slug。專輯頁初始 HTML 有全文與來源，含 alt、metadata、canonical、JSON-LD，完整同步 route manifest、sitemap 與正式 chrysalismusicusa.com 根路徑；維持 Ahrefs script、舊路徑相容及真正 noindex 404。預期 87 張專輯、65 篇文章、72 團、142 篇唯一導讀與 225 條公開路由。
+
+
+## 22-20s〈Devil In Me〉與 Babybird〈Candy Girl〉（2026-11-06）
+- [ ] 新增 22-20s《22-20s》同名首張專輯介紹及〈Devil In Me〉歌曲導讀；使用 Apple Music 11 首目錄版本並標明歌曲為第 1 首。新增 Babybird《Ugly Beautiful》標準專輯介紹及〈Candy Girl〉歌曲導讀；採 1996 年 15 首標準版，歌曲為第 2 首，不混用 26 首 Expanded 版。兩首歌皆連到各自專輯，專輯頁亦可找到歌曲導讀。
+- [ ] 每篇專輯介紹與歌曲導讀各 500–800 個中文字、4–6 段原創繁中內容；至少兩個已閱讀的可靠 HTTPS 來源，核實正式版本、發行年、曲序、所屬及封面。可用來源含 Apple Music、BBC、The Independent、AllMusic。正文不引用歌詞、不將主觀詮釋說成創作者唯一意圖。
+- [ ] 使用兩張與官方標準版相符的方形封面，標出 Apple Music 來源；更新各樂團頁、首頁、搜尋、導讀索引、分類／年代、SSR、canonical、metadata、JSON-LD、219→231 路由 manifest 和 sitemap，不改動現有文章與品牌設計。完成後全站應為 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀、231 條公開路由。
+- [ ] 在舊路徑建立真實永久 HTTP 301：`http://chrysalismusicusa.com/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`http://chrysalismusicusa.com/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。於 Cloudflare edge 設定時保留區域內既有 Redirect Rules，並以兩個來源各自回傳 301、正確 `Location` 且目標回傳 200 作驗收；GitHub Pages 靜態 redirect、meta refresh 或 JavaScript 導向不算 HTTP 301。
