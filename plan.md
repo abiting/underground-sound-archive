@@ -107,3 +107,5 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 沿用 Album.listeningNotes 存兩篇專輯故事、以各自 Article.albumId 建立兩篇歌曲文章；ArtistPage、AlbumPage、ArticlePage、全文搜尋、索引、canonical、metadata、JSON-LD、route manifest 與 sitemap 由既有目錄生成。使用 Apple Music 同版方形 artwork 並標出來源。新增兩個 artist route、兩個 album route、兩個 article route；預期全站 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀及 231 個公開路由。
 
 兩個舊網址需導向各自歌曲文章：`/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。GitHub Pages 靜態輸出本身無法保證 HTTP 301；在正式頁面 live 後，須透過目前代理正式網域的 Cloudflare Single Redirects 對指定 host/path 建立兩條 301 規則，保留既有規則，並逐一以 HTTP 回應狀態與 Location 驗證。若 Cloudflare API 權限尚未授權，需使用安全授權流程，絕不把 JavaScript／meta refresh 誤報為 301。
+
+實作完成：`chrysalismusicusa.com` 的 `http_request_dynamic_redirect` zone entrypoint 原先不存在，因此新增專用規則集，內含且僅含兩條對應舊 host/path 的永久 301 規則；各規則涵蓋有／無尾斜線、保留原 query string，其他網址不匹配。已直接以 HTTP 與 HTTPS、帶 query 與無尾斜線變體驗證四個來源請求回傳 301，`Location` 均指向各自新歌頁，兩個目的頁回傳 200。其他 Cloudflare rulesets 未更動。

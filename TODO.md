@@ -105,7 +105,7 @@
 
 
 ## 22-20s〈Devil In Me〉與 Babybird〈Candy Girl〉（2026-11-06）
-- [ ] 新增 22-20s《22-20s》同名首張專輯介紹及〈Devil In Me〉歌曲導讀；使用 Apple Music 11 首目錄版本並標明歌曲為第 1 首。新增 Babybird《Ugly Beautiful》標準專輯介紹及〈Candy Girl〉歌曲導讀；採 1996 年 15 首標準版，歌曲為第 2 首，不混用 26 首 Expanded 版。兩首歌皆連到各自專輯，專輯頁亦可找到歌曲導讀。
-- [ ] 每篇專輯介紹與歌曲導讀各 500–800 個中文字、4–6 段原創繁中內容；至少兩個已閱讀的可靠 HTTPS 來源，核實正式版本、發行年、曲序、所屬及封面。可用來源含 Apple Music、BBC、The Independent、AllMusic。正文不引用歌詞、不將主觀詮釋說成創作者唯一意圖。
-- [ ] 使用兩張與官方標準版相符的方形封面，標出 Apple Music 來源；更新各樂團頁、首頁、搜尋、導讀索引、分類／年代、SSR、canonical、metadata、JSON-LD、219→231 路由 manifest 和 sitemap，不改動現有文章與品牌設計。完成後全站應為 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀、231 條公開路由。
-- [ ] 在舊路徑建立真實永久 HTTP 301：`http://chrysalismusicusa.com/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`http://chrysalismusicusa.com/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。於 Cloudflare edge 設定時保留區域內既有 Redirect Rules，並以兩個來源各自回傳 301、正確 `Location` 且目標回傳 200 作驗收；GitHub Pages 靜態 redirect、meta refresh 或 JavaScript 導向不算 HTTP 301。
+- [x] 新增 22-20s《22-20s》同名首張專輯介紹及〈Devil In Me〉歌曲導讀；使用 Apple Music 11 首目錄版本並標明歌曲為第 1 首。新增 Babybird《Ugly Beautiful》標準專輯介紹及〈Candy Girl〉歌曲導讀；採 1996 年 15 首標準版，歌曲為第 2 首，不混用 26 首 Expanded 版。兩首歌皆連到各自專輯，專輯頁亦可找到歌曲導讀。
+- [x] 每篇專輯介紹與歌曲導讀各 500–800 個中文字、4–6 段原創繁中內容；至少兩個已閱讀的可靠 HTTPS 來源，核實正式版本、發行年、曲序、所屬及封面。可用來源含 Apple Music、BBC、The Independent、AllMusic。正文不引用歌詞、不將主觀詮釋說成創作者唯一意圖。
+- [x] 使用兩張與官方標準版相符的方形封面，標出 Apple Music 來源；更新各樂團頁、首頁、搜尋、導讀索引、分類／年代、SSR、canonical、metadata、JSON-LD、219→231 路由 manifest 和 sitemap，不改動現有文章與品牌設計。完成後全站應為 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀、231 條公開路由。
+- [x] 在舊路徑建立真實永久 HTTP 301：`http://chrysalismusicusa.com/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`http://chrysalismusicusa.com/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。Cloudflare dynamic redirect phase 已建立兩條精確規則，涵蓋有／無尾斜線並保留 query string；已確認兩個舊網址回傳 301 與正確 `Location`，新目標均回傳 200。GitHub Pages 靜態 redirect、meta refresh 或 JavaScript 導向不算 HTTP 301。
