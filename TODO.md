@@ -119,3 +119,6 @@
 - [x] 開始收錄古典樂團，先新增 Simon Rattle 指揮 Berliner Philharmoniker 的《Mahler: Symphony No. 9》專輯介紹一篇，500–800 個中文字、4–6 段；先核實正式錄音與發行版，明列錄音年份與發行年份，避免和不同樂團、年份、套裝版混用。
 - [x] 至少兩個已閱讀的可靠 HTTPS 來源支持作品、四樂章、指揮／演出團、版本與正式封面；把作品背景、樂章導聆和此錄音的演奏聽感分開，不把死亡預言等詮釋寫成確定事實。曲目數以正式發行音訊目錄為準，保留原權利人與封面來源。
 - [x] 沿用 Album 模型與既有頁面，新分類「古典音樂」能由首頁篩選與樂團索引找到；可用柏林愛樂／Berlin Philharmonic／Berliner Philharmoniker／Simon Rattle／馬勒／Mahler 搜尋，作品與演出者名稱清楚，不改品牌名或既有設計。連同 Nightmare／Fiction，今日共三篇，全站預期 91 張專輯、68 篇文章、75 個樂團、149 篇唯一導讀及 235 條公開路由；全部具有初始 HTML、canonical、metadata、sitemap 與 manifest，不修改轉址。
+
+## 首頁樂團索引左欄廣告（2026-11-25）
+- [x] 僅在首頁樂團索引左側留白加入使用者提供的圖片 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`；保留直式圖片比例、不裁切，在圖片左上角清楚標示「廣告」並提供替代文字，外連開新分頁且使用 `rel="sponsored noopener noreferrer"`，行動版不溢出。正式首頁樂團索引左欄應顯示可點擊的廣告圖，其他頁面不變。
