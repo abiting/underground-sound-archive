@@ -273,6 +273,10 @@
       "title": "〈Candy Girl〉歌曲導讀：Babybird 把甜美寫成反差｜破繭之聲"
     },
     {
+      "path": "/article/avenged-sevenfold-fiction",
+      "title": "Avenged Sevenfold〈Fiction〉歌曲解析：琴聲中的對話｜破繭之聲"
+    },
+    {
       "path": "/artist/queen",
       "title": "Queen 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
     },
@@ -567,6 +571,10 @@
     {
       "path": "/artist/mygo",
       "title": "MyGO!!!!! 樂團介紹與代表專輯｜破繭之聲 Underground Sound Archive"
+    },
+    {
+      "path": "/artist/berliner-philharmoniker",
+      "title": "Berliner Philharmoniker 樂團介紹與代表專輯｜破繭之聲"
     },
     {
       "path": "/album/queen-opera",
@@ -923,6 +931,14 @@
     {
       "path": "/album/babybird-ugly-beautiful",
       "title": "Babybird《Ugly Beautiful》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/avenged-sevenfold-nightmare",
+      "title": "Avenged Sevenfold《Nightmare》完整專輯導讀、曲目與聆聽指南｜破繭之聲"
+    },
+    {
+      "path": "/album/berliner-philharmoniker-rattle-mahler-symphony-9",
+      "title": "Berliner Philharmoniker《Mahler: Symphony No. 9》｜破繭之聲"
     }
   ]
 }

@@ -42,15 +42,15 @@ describe("My Chemical Romance《The Black Parade》專輯頁", () => {
     expect(filterAlbums(albums, { query: "Paramour", category: "全部", decade: "全部年代" })).toContain(album);
     expect(filterAlbums(albums, { query: "Disenchanted", category: "全部", decade: "2000s" })).toContain(album);
     const index = buildArtistIndex(albums, articles);
-    expect(index).toHaveLength(74);
+    expect(index).toHaveLength(75);
     expect(index.find((artist) => artist.slug === "my-chemical-romance")).toMatchObject({ albumCount: 1, guideCount: 2 });
-    expect(albums).toHaveLength(89);
-    expect(articles).toHaveLength(67);
-    expect(catalogGuideCount(albums, articles)).toBe(146);
+    expect(albums).toHaveLength(91);
+    expect(articles).toHaveLength(68);
+    expect(catalogGuideCount(albums, articles)).toBe(149);
   });
 
   it("專輯與藝人頁在初始 HTML 顯示全文、封面來源及彼此回鏈", () => {
-    expect(getPublicPaths()).toHaveLength(231);
+    expect(getPublicPaths()).toHaveLength(235);
     expect(getPublicPaths()).toContain(albumPath);
     expect(getPublicPaths()).toContain(artistPath);
     expect(getPublicPaths()).toContain(articlePath);
@@ -80,9 +80,9 @@ describe("My Chemical Romance《The Black Parade》專輯頁", () => {
     expect(metadata.structuredData.some((entry) => entry["@type"] === "MusicAlbum" && entry.numTracks === 14)).toBe(true);
     const sitemap = renderSeoDocuments(options).sitemap;
     expect(sitemap).toContain(`https://abiting.github.io/underground-sound-archive${albumPath}/`);
-    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(231);
+    expect((sitemap.match(/<loc>/g) ?? [])).toHaveLength(235);
     const manifest = JSON.parse(fs.readFileSync(new URL("../client/public/manus-routes.json", import.meta.url), "utf8")) as { routes: Array<{ path: string }> };
-    expect(manifest.routes).toHaveLength(231);
+    expect(manifest.routes).toHaveLength(235);
     expect(manifest.routes.map((route) => route.path)).toContain(albumPath);
   });
 });

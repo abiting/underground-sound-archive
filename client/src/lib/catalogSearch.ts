@@ -22,6 +22,8 @@ const artistSearchAliases: Record<string, string[]> = {
   "Men Envy Children": ["小男孩樂團", "MEC", "MECBand"],
   "Aerosmith": ["史密斯飛船", "史密斯飛船樂團"],
   "史密斯飛船": ["Aerosmith"],
+  "Avenged Sevenfold": ["A7X", "AX7"],
+  "Berliner Philharmoniker": ["柏林愛樂", "柏林愛樂管弦樂團", "Berlin Philharmonic"],
 };
 
 function searchNames(artist: string) {

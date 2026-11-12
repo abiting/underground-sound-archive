@@ -5,8 +5,8 @@ import { normalizeBasePath, withBasePath } from "../lib/sitePaths";
 export const SITE_NAME = "破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌";
 export const BRAND_NAME = "破繭之聲";
 export const ENGLISH_NAME = "Underground Sound Archive";
-export const SITE_DESCRIPTION = "破繭之聲 Underground Sound Archive 是以繁體中文探索搖滾、重金屬與唱片文化的線上場刊。從 Queen、Metallica 到 Green Day 與 Ave Mujica，閱讀完整專輯故事、樂團背景、代表曲目與聲音脈絡，依類型或年代尋找下一張值得重播的唱片。";
-export const SITE_KEYWORDS = ["搖滾", "重金屬", "專輯導讀", "樂團介紹", "唱片評論", "音樂史", "日本流行搖滾", "破繭之聲"];
+export const SITE_DESCRIPTION = "破繭之聲 Underground Sound Archive 以繁體中文探索搖滾、重金屬與古典音樂。從 Queen、Avenged Sevenfold 到柏林愛樂，閱讀完整專輯故事、歌曲解析與樂章導聆，核對演出和錄音版本，依類型或年代尋找下一張值得重播的唱片。";
+export const SITE_KEYWORDS = ["搖滾", "重金屬", "專輯導讀", "樂團介紹", "唱片評論", "古典音樂", "日本流行搖滾", "破繭之聲"];
 export const SOCIAL_IMAGE_PATH = "/images/underground-social.jpg";
 export const DEFAULT_SOCIAL_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663217818186/wjjvFTNJhRwXPVCd.jpg";
 

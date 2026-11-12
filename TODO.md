@@ -21,7 +21,7 @@
 - [x] 網站標題改為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」，品牌導覽、頁尾、HTML 標題一致。
 - [x] 頁尾「破繭之聲」品牌名稱可點擊並返回首頁；正式網域目標為 `/`，GitHub Pages 子目錄目標為 `/underground-sound-archive/`。
 - [x] 每頁有 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片有描述性 alt，裝飾圖片與圖示不冗餘朗讀。
-- [x] 首頁、67 篇文章、74 個樂團頁及 89 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
+- [x] 首頁、68 篇文章、75 個樂團頁及 91 張專輯頁的主要內容與 metadata 直接存在初始 HTML 中，並保留搜尋、篩選與用戶端導覽。
 - [x] 不臆造正式網域。canonical、og:url、正式 sitemap 經公開網域設定產生；預覽未設定正式網域時 noindex，提供 robots 與 sitemap，錯誤頁 noindex 並回傳 HTTP 404。
 - [x] SEO 更新以型別、建置、raw HTML 和 metadata 測試驗證；不把預覽檢查誤報為搜尋引擎收錄。
 - [x] 中英文品牌名稱中間保留空格：破繭之聲 Underground Sound Archive；主視覺大標為兩行「把音量開到」「失真以外」，第二行末尾不加句點，且不在該區重複站名。
@@ -109,3 +109,13 @@
 - [x] 每篇專輯介紹與歌曲導讀各 500–800 個中文字、4–6 段原創繁中內容；至少兩個已閱讀的可靠 HTTPS 來源，核實正式版本、發行年、曲序、所屬及封面。可用來源含 Apple Music、BBC、The Independent、AllMusic。正文不引用歌詞、不將主觀詮釋說成創作者唯一意圖。
 - [x] 使用兩張與官方標準版相符的方形封面，標出 Apple Music 來源；更新各樂團頁、首頁、搜尋、導讀索引、分類／年代、SSR、canonical、metadata、JSON-LD、219→231 路由 manifest 和 sitemap，不改動現有文章與品牌設計。完成後全站應為 89 張專輯、67 篇文章、74 個樂團、146 篇唯一導讀、231 條公開路由。
 - [x] 在舊路徑建立真實永久 HTTP 301：`http://chrysalismusicusa.com/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`http://chrysalismusicusa.com/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。Cloudflare dynamic redirect phase 已建立兩條精確規則，涵蓋有／無尾斜線並保留 query string；已確認兩個舊網址回傳 301 與正確 `Location`，新目標均回傳 200。GitHub Pages 靜態 redirect、meta refresh 或 JavaScript 導向不算 HTTP 301。
+
+## Avenged Sevenfold《Nightmare》與〈Fiction〉（2026-11-12）
+- [x] 新增 A7X／Avenged Sevenfold《Nightmare》專輯介紹及〈Fiction〉歌曲導讀各一篇；本次新增此前尚未收錄的專輯，保留《City of Evil》與〈Bat Country〉現有內容及網址。兩篇各 500–800 個中文字、4–6 段繁中原創正文，優先自然使用「Avenged Sevenfold Nightmare 專輯介紹」「Fiction 歌曲導讀」等中長尾關鍵字，今日新增兩篇不超過每日五篇。
+- [x] 以至少兩個已閱讀的可靠 HTTPS 來源核對 2010 年標準版、曲序、正式封面及創作／製作背景；The Rev 的創作與死亡時間須以可信資料核實，不把歌詞當作死亡預言或未經證實的遺書，不引用長段歌詞，聽感與史實分開。
+- [x] 兩篇以 albumId 建立雙向連結，歌曲顯示所屬專輯封面；更新首頁、A7X 樂團索引、搜尋、SSR、canonical、metadata、JSON-LD、manifest 和 sitemap。加上同日首張古典選輯後，全站預期 91 張專輯、68 篇文章、75 團、149 篇唯一導讀與 235 條公開路由；不修改 Cloudflare 或任何舊路徑轉址。
+
+## 古典音樂首張選輯：Rattle／柏林愛樂《馬勒第九號交響曲》（2026-11-12）
+- [x] 開始收錄古典樂團，先新增 Simon Rattle 指揮 Berliner Philharmoniker 的《Mahler: Symphony No. 9》專輯介紹一篇，500–800 個中文字、4–6 段；先核實正式錄音與發行版，明列錄音年份與發行年份，避免和不同樂團、年份、套裝版混用。
+- [x] 至少兩個已閱讀的可靠 HTTPS 來源支持作品、四樂章、指揮／演出團、版本與正式封面；把作品背景、樂章導聆和此錄音的演奏聽感分開，不把死亡預言等詮釋寫成確定事實。曲目數以正式發行音訊目錄為準，保留原權利人與封面來源。
+- [x] 沿用 Album 模型與既有頁面，新分類「古典音樂」能由首頁篩選與樂團索引找到；可用柏林愛樂／Berlin Philharmonic／Berliner Philharmoniker／Simon Rattle／馬勒／Mahler 搜尋，作品與演出者名稱清楚，不改品牌名或既有設計。連同 Nightmare／Fiction，今日共三篇，全站預期 91 張專輯、68 篇文章、75 個樂團、149 篇唯一導讀及 235 條公開路由；全部具有初始 HTML、canonical、metadata、sitemap 與 manifest，不修改轉址。

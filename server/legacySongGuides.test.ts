@@ -24,11 +24,11 @@ describe("22-20s 與 Babybird 歌曲／專輯回補", () => {
   it("新增兩張專輯、兩篇歌曲導讀、兩個團頁與六條公開路由", () => {
     expect(legacySongAlbums).toHaveLength(2);
     expect(legacySongAlbums.map((item) => item.id)).toEqual(["22-20s-self-titled", "babybird-ugly-beautiful"]);
-    expect(albums).toHaveLength(89);
-    expect(articles).toHaveLength(67);
-    expect(buildArtistIndex(albums, articles)).toHaveLength(74);
-    expect(catalogGuideCount(albums, articles)).toBe(146);
-    expect(getPublicPaths()).toHaveLength(231);
+    expect(albums).toHaveLength(91);
+    expect(articles).toHaveLength(68);
+    expect(buildArtistIndex(albums, articles)).toHaveLength(75);
+    expect(catalogGuideCount(albums, articles)).toBe(149);
+    expect(getPublicPaths()).toHaveLength(235);
   });
 
   it("採用正式專輯版次與曲序，四篇正文都有完整篇幅和來源", () => {

@@ -9,11 +9,11 @@ const movieLink = "https://coai.abiting.cc/archives/1437";
 const genesectLink = "https://list.abitingpokedex.com/pokemon/genesect/zh";
 
 describe("Riff Atlas 唱片誌資料", () => {
-  it("保留原有 10 篇專輯文章及 6 篇指定單曲文章，含 Spitz、生物股長、MCR、小男孩樂團、22-20s 與 Babybird", () => {
-    expect(articles).toHaveLength(67);
-    expect(albums).toHaveLength(89);
-    expect(new Set(articles.map((item) => item.slug)).size).toBe(67);
-    expect(articles.filter((item) => item.albumId)).toHaveLength(64);
+  it("保留原有 10 篇專輯文章及 7 篇指定單曲文章，含 Spitz、生物股長、MCR、小男孩樂團、22-20s、Babybird 與 A7X", () => {
+    expect(articles).toHaveLength(68);
+    expect(albums).toHaveLength(91);
+    expect(new Set(articles.map((item) => item.slug)).size).toBe(68);
+    expect(articles.filter((item) => item.albumId)).toHaveLength(65);
     const special = articles.find((item) => item.artist === "Spitz");
     expect(special?.title).toBe("美しい鰭：《黑鐵的魚影》片尾");
     expect(special?.body).toContain(`[《黑鐵的魚影》](${movieLink})`);

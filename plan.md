@@ -1,10 +1,10 @@
 # 破繭之聲：站名、SEO 與 hydration
 
-網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 67 篇文章、89 張專輯、74 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
+網站名稱為「破繭之聲 Underground Sound Archive｜搖滾與金屬唱片誌」。保留地下場刊的紅、黑、米白配色，以及 68 篇文章、91 張專輯、75 個樂團索引、即時封面搜尋與響應式版面。中英文品牌之間保留空格；首頁主視覺為兩行「把音量開到」「失真以外」，第二行末尾不加句點，也不在該區塊重複站名。
 
 ## SEO 與渲染
 
-以現有 React App 和作品目錄輸出 231 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
+以現有 React App 和作品目錄輸出 235 個公開路由的完整 HTML。Vite 預覽、靜態 build 與標準 build 共用渲染器，Node build 不依賴瀏覽器或新的資料庫功能。用戶端透過 hydrateRoot 保留預先渲染的內容，只有空白掛載容器才使用 createRoot。
 
 每頁提供 route-specific title、description、keywords、Open Graph、Twitter Card、JSON-LD、語言與語意化 heading；有內容的圖片提供描述性 alt，裝飾圖示避免冗餘朗讀。分享圖採已完成的原創演出圖片和長效公開 CDN URL。預覽與標準 production server 對不存在的頁面回傳 HTTP 404 和 noindex，而不是回到首頁形成 soft 404。
 
@@ -32,7 +32,7 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 
 ## GitHub Pages 自訂網域
 
-目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 89 張專輯與 74 個樂團、146 篇唯一導讀及 231 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
+目前 GitHub Actions workflow 將靜態建置的 SITE_BASE_PATH 設為根路徑 /、PUBLIC_SITE_ORIGIN 設為 https://chrysalismusicusa.com。保留 GitHub Pages 與既有靜態預渲染入口，不覆蓋使用者對正式網域的設定。canonical、og:url、JSON-LD、robots、sitemap 和頁內路由均指向自訂網域根目錄。現收錄 91 張專輯與 75 個樂團、149 篇唯一導讀及 235 個公開路由；去重導讀數與公開路由由資料目錄自動生成。
 
 專輯與文章內文皆有 500–800 個中文字的原創導讀，含可核對發行來源和具體聆聽線索。樂團索引統計相同內容跨專輯與文章路由只計一次；專輯故事與其所屬歌曲的不同導讀分開計數。
 
@@ -109,3 +109,12 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 兩個舊網址需導向各自歌曲文章：`/2010/05/22-20s-storm-japan/` → `https://chrysalismusicusa.com/article/22-20s-devil-in-me/`；`/roster/artists/babybird/` → `https://chrysalismusicusa.com/article/babybird-candy-girl/`。GitHub Pages 靜態輸出本身無法保證 HTTP 301；在正式頁面 live 後，須透過目前代理正式網域的 Cloudflare Single Redirects 對指定 host/path 建立兩條 301 規則，保留既有規則，並逐一以 HTTP 回應狀態與 Location 驗證。若 Cloudflare API 權限尚未授權，需使用安全授權流程，絕不把 JavaScript／meta refresh 誤報為 301。
 
 實作完成：`chrysalismusicusa.com` 的 `http_request_dynamic_redirect` zone entrypoint 原先不存在，因此新增專用規則集，內含且僅含兩條對應舊 host/path 的永久 301 規則；各規則涵蓋有／無尾斜線、保留原 query string，其他網址不匹配。已直接以 HTTP 與 HTTPS、帶 query 與無尾斜線變體驗證四個來源請求回傳 301，`Location` 均指向各自新歌頁，兩個目的頁回傳 200。其他 Cloudflare rulesets 未更動。
+
+
+## Nightmare／Fiction 與首張古典音樂選輯（2026-11-12）
+
+新增 Avenged Sevenfold《Nightmare》標準版專輯介紹、〈Fiction〉獨立歌曲文章，以及 Simon Rattle 指揮 Berliner Philharmoniker 的馬勒第九號交響曲專輯導讀，共三篇。前兩篇用既有 listeningNotes／Article.albumId 建立回鏈，各自計數，不覆蓋《City of Evil》或〈Bat Country〉。古典錄音單獨列為一張專輯，以 genre「古典音樂」進入共用分類；演出團、指揮與作曲者在標題／摘要／正文和曲目聽點清楚呈現，採用正式目錄同一錄音版封面，核實錄音年份及發行年份。
+
+三個獨立研究單位保存已讀來源與可支持事實；對 The Rev、馬勒死亡題材不採預言或遺書推測。研究結果接入獨立 november12Albums.ts、november12Articles.ts，使用既有 catalog、全文搜尋、ArtistPage、AlbumPage、ArticlePage、SEO 和 GitHub Pages 根路徑建置。新增 A7X／AX7 和柏林愛樂中英文搜尋別名；現有網址、品牌視覺、Ahrefs 與所有 Cloudflare 301 保持不變。預期新增兩個專輯頁、一個歌曲頁與柏林愛樂一個團頁，全站共 91 張專輯、68 篇文章、75 團、149 篇唯一導讀及 235 條公開路由。
+
+採用版本：Nightmare 為 2010 年 7 月 27 日標準 11 曲版，Fiction 是第 10 首；馬勒第九號交響曲為 2007 年 10 月柏林愛樂廳現場錄製、2008 年發行的 EMI／Warner 版本，四樂章各一軌。新增三篇分別為 538、533、579 個中文字，均為五段；TypeScript、81 項回歸測試與正式根網域 235 頁靜態預渲染驗證通過。

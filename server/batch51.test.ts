@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 import { batch51Albums } from "../client/src/data/batch51Albums";
 import { batch51Articles } from "../client/src/data/batch51Articles";
 import { october29Albums } from "../client/src/data/october29Albums";
+import { november12Albums } from "../client/src/data/november12Albums";
+import { november12Articles } from "../client/src/data/november12Articles";
 import { albums, articles } from "../client/src/data/catalog";
 import { artistSlug, buildArtistIndex, catalogGuideCount, filterAlbums, filterArticles } from "../client/src/lib/catalogSearch";
 import { getPublicPaths } from "../client/src/seo/metadata";
@@ -13,7 +15,7 @@ const origin = "https://chrysalismusicusa.com";
 const rootOptions = { origin, basePath: "/" };
 const albumIds = new Set(batch51Albums.map((item) => item.id));
 const articleIds = new Set(batch51Articles.map((item) => item.id));
-const laterAlbumIds = new Set(october29Albums.map((item) => item.id));
+const laterAlbumIds = new Set([...october29Albums, ...november12Albums].map((item) => item.id));
 const cjkCount = (text: string) => (text.match(/[\u3400-\u9fff]/g) ?? []).length;
 const paragraphCount = (text: string) => text.split(/\n\s*\n/).filter(Boolean).length;
 const normalizeArtist = (name: string) => name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -26,15 +28,15 @@ describe("50 個新樂團專輯與 DEEN 第 51 組資料", () => {
     expect(new Set(batch51Albums.map((item) => item.artist)).size).toBe(51);
     expect(new Set(batch51Albums.map((item) => item.id)).size).toBe(51);
     expect(new Set(batch51Articles.map((item) => item.slug)).size).toBe(51);
-    expect(albums).toHaveLength(89);
-    expect(articles).toHaveLength(67);
-    expect(buildArtistIndex(albums, articles)).toHaveLength(74);
-    expect(catalogGuideCount(albums, articles)).toBe(146);
-    expect(getPublicPaths()).toHaveLength(231);
+    expect(albums).toHaveLength(91);
+    expect(articles).toHaveLength(68);
+    expect(buildArtistIndex(albums, articles)).toHaveLength(75);
+    expect(catalogGuideCount(albums, articles)).toBe(149);
+    expect(getPublicPaths()).toHaveLength(235);
 
     const oldArtists = new Set([
       ...albums.filter((item) => !albumIds.has(item.id) && !laterAlbumIds.has(item.id)).map((item) => normalizeArtist(item.artist)),
-      ...articles.filter((item) => !articleIds.has(item.id)).map((item) => normalizeArtist(item.artist)),
+      ...articles.filter((item) => !articleIds.has(item.id) && !november12Articles.some((later) => later.id === item.id)).map((item) => normalizeArtist(item.artist)),
     ]);
     for (const item of batch51Albums) expect(oldArtists.has(normalizeArtist(item.artist)), item.artist).toBe(false);
   });
@@ -71,8 +73,9 @@ describe("50 個新樂團專輯與 DEEN 第 51 組資料", () => {
       expect(filterAlbums(albums, filters(album.title))).toContain(album);
       expect(filterArticles(articles, filters(article.title))).toContain(article);
       const entry = index.find((item) => item.slug === artistSlug(album.artist));
-      const laterAlbumCount = october29Albums.filter((item) => item.artist === album.artist).length;
-      expect(entry, album.artist).toMatchObject({ albumCount: 1 + laterAlbumCount, guideCount: 2 + laterAlbumCount });
+      const laterAlbumCount = [...october29Albums, ...november12Albums].filter((item) => item.artist === album.artist).length;
+      const laterSongCount = november12Articles.filter((item) => item.artist === album.artist).length;
+      expect(entry, album.artist).toMatchObject({ albumCount: 1 + laterAlbumCount, guideCount: 2 + laterAlbumCount + laterSongCount });
       expect(getPublicPaths()).toContain(`/artist/${artistSlug(album.artist)}`);
       expect(getPublicPaths()).toContain(`/album/${album.id}`);
       expect(getPublicPaths()).toContain(`/article/${article.slug}`);

@@ -1,3 +1,4 @@
+import { november12Articles } from "./november12Articles";
 import type { Article } from "./types";
 import { batch51Articles } from "./batch51Articles";
 
@@ -460,3 +461,5 @@ articles.push({
 
 建議先連聽專輯前三首，再把〈Candy Girl〉和第七首〈You're Gorgeous〉放在一起比較。前者使用更直接的戲謔感，後者則在流行旋律下藏著較難安放的情緒；這是聆聽上的對照，不是對歌曲意義的裁決。接著可以播放全長 15 首的《Ugly Beautiful》，聽第二首如何在專輯早段建立語氣，也留意後面的歌曲如何延展或打破這種期待。`,
 });
+
+articles.push(...november12Articles);
