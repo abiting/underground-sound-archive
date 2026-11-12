@@ -90,7 +90,7 @@ describe("全樂團追加知名專輯", () => {
     expect(home).toMatch(/149(?:<!-- -->)? 篇導讀/);
     expect(home).toMatch(/2(?:<!-- -->)? 篇導讀/);
     expect(readableHome).toContain("不重複導讀 149 篇");
-    expect(home).toContain("場刊是本站的編輯風格");
+    expect(home).not.toContain("場刊是本站的編輯風格");
     expect(home).not.toContain("相關文章");
     for (const album of ids.map(record)) {
       const slug = artistSlug(album.artist);

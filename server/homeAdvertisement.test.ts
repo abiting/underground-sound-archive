@@ -19,9 +19,11 @@ function homeAdvertisement() {
 }
 
 describe("首頁樂團索引左欄廣告", () => {
-  it("指定圖片在首頁初始 HTML 的索引左欄說明下方，並且只顯示一次", () => {
+  it("桌面首頁初始 HTML 的廣告在樂團索引標題下方，不含原說明文字", () => {
     const { home, leftColumn, advertisement } = homeAdvertisement();
-    expect(leftColumn.indexOf('class="artist-index-ad"')).toBeGreaterThan(leftColumn.indexOf('class="artist-index-note"'));
+    expect(leftColumn).not.toContain("場刊是本站的編輯風格");
+    expect(leftColumn).not.toContain('class="artist-index-note"');
+    expect(leftColumn.indexOf('class="artist-index-ad"')).toBeGreaterThan(leftColumn.indexOf("</h2>"));
     expect(advertisement).toContain('class="artist-index-ad-label">廣告</span>');
     expect(advertisement).toContain(`src="${imageUrl}"`);
     expect(advertisement).toContain('alt="軟體王阿力：免費替代軟體資料庫廣告"');
@@ -34,6 +36,8 @@ describe("首頁樂團索引左欄廣告", () => {
     expect(labelStyle).toContain("top: 10px");
     expect(labelStyle).toContain("left: 10px");
     expect(labelStyle).toContain("pointer-events: none");
+    const mobileStyles = css.split("@media (max-width: 760px) {")[1]?.split("@media (max-width: 420px)")[0] ?? "";
+    expect(mobileStyles).toMatch(/\.artist-index-ad\s*\{\s*display:\s*none;\s*\}/);
     expect((home.html.match(/class="artist-index-ad"/g) ?? []).length).toBe(1);
     expect(home.html).toContain('href="https://chrysalismusicusa.com/"');
   });

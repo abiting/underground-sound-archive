@@ -120,4 +120,4 @@ App 是伺服端與用戶端共用的元件樹。Sonner 通知 live-region 不�
 採用版本：Nightmare 為 2010 年 7 月 27 日標準 11 曲版，Fiction 是第 10 首；馬勒第九號交響曲為 2007 年 10 月柏林愛樂廳現場錄製、2008 年發行的 EMI／Warner 版本，四樂章各一軌。新增三篇分別為 538、533、579 個中文字，均為五段；TypeScript、81 項回歸測試與正式根網域 235 頁靜態預渲染驗證通過。
 
 ## 首頁樂團索引左欄廣告（2026-11-25）
-僅在首頁 `#artists` 樂團索引左欄介紹文下方留白，放置使用者指定的直式廣告圖 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`。沿用現有紙色底、紅色細節與字體風格，在圖片左上角覆蓋標示「廣告」，圖片維持原比例且不裁切；外連開新分頁並使用 `rel="sponsored noopener noreferrer"`。行動版在介紹文下方顯示並限制最大寬度；不擴及其他頁面、不變更既有路由或轉址。
+僅在首頁 `#artists` 樂團索引左欄標題下方留白，放置使用者指定的直式廣告圖 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`。移除原有的樂團索引說明句。沿用現有紙色底、紅色細節與字體風格，在圖片左上角覆蓋標示「廣告」，圖片維持原比例且不裁切；外連開新分頁並使用 `rel="sponsored noopener noreferrer"`。桌面版顯示，手機版（視窗寬度不超過 760px）隱藏；不擴及其他頁面、不變更既有路由或轉址。

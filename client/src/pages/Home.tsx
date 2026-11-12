@@ -95,7 +95,6 @@ export default function Home() {
         <div className="artist-band-title">
           <p className="section-kicker">02 / BAND INDEX</p>
           <h2>樂團索引<span>，</span><br />從名字開始挖。</h2>
-          <p className="artist-index-note">場刊是本站的編輯風格；長文都統稱「導讀」，同一篇只計一次。</p>
           <aside className="artist-index-ad" aria-label="廣告">
             <span className="artist-index-ad-label">廣告</span>
             <a href="https://app.abiting.cc/software" target="_blank" rel="sponsored noopener noreferrer" aria-label="查看軟體王阿力免費替代軟體資料庫（另開新分頁）">

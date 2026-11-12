@@ -121,4 +121,5 @@
 - [x] 沿用 Album 模型與既有頁面，新分類「古典音樂」能由首頁篩選與樂團索引找到；可用柏林愛樂／Berlin Philharmonic／Berliner Philharmoniker／Simon Rattle／馬勒／Mahler 搜尋，作品與演出者名稱清楚，不改品牌名或既有設計。連同 Nightmare／Fiction，今日共三篇，全站預期 91 張專輯、68 篇文章、75 個樂團、149 篇唯一導讀及 235 條公開路由；全部具有初始 HTML、canonical、metadata、sitemap 與 manifest，不修改轉址。
 
 ## 首頁樂團索引左欄廣告（2026-11-25）
-- [x] 僅在首頁樂團索引左側留白加入使用者提供的圖片 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`；保留直式圖片比例、不裁切，在圖片左上角清楚標示「廣告」並提供替代文字，外連開新分頁且使用 `rel="sponsored noopener noreferrer"`，行動版不溢出。正式首頁樂團索引左欄應顯示可點擊的廣告圖，其他頁面不變。
+- [x] 僅桌面版在首頁樂團索引標題下方留白加入使用者提供的圖片 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`；移除原樂團索引說明句，保留直式圖片比例、不裁切，在圖片左上角清楚標示「廣告」並提供替代文字，外連開新分頁且使用 `rel="sponsored noopener noreferrer"`，手機版（寬度不超過 760px）不顯示。正式首頁桌面版樂團索引左欄顯示可點擊的廣告圖，其他頁面不變。
+- [x] 僅桌面版在首頁樂團索引標題下方留白加入使用者提供的圖片 `https://app.abiting.cc/wp-content/uploads/2026/11/appabiting.jpeg`，點擊連至 `https://app.abiting.cc/software`；移除原樂團索引說明句，保留直式圖片比例、不裁切，在圖片左上角清楚標示「廣告」並提供替代文字，外連開新分頁且使用 `rel="sponsored noopener noreferrer"`，手機版（寬度不超過 760px）不顯示。正式首頁桌面版樂團索引左欄顯示可點擊的廣告圖，其他頁面不變。
